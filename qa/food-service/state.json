@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "scope": "State and static navigation tests, not browser/device or animation-quality evidence",
+  "checks": [
+    "Two customer flow and clear physical queue corridor",
+    "Recipe stock deducted once and refunded only before preparation",
+    "Correct plate required; exactly-once payment across reload; no player nutrition reward",
+    "Cancel before/after preparation and collection; leaving distance; patience expiry; all customers settle",
+    "Owned wardrobe and furniture unchanged"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-24",
+  "status": "passed",
+  "combinations": 8,
+  "apartmentTriangles": 4884,
+  "checks": [
+    "Legacy look/money retained; natural style, bob and finishes round-trip; malformed styles rejected; sitting/computer apply bounded effects",
+    "All seven furniture stations reachable with/without sofa; apartment below 10k triangles; finish changes retain cutaway material; whole floor fits four CPU viewports",
+    "Eight natural-style sex/outfit combinations with bob retain finite idle/walk/activity transforms and return to walking"
+  ],
+  "scope": "CPU geometry/logic only; no rendered browser, native touch or Android performance claim."
+}

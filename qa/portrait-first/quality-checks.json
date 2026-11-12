@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checks": [
+    "Legacy orange dress and day/evening/Ankara/iro on both sexes and slim/broad builds: finite animated hem, bounded continuous silhouette and retained colours (CPU, not visual acceptance)",
+    "Both service lanes clear; arriving/queuing/departing customers remain separated; player collision prevents entry; old save format valid",
+    "Explicit quick-menu/button foregrounds and separate fabric/tile/metal materials; browser CSS contrast remains a device check"
+  ],
+  "minimumCustomerSeparation": 1.100181803158002,
+  "scope": "CPU geometry/state/collision and CSS source checks. Does not override failed Android visual acceptance."
+}

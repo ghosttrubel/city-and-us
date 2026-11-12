@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "scope": "Shipped game handlers and meshes using synthetic DOM, renderer, media and input. Not device pixels/audio/touch acceptance.",
+  "steps": [
+    "Legacy migration, weather random sequence/time/day round-trip and malformed audio setting rejection pass.",
+    "Saved dialogue mute/volume/subtitles/text-only, rain/ambience and crowd settings survive reload. Diagnostics hidden by default.",
+    "Courier answers meal questions, politely refuses extras and waits when collection is declined; no premature receipt.",
+    "Playback requests order NPC -> selected player voice -> NPC. Receipt occurs after the handover pose, once; carried package remains visible across reload and a physical door. Audio decoding/listening still requires phone verification.",
+    "Opening gives no hunger reward; interrupted eating gives none; one visible bite consumes one portion and improves hunger. Partial meal, appearance and ownership survive reload.",
+    "Cooked jollof through collection/preparation/stirring/plating, kept the visible open plate, served at the table and took an animated bite with hunger gain."
+  ]
+}

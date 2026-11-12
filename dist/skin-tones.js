@@ -1,0 +1,9 @@
+// Natural colour choices; existing arbitrary saved colours remain valid.
+export const SKIN_TONES=Object.freeze([
+ {name:'Deep · neutral',colour:'#4b3028'}, {name:'Deep · warm',colour:'#603b2b'}, {name:'Deep · cool',colour:'#62403a'},
+ {name:'Rich · golden',colour:'#795035'}, {name:'Rich · neutral',colour:'#885037'}, {name:'Medium · warm',colour:'#a46c48'},
+ {name:'Medium · olive',colour:'#ad815b'}, {name:'Medium · rose',colour:'#b77e68'}, {name:'Light · golden',colour:'#d4a77d'},
+ {name:'Light · neutral',colour:'#dfb79b'}, {name:'Light · rose',colour:'#ecc3b1'}, {name:'Fair · neutral',colour:'#f1d3bb'}
+]);
+export function skinToneMarkup(value){return '<fieldset class="skin-tones"><legend>Natural skin tone</legend><p>Neutral studio light · texture and facial detail retained</p><input id="skin" type="hidden" value="'+(/^#[0-9a-f]{6}$/i.test(value)?value:'#885037')+'"><div class="skin-tone-grid">'+SKIN_TONES.map((tone,i)=>'<button type="button" id="skin-tone-'+i+'" class="skin-tone" aria-pressed="'+(tone.colour.toLowerCase()===value.toLowerCase())+'"><span style="background:'+tone.colour+'"></span>'+tone.name+'</button>').join('')+'</div><p id="skin-tone-status" role="status"></p></fieldset>';}
+export function bindSkinTones(container,onChange){const input=container.querySelector('#skin');function update(){const match=SKIN_TONES.find(t=>t.colour.toLowerCase()===input.value.toLowerCase());container.querySelector('#skin-tone-status').textContent=match?match.name:'Your saved custom tone · preserved until you choose a swatch';for(const [i,t]of SKIN_TONES.entries())container.querySelector('#skin-tone-'+i).setAttribute('aria-pressed',String(t===match));}for(const [i,t]of SKIN_TONES.entries())container.querySelector('#skin-tone-'+i).onclick=()=>{input.value=t.colour;update();onChange(t.colour);};update();}

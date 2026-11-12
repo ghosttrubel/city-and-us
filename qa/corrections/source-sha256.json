@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-24",
+  "checkpointFilesVerified": 94,
+  "files": {
+    "dist/character.js": "99f5044a3b59eace8ae41f1aacc6f7a87f2fcb20273872110f0417118e87d71a",
+    "dist/camera.js": "276d72a88824ebc819132a346cc5bc13e88469968a76352227b4b1cf8cd38eb3",
+    "dist/interior.js": "fce9d0f2e0fe15e9c8138edb7792a95295e9493ee5673031b6feb2a12d117ac2",
+    "dist/interior-camera.js": "edb72cbcad13609aec68f76cdb83706e5c04ceb72119514714c319c369089fac",
+    "dist/doorway.js": "57e5afdb216d79638d67d30781b6453afdc888c20d6fc846a1e6b788a3ca3b09",
+    "dist/navigation.js": "d263147043838bdf73e78c38f8e5a891a7427e1b73dbc81100d91fb47e545840",
+    "dist/street.js": "bc635d261c2234ec52ff6c70d147af52de816f15c903c488298b7eee40d39774",
+    "dist/districts.js": "51762e4df9ca32947f97ef9f878d97dadfd001924e140c55f4914194de657f8c",
+    "dist/game.js": "0b7a93a5878b206ff6f2564af8c3226dabb67ede60cddc1704a1aee75a808e18",
+    "dist/index.html": "b8910e6a68249777dfe9cd523bdecc74fc970b5e6496a930eb71525ac5fef856",
+    "dist/style.css": "6203ae61cbd42406cd05f50a3082e7622ad8de5756229b733724367b8c28d617"
+  }
+}

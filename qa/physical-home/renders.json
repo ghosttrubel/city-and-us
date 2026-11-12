@@ -1,0 +1,29 @@
+{
+  "scope": "Software renders of shipped meshes/poses; not browser screenshots or device rendering.",
+  "frames": [
+    {
+      "name": "../../../qa/physical-home/carry.png",
+      "triangles": 12620
+    },
+    {
+      "name": "../../../qa/physical-home/eat.png",
+      "triangles": 12473
+    },
+    {
+      "name": "../../../qa/physical-home/prepare.png",
+      "triangles": 12697
+    },
+    {
+      "name": "../../../qa/physical-home/study.png",
+      "triangles": 12494
+    },
+    {
+      "name": "../../../qa/physical-home/shower.png",
+      "triangles": 13337
+    },
+    {
+      "name": "../../../qa/physical-home/overview.png",
+      "triangles": 11009
+    }
+  ]
+}

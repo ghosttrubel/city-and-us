@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "triangles": 16663,
+  "materialBatches": 5,
+  "bones": 65,
+  "maxJointPositionError": 7.463402417756282e-7,
+  "bytes": 998128,
+  "sha256": "60e189460068f43030ef878080d2c7ce5145cd97465d5be3995306972554dbe2",
+  "materials": [
+    "Top_Knit",
+    "Jeans_Denim",
+    "Top_Binding",
+    "Jeans_Stitch",
+    "Hardware"
+  ],
+  "sex": "male",
+  "profile": "tee"
+}

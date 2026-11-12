@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-26T13:07:57.740Z",
+  "status": "passed",
+  "steps": [
+    "Played cooking, cancelled preparation with one refund, paused/reloaded simmer, served once and ate the stored plate once.",
+    "Confirmed food once, refunded cancellation once, reloaded during courier collection, physically received at Home and consumed exactly once.",
+    "Met the physical vehicle, boarded, reloaded in transit, followed its world position and alighted at Provisions without a second fare.",
+    "Early cancellation drove to the next safe stop, survived reload and retained the already agreed fare.",
+    "Claimed each daily objective once; final money, meals, service history, appearance, wardrobe and decorating survived reload."
+  ],
+  "money": 13950,
+  "daily": {
+    "version": 1,
+    "foodSerial": 2,
+    "rideSerial": 2,
+    "cookSerial": 2,
+    "order": {
+      "id": 2,
+      "menu": "jollof",
+      "address": "home",
+      "total": 950,
+      "status": "received",
+      "progress": 1
+    },
+    "ride": {
+      "id": 2,
+      "pickup": "shop",
+      "destination": "home",
+      "dropoff": "dispatch",
+      "fare": 300,
+      "status": "ended",
+      "progress": 1,
+      "path": [
+        {
+          "x": 1.8,
+          "z": 26
+        },
+        {
+          "x": 1.8,
+          "z": 34
+        },
+        {
+          "x": -1.8,
+          "z": 34
+        },
+        {
+          "x": -1.8,
+          "z": -34
+        },
+        {
+          "x": 1.8,
+          "z": -34
+        },
+        {
+          "x": 1.8,
+          "z": -18
+        }
+      ],
+      "distance": 102.19999999999966,
+      "early": true
+    },
+    "cook": {
+      "id": 2,
+      "status": "complete",
+      "chops": 3,
+      "heat": 64.9422886368851,
+      "burner": 65,
+      "elapsed": 12.35000000000004,
+      "good": 10.20000000000001,
+      "stirs": 2,
+      "sinceStir": 0,
+      "quality": "good"
+    },
+    "meals": [],
+    "guide": null,
+    "stats": {
+      "received": 1,
+      "eaten": 2,
+      "rides": 1,
+      "cooked": 1
+    }
+  },
+  "scope": "Shipped game handlers, scene objects and synthetic joystick/UI with isolated DOM/renderer/storage doubles. Not an actual browser or physical device.",
+  "userStorageTouched": false
+}

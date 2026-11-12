@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+import {buildStreet} from '../dist/street.js';
+import {migrate} from '../dist/life.js';
+import {stepBike,mountBike} from '../dist/dispatch-bike.js';
+import {collectDelivery,PICKUP} from '../dist/neighbourhood.js';
+const ctx=new Proxy({measureText:s=>({width:s.length*8}),createLinearGradient:()=>({addColorStop(){}})},{get:(o,k)=>o[k]||(()=>{}),set:(o,k,v)=>(o[k]=v,true)});
+globalThis.document={createElement:()=>({getContext:()=>ctx})};
+const seed={name:'Reproduction',money:15000,food:85,energy:95,mood:80,time:480,day:1,x:12,z:20,rentDay:1,skills:{trader:0,rider:0,chef:0}};
+const s=migrate(seed,seed,'LS-0123456789ABCDEF'),world=buildStreet();collectDelivery(s,'dispatch',PICKUP);Object.assign(s.dispatchBike,{x:12,z:20,heading:Math.PI});assert(mountBike(s,'city',s.dispatchBike).ok);
+for(let i=0;i<300;i++)stepBike(s,{x:0,z:-1},.05,world.obstacles);
+const before={...s.dispatchBike};for(let i=0;i<300;i++)stepBike(s,{x:0,z:1},.05,world.obstacles);
+const moved=Math.hypot(s.dispatchBike.x-before.x,s.dispatchBike.z-before.z);
+assert(before.z<14.5,'Did not reach buka pedestrian serving area');assert(moved<.05,'Expected the old direction-only controls to trap the bike');
+const report={status:'reproduced',before,after:{...s.dispatchBike},escapeDistance:moved,explanation:'The bike enters the pedestrian terrace under the buka canopy and stops nose-first at the building/counter. Direction-only controls offer no reverse; rotating the front corners intersects the wall, so opposite stick input cannot escape. This reproduces the visible trapped-bike behavior, not passage through a sealed room transition.'};
+await writeFile('qa/places-vehicles-3/bike-before.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));

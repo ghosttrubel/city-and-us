@@ -1,0 +1,23 @@
+[
+  {
+    "asset": "Square_Denim",
+    "status": 200,
+    "cacheControl": "no-cache",
+    "bytes": 1067644,
+    "matchesStaged": true
+  },
+  {
+    "asset": "Tank_Denim",
+    "status": 200,
+    "cacheControl": "no-cache",
+    "bytes": 986344,
+    "matchesStaged": true
+  },
+  {
+    "asset": "Male_Everyday",
+    "status": 200,
+    "cacheControl": "no-cache",
+    "bytes": 998128,
+    "matchesStaged": true
+  }
+]

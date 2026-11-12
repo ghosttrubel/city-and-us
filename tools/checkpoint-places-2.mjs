@@ -1,0 +1,14 @@
+import {readdir,mkdir,readFile,writeFile,copyFile,stat} from 'node:fs/promises';
+import path from 'node:path';import {createHash} from 'node:crypto';
+const root=process.cwd(),cp=path.join(root,'checkpoints/2026-11-08-before-places-batch-2');
+if(await stat(cp).catch(()=>null))throw Error('Refusing to overwrite an existing checkpoint');
+await mkdir(cp,{recursive:true});const files=[];
+async function walk(dir){for(const e of await readdir(dir,{withFileTypes:true})){if(e.isDirectory()){if(!e.name.startsWith('.')&&!['node_modules','build','cache','models'].includes(e.name))await walk(path.join(dir,e.name));}else if(e.name!=='local.properties'&&!/\.(jks|keystore)$/.test(e.name))files.push(path.join(dir,e.name));}}
+for(const e of await readdir(root,{withFileTypes:true}))if(e.isFile())files.push(path.join(root,e.name));
+for(const d of ['dist','docs','tools','art','reference','city-and-us-references','android'])await walk(path.join(root,d));
+files.push(path.join(root,'.openai/hosting.json'));const records=[],hash=b=>createHash('sha256').update(b).digest('hex');
+for(const p of files){const rel=path.relative(root,p),dest=path.join(cp,rel);await mkdir(path.dirname(dest),{recursive:true});await copyFile(p,dest);const original=await readFile(p),digest=hash(original);if(hash(await readFile(dest))!==digest)throw Error('Copy mismatch '+rel);records.push({file:rel.replaceAll('\\','/'),sha256:digest,bytes:original.length});}
+await writeFile(path.join(cp,'manifest.json'),JSON.stringify({scope:'Batch 2 recovery: source, runtime assets, editable art and references. Excludes dependencies, hidden model/build caches, signing keys and browser saves.',files:records},null,2));
+const head='# Places & vehicles batch 2 corrections — 8 November 2026\n\nProvisions visual direction is owner-approved; preserve it. Danfo booking direction is accepted. Next: audible situation-aware Nigerian English/Pidgin shop and dispatch dialogue with player replies, mute/volume and subtitles; a usable parcel dispatch bike (collect, mount, ride, dismount, hand over), with walking retained; more spacious streets, pavements and pickup areas. Parcel dispatch remains distinct from passenger tickets. Report voice coverage and working vehicle interactions explicitly; missing parts are not complete. Character/outfit revisions remain paused. Preserve all saves, rights, colours, ownership and the full roadmap below.\n\nInstalled offline voices are stock English synthesis voices. The script can use Nigerian English/Pidgin wording, but Nigerian accent, pronunciation and device playback remain pending listening/device acceptance. No paid service or voice cloning.\n\n---\n\n';
+for(const name of ['README.md','ROADMAP.md','docs/OWNER_REQUIREMENTS.md']){const p=path.join(root,name);await writeFile(p,head+await readFile(p,'utf8'));}
+await mkdir(path.join(root,'qa/places-vehicles-2'),{recursive:true});console.log('Checkpoint verified:',records.length,'files. Corrections recorded.');

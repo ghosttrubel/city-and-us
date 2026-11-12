@@ -1,0 +1,8 @@
+import {renderOffline} from './catalogue-preview-runtime.mjs';
+import * as T from '../dist/vendor/three.module.js';
+import {makeCharacter,disposeCharacter,appearanceDefaults} from '../dist/character.js';
+import {migrateWardrobe,previewFashion} from '../dist/wardrobe-state.js';
+for(const sex of ['female','male'])for(const [tone,skin]of [['deep','#4b3028'],['medium','#885037'],['light','#dfb79b']])for(const makeup of [false,true]){
+ const model=makeCharacter({...appearanceDefaults,sex,skin,characterStyle:'natural',hair:sex==='female'?'bob':'fade',outfit:'streetwear',shirt:'#e4ddd0',accessory:'none',makeup:makeup?{brows:.6,liner:.5,lipstick:.55,blush:.35,lipColour:'#963f51'}:undefined}),scene=new T.Scene();scene.add(model);model.rotation.y=.12;const cam=new T.PerspectiveCamera(32,1,.1,30);cam.position.set(.02,2.16,1.4);cam.lookAt(0,2.16,0);await renderOffline(scene,cam,400,400,'../../../qa/fashion-review/'+sex+'-'+tone+'-'+(makeup?'makeup':'bare')+'.png');disposeCharacter(model);console.log(sex,tone,makeup);
+}
+for(const [sex,items]of [['female',['hair-bob','hair-braids','hair-bun']],['male',['hair-fade','hair-locs','hair-cornrows']]])for(const id of items){let state={...appearanceDefaults,sex,characterStyle:'natural',accessory:'none',outfit:'streetwear',shirt:'#e4ddd0'};migrateWardrobe(state,{});state=previewFashion(state,id);const model=makeCharacter(state),scene=new T.Scene();scene.add(model);model.rotation.y=.4;const cam=new T.PerspectiveCamera(32,1,.1,30);cam.position.set(.02,2.16,1.7);cam.lookAt(0,2.16,0);await renderOffline(scene,cam,320,320,'../../../qa/fashion-review/'+sex+'-'+id+'.png');disposeCharacter(model);console.log(sex,id);}

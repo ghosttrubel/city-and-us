@@ -1,0 +1,51 @@
+[
+  {
+    "path": "/?review=apartment",
+    "status": 200,
+    "mime": "text/html; charset=utf-8",
+    "matchesLocal": true,
+    "bytes": 3462
+  },
+  {
+    "path": "/game.js",
+    "status": 200,
+    "mime": "text/javascript; charset=utf-8",
+    "matchesLocal": true,
+    "bytes": 61105
+  },
+  {
+    "path": "/interior.js",
+    "status": 200,
+    "mime": "text/javascript; charset=utf-8",
+    "matchesLocal": true,
+    "bytes": 13063
+  },
+  {
+    "path": "/character.js",
+    "status": 200,
+    "mime": "text/javascript; charset=utf-8",
+    "matchesLocal": true,
+    "bytes": 13719
+  },
+  {
+    "path": "/activity-pose.js",
+    "status": 200,
+    "mime": "text/javascript; charset=utf-8",
+    "matchesLocal": true,
+    "bytes": 1904
+  },
+  {
+    "path": "/home-style.js",
+    "status": 200,
+    "mime": "text/javascript; charset=utf-8",
+    "matchesLocal": true,
+    "bytes": 492
+  },
+  {
+    "path": "/assets/characters/Hair_Long.glb",
+    "status": 200,
+    "mime": "model/gltf-binary",
+    "matchesLocal": true,
+    "bytes": 117448
+  }
+]

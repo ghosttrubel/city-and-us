@@ -1,0 +1,241 @@
+{
+  "clip": "C:\\Users\\SeniorBaby\\OneDrive\\Documents\\projects\\lagos-street\\city-and-us-references\\videos\\1001988127.mp4",
+  "method": "libVLC CPU video memory callbacks; no audio",
+  "duration_ms": 181267,
+  "decoded_frames": 5439,
+  "captures": [
+    {
+      "milliseconds": 0,
+      "file": "at-000000000.bmp"
+    },
+    {
+      "milliseconds": 3152,
+      "file": "at-000003152.bmp"
+    },
+    {
+      "milliseconds": 6403,
+      "file": "at-000006403.bmp"
+    },
+    {
+      "milliseconds": 9652,
+      "file": "at-000009652.bmp"
+    },
+    {
+      "milliseconds": 12903,
+      "file": "at-000012903.bmp"
+    },
+    {
+      "milliseconds": 16150,
+      "file": "at-000016150.bmp"
+    },
+    {
+      "milliseconds": 19401,
+      "file": "at-000019401.bmp"
+    },
+    {
+      "milliseconds": 22651,
+      "file": "at-000022651.bmp"
+    },
+    {
+      "milliseconds": 25654,
+      "file": "at-000025654.bmp"
+    },
+    {
+      "milliseconds": 29154,
+      "file": "at-000029154.bmp"
+    },
+    {
+      "milliseconds": 32650,
+      "file": "at-000032650.bmp"
+    },
+    {
+      "milliseconds": 35651,
+      "file": "at-000035651.bmp"
+    },
+    {
+      "milliseconds": 38657,
+      "file": "at-000038657.bmp"
+    },
+    {
+      "milliseconds": 41903,
+      "file": "at-000041903.bmp"
+    },
+    {
+      "milliseconds": 45152,
+      "file": "at-000045152.bmp"
+    },
+    {
+      "milliseconds": 48401,
+      "file": "at-000048401.bmp"
+    },
+    {
+      "milliseconds": 51653,
+      "file": "at-000051653.bmp"
+    },
+    {
+      "milliseconds": 54901,
+      "file": "at-000054901.bmp"
+    },
+    {
+      "milliseconds": 57904,
+      "file": "at-000057904.bmp"
+    },
+    {
+      "milliseconds": 61401,
+      "file": "at-000061401.bmp"
+    },
+    {
+      "milliseconds": 64404,
+      "file": "at-000064404.bmp"
+    },
+    {
+      "milliseconds": 67903,
+      "file": "at-000067903.bmp"
+    },
+    {
+      "milliseconds": 71151,
+      "file": "at-000071151.bmp"
+    },
+    {
+      "milliseconds": 74157,
+      "file": "at-000074157.bmp"
+    },
+    {
+      "milliseconds": 77402,
+      "file": "at-000077402.bmp"
+    },
+    {
+      "milliseconds": 80652,
+      "file": "at-000080652.bmp"
+    },
+    {
+      "milliseconds": 83653,
+      "file": "at-000083653.bmp"
+    },
+    {
+      "milliseconds": 86653,
+      "file": "at-000086653.bmp"
+    },
+    {
+      "milliseconds": 89902,
+      "file": "at-000089902.bmp"
+    },
+    {
+      "milliseconds": 93401,
+      "file": "at-000093401.bmp"
+    },
+    {
+      "milliseconds": 96652,
+      "file": "at-000096652.bmp"
+    },
+    {
+      "milliseconds": 99901,
+      "file": "at-000099901.bmp"
+    },
+    {
+      "milliseconds": 103150,
+      "file": "at-000103150.bmp"
+    },
+    {
+      "milliseconds": 106155,
+      "file": "at-000106155.bmp"
+    },
+    {
+      "milliseconds": 109155,
+      "file": "at-000109155.bmp"
+    },
+    {
+      "milliseconds": 112650,
+      "file": "at-000112650.bmp"
+    },
+    {
+      "milliseconds": 115901,
+      "file": "at-000115901.bmp"
+    },
+    {
+      "milliseconds": 119151,
+      "file": "at-000119151.bmp"
+    },
+    {
+      "milliseconds": 122153,
+      "file": "at-000122153.bmp"
+    },
+    {
+      "milliseconds": 125401,
+      "file": "at-000125401.bmp"
+    },
+    {
+      "milliseconds": 128402,
+      "file": "at-000128402.bmp"
+    },
+    {
+      "milliseconds": 131651,
+      "file": "at-000131651.bmp"
+    },
+    {
+      "milliseconds": 134652,
+      "file": "at-000134652.bmp"
+    },
+    {
+      "milliseconds": 137652,
+      "file": "at-000137652.bmp"
+    },
+    {
+      "milliseconds": 140901,
+      "file": "at-000140901.bmp"
+    },
+    {
+      "milliseconds": 143903,
+      "file": "at-000143903.bmp"
+    },
+    {
+      "milliseconds": 147152,
+      "file": "at-000147152.bmp"
+    },
+    {
+      "milliseconds": 150152,
+      "file": "at-000150152.bmp"
+    },
+    {
+      "milliseconds": 153402,
+      "file": "at-000153402.bmp"
+    },
+    {
+      "milliseconds": 156651,
+      "file": "at-000156651.bmp"
+    },
+    {
+      "milliseconds": 159653,
+      "file": "at-000159653.bmp"
+    },
+    {
+      "milliseconds": 162902,
+      "file": "at-000162902.bmp"
+    },
+    {
+      "milliseconds": 165906,
+      "file": "at-000165906.bmp"
+    },
+    {
+      "milliseconds": 169151,
+      "file": "at-000169151.bmp"
+    },
+    {
+      "milliseconds": 172154,
+      "file": "at-000172154.bmp"
+    },
+    {
+      "milliseconds": 175651,
+      "file": "at-000175651.bmp"
+    },
+    {
+      "milliseconds": 178652,
+      "file": "at-000178652.bmp"
+    },
+    {
+      "milliseconds": 181161,
+      "file": "at-000181161.bmp"
+    }
+  ],
+  "terminal_state": 6
+}

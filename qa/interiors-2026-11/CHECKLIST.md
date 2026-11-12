@@ -1,0 +1,36 @@
+# Accessible-location correction checklist
+
+Owner scope, 2 November 2026: ALL accessible buildings. Outdoor direction is approved; existing interiors and wardrobe are NOT visually accepted. Preserve saves, jobs, camera/menu/zoom, touch controls, ownership, source portability and MIT notices. No new Site or publication.
+
+No location below is marked complete. “Candidate” means source implementation awaiting actual in-game screenshots, interaction review and owner acceptance. First review is Boutique & Salon; first requested batch also includes provisions, Mama T’s and Yaba library.
+
+Audit sources: dist/neighbourhood.js ENTRANCES and BUILDINGS/KIOSKS; dist/interior.js; dist/destination-interiors.js; dist/home-interior.js; dist/game.js contextAction/openVenue/districtVenue; dist/service-experience.js. Eleven entrance IDs exist. Mama T’s, clinic and park are accessible outdoor interactions, not currently enterable rooms.
+
+| Location / ID | Current working purpose and actions | Required correction / staff / situation dialogue | Status |
+| --- | --- | --- | --- |
+| Boutique & Salon / salon | Catalogue preview/cancel, game-currency purchase, equip, named looks | Dedicated rails/garments, mannequins, shoes/accessories, fitting area, real mirrors, checkout, separate salon stations/tools. Attendant and stylist; current selection/price/funds/owned/equipped dialogue; browsing visitor and seated salon client. | Local candidate; route/state checks recorded separately; live screenshots, mirror shader/device performance and acceptance pending. |
+| Provisions / shop | Grocery purchase delivers 3 pantry portions for ₦500; sofa purchase; trading shift; courier handover/payment | Grocery/drink/toiletry shelving with recognisable packets/bottles, checkout/shopkeeper, browsing/restocking off routes. Greeting → browse → confirm → receipt/funds; parcel handover uses existing once-only payment. | Audited; generic room remains. First batch pending. |
+| Mama T’s / food | Outdoor ₦800 instant eat action; outdoor two-customer accept/prepare/stir/collect/serve job; phone food preparation/delivery | Proper service/preparation/food pots, dining tables/chairs, Mama T serving and customers ordering/eating. A physical interior and entrance do not exist yet; do not claim otherwise. Preserve current outdoor job, food orders and approved facade while adding an interior with matching transitions and save support. Replace instant eat only with tested physical fulfilment. Dialogue must track availability/prep/ready/payment/eating and active kitchen shift. | Audited; first batch pending. No interior screenshots possible yet. |
+| Yaba Reading Room / library | Counter selects trading/dispatch/cooking study and awards one-game-hour study | Bookcases/books, reading tables/chairs, librarian desk, librarian and seated readers. Finding topics, reading and quiet-room rules; retain skill study. No borrowing feature exists, so offer no borrow/return action. | Audited; generic room remains. First batch pending. |
+| Dispatch hub / dispatch | Collect parcel; carrying → Provisions handover/pay → return home; repeat collection guarded | Parcel racks with labelled packages, sorting/collection counter, attendant, rider staging/loading clear of entrance. Dialogue from actual delivery status/parcel ID/pay; no new parcel while carrying or awaiting return. | Audited; pending later batch. |
+| Yaba Works / hub | LAG → YAB → MAR records sorting job, pay and rider skill | Workstations/screens/keyboards, records trays/storage, supervisor and working clerks. Remember next record, wrong choice, completion and payment. | Audited; generic room with one monitor remains; pending. |
+| Island Trading Arcade / arcade | Groceries, sofa purchase and trading price-offer shift | Distinct market stalls/displays and trading desk, traders and browsing visitors. Wallet, selected offer, accepted/rejected offer and settled pay must drive replies. | Audited; generic room remains; pending. |
+| Lagoon Pot Eatery / islandfood | ₦700 physical pepper-yam takeaway, carried meal → eat/store at home | Food preparation/pots, serving and pickup counter, dining furniture, cook/server and eating customers. Actual meal capacity/funds/receipt determine availability and lines. | Audited; rudimentary eatery remains; pending. |
+| Tide Courtyard Hotel / island-house | ₦700 booking, refund unused booking, two-game-hour rest | Reception/lobby, screened/private rest suite, proper bed/linen/storage, receptionist and purposefully seated/arriving guest. Booking/unused/refund/used states determine dialogue. | Audited; bed currently shares lobby; pending. |
+| Lantern Yard Club / club | Free four-beat dance activity | DJ decks/mixer/speakers, distinct dance floor, proper lounge seats/tables and lighting, DJ/host and dancing patrons. Session/hits/finished state drives host responses. | Audited; block seating and no staff; pending. |
+| Home / home | Cooking/storage/meals, washing, reading/computer, sleep, wardrobe, decorating/rent | Already has purpose-specific zones but its furnishings are not newly accepted. Audit comfort, authored furniture, flooring, contact and circulation while preserving every owned item and saved placement (safe storage migration if needed). No invented household staff. | Audited; existing home retained; correction/review pending. |
+| Coastal Beach / beach | Three litter pickups and recycling; moving caretaker Efe | Outdoor destination, not a building interior. Audit recognisable recycling station/seating and caretaker dialogue against collected/deposited/day state; suitable visitors. Preserve approved coast visuals. | Audited; existing destination retained; pending review. |
+| Community clinic / clinic | Outdoor recovery payment/energy action | No interior/doctor exists. Record future reception/consultation/rest furnishings and clinical staff against the existing recovery action; no fake medical gameplay. | Audited; accessible service, no interior yet. |
+| Street gardens / park | Outdoor free relax action | Outdoor space, not an interior. Suitable sitting/relaxing visitors and clear routes; preserve approved outdoor direction. | Audited; retained. |
+
+Closed/non-accessible: Grace Courtyard Church, neighbourhood mosque, police station, governor/presidential residence sites, other apartment/scenery blocks, book market and clock tower. Do not silently open these or invent functional public services/multiplayer/elections.
+
+## Shared dialogue acceptance
+
+Role and current state govern both text and choices. No new greeting halfway through an order, no unavailable actions, no duplicate payments. Re-read wallet/ownership/order/job status on confirmation. Show completion and busy states. Use natural character-appropriate Nigerian English/Pidgin without caricature. New lines remain text-only until matching approved recordings exist. Existing unrelated spoken clips must not play over them.
+
+Only boutique conversation is connected in this candidate. Other role conversations above remain pending; they are not completed by this checklist.
+
+## Separate wardrobe gate
+
+See ../exact-outfit-review/STATUS.md. One exact sheet position has been inspected; no replacement garment or expanded batch is authorised before the standing/seated reference comparison is reviewed.

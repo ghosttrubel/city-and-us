@@ -1,0 +1,110 @@
+/* Shared road HUD: original vector controls, sized for portrait thumbs. */
+#vehicle-controls{
+ --steer-size:clamp(56px,18vw,86px);--pedal-width:clamp(58px,18vw,76px);
+ position:fixed;left:calc(10px + env(safe-area-inset-left));right:calc(10px + env(safe-area-inset-right));
+ bottom:calc(12px + env(safe-area-inset-bottom));z-index:28;pointer-events:none;color:#f0f8ef;
+}
+#vehicle-controls[hidden],#vehicle-controls [hidden]{display:none!important}
+#vehicle-controls button{
+ display:grid;place-items:center;pointer-events:auto;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;
+ padding:8px;margin:0;min-width:44px;min-height:44px;border:1px solid #c6dbd38c;border-radius:13px;
+ background:#142e34df;color:#f0f8ef;box-shadow:0 3px 0 #061c22a8;
+}
+#vehicle-controls button svg{width:26px;height:26px;pointer-events:none}
+#vehicle-controls button:focus-visible{outline:3px solid #f0c77d;outline-offset:3px}
+#vehicle-controls button.pressed,#vehicle-controls button:active:not(:disabled){
+ background:#edc17a;color:#132c32;border-color:#fff0cf;box-shadow:inset 0 2px 4px #67421460;transform:translateY(3px);
+}
+#vehicle-controls button:disabled{opacity:.38}
+.drive-dashboard{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.drive-tools{display:flex;gap:4px}
+#vehicle-controls .drive-tools button{width:44px;height:44px;border-radius:11px;padding:9px}
+#drive-speed{display:flex;align-items:center;gap:8px;min-width:80px;height:44px;padding:4px 9px;border:1px solid #c6dbd34d;border-radius:11px;background:#142e34e8;font-variant-numeric:tabular-nums;line-height:1}
+#drive-speed b{display:block;font-size:20px;font-weight:700}
+#drive-speed small{display:block;font-size:9px;line-height:1.3;color:#c6dbd3}
+#drive-gear{font-size:17px;font-weight:700;color:#bce4d0}
+#drive-gear[data-gear=R]{color:#f0c77d}
+.drive-pedals{display:flex;justify-content:space-between;align-items:end;gap:16px}
+.drive-steering,.drive-feet{display:flex;align-items:end;gap:6px}
+#vehicle-controls .drive-steering button{width:var(--steer-size);height:clamp(80px,23vw,96px);padding:12px}
+#vehicle-controls .drive-steering svg{width:100%;height:48px;stroke-width:2.5}
+#vehicle-controls .drive-feet button{width:var(--pedal-width);height:118px;padding:6px 5px;grid-template-rows:1fr auto}
+#vehicle-controls #drive-brake{height:100px}
+#vehicle-controls .drive-feet .pedal-art{width:100%;height:90px}
+#vehicle-controls #drive-brake .pedal-art{height:72px}
+.pedal-neck{fill:#8ba4aa}
+.pedal-face{fill:#e0e7e5;stroke:#fff;stroke-width:1.5}
+.pedal-grip{fill:#263e44}
+#vehicle-controls .pressed .pedal-face{fill:#fff0cd;stroke:#fffaf0}
+#vehicle-controls .drive-feet span{font-size:10px;font-weight:650;line-height:1.3}
+body.driving #joystick,body.driving #action,body.driving .camera-hint{display:none!important}
+@media(min-width:700px){#vehicle-controls{left:calc(24px + env(safe-area-inset-left));right:calc(24px + env(safe-area-inset-right))}}
+@media(max-width:340px){
+ #vehicle-controls{--steer-size:56px;--pedal-width:58px}
+ .drive-dashboard{gap:5px}.drive-pedals{gap:12px}
+}
+@media(max-height:500px) and (orientation:landscape){
+ #vehicle-controls .drive-feet button{height:94px}
+ #vehicle-controls #drive-brake{height:82px}
+ #vehicle-controls .drive-feet .pedal-art{height:66px}
+ #vehicle-controls #drive-brake .pedal-art{height:56px}
+ #vehicle-controls .drive-steering button{height:74px}
+ .drive-dashboard{margin-bottom:6px}
+}
+
+/* Compact service sheets keep the street sharp and visible. Costs stay outside details. */
+#overlay.service-overlay{
+ align-items:flex-end;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;pointer-events:none;
+ padding:calc(8px + env(safe-area-inset-top)) calc(10px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(10px + env(safe-area-inset-left));
+}
+#overlay.service-overlay #sheet{
+ pointer-events:auto;width:min(460px,100%);max-height:min(340px,44dvh);min-height:0;margin:0 auto;padding:10px 12px;
+ overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;border-radius:15px;border:1px solid #9ebcb86b;
+ background:#142e34f5;color:#f0f8ef;box-shadow:0 6px 24px #081b2440;
+}
+#overlay.service-overlay #sheet h2{font-size:17px;line-height:1.2;letter-spacing:0;margin:2px 44px 8px 0;padding:0}
+#overlay.service-overlay #sheet h3{font-size:14px}
+#overlay.service-overlay #sheet p{color:#e1ece5;font-size:13px;line-height:1.4;margin:6px 0}
+#overlay.service-overlay #sheet .eyebrow{color:#c9dcd5}
+#overlay.service-overlay #sheet button{min-height:44px;margin:3px 2px;padding:8px 11px;border-radius:9px;font-size:12px;background:#2a4950;color:#f0f8ef;border:1px solid #9ebcb85c}
+#overlay.service-overlay #sheet button.primary{background:#c4dfd0;color:#142e34;font-weight:700}
+#overlay.service-overlay #sheet .close{position:sticky;top:0;float:right;margin:-3px -4px 0 0;width:44px;height:44px;font-size:23px;padding:0;background:#24434b}
+#overlay.service-overlay #sheet .card{background:#213e45;border:1px solid #9ebcb844;padding:9px;margin:7px 0}
+#overlay.service-overlay #sheet select,#overlay.service-overlay #sheet input{background:#213e45;color:#f0f8ef;border-color:#9ebcb8}
+#overlay.service-overlay #sheet .service-actions{display:flex;gap:6px;clear:both}
+#overlay.service-overlay #sheet .service-actions button{flex:1;margin:4px 0;min-width:0}
+#overlay.service-overlay #sheet .rental-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+#overlay.service-overlay #sheet .rental-price strong{font-size:22px;color:#f0c77d}
+#overlay.service-overlay #sheet .rental-price span{font-size:12px}
+#overlay.service-overlay #sheet details{border-top:1px solid #9ebcb844;margin-top:6px;font-size:12px}
+#overlay.service-overlay #sheet summary{min-height:44px;padding:12px 2px;cursor:pointer;color:#c9dcd5}
+#overlay.service-overlay #sheet details button{width:100%;margin:3px 0}
+#overlay.service-overlay #sheet #rental-feedback:empty{display:none}
+#overlay.service-overlay #sheet #rental-feedback{color:#f0c77d}
+.product-list{max-height:21dvh;overflow:auto;overscroll-behavior:contain}
+.product-row{display:grid;grid-template-columns:minmax(0,1fr) 44px 24px 44px;align-items:center;gap:3px;border-bottom:1px solid #9ebcb82b}
+.product-row small{display:block;font-size:11px;color:#c9dcd5}
+.product-row output{text-align:center}
+
+/* Street dialogue shares the HUD palette, with optional controls tucked away. */
+#dialogue-panel,#place-voice-hud{
+ position:fixed!important;inset:auto calc(10px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(10px + env(safe-area-inset-left))!important;
+ width:auto!important;max-width:460px!important;max-height:min(270px,34dvh)!important;margin:0 auto!important;transform:none!important;
+ overflow:auto!important;background:#142e34f5;color:#f0f8ef;border:1px solid #9ebcb86b;border-radius:14px;padding:8px 10px;
+}
+#dialogue-panel .dialogue-body{max-height:25dvh;overflow:auto}
+#dialogue-panel p,#place-voice p{font-size:13px;line-height:1.4;margin:6px 0}
+#dialogue-panel .dialogue-heading,#place-voice .dialogue-heading{display:flex;gap:4px;align-items:center;min-height:44px;flex-wrap:nowrap}
+#dialogue-panel .dialogue-heading strong,#place-voice .dialogue-heading strong{flex:1;min-width:0;font-size:12px;padding:0}
+#dialogue-panel button,#place-voice button{min-height:44px;background:#2a4950;color:#f0f8ef;border:1px solid #9ebcb85c;border-radius:9px;padding:6px 10px;font-size:12px}
+#dialogue-panel .dialogue-heading button,#place-voice .dialogue-heading button{width:44px;height:44px;flex:none;margin:0;font-size:20px;padding:0}
+#dialogue-choices{max-height:16dvh;overflow:auto}
+#dialogue-choices button{font-size:12px;background:#2a4950;color:#f0f8ef}
+#dialogue-panel details,#place-voice details{font-size:12px;color:#c9dcd5}
+#dialogue-panel summary,#place-voice summary{min-height:44px;padding:12px 0;cursor:pointer}
+#dialogue-panel details small,#place-voice details small{display:block;line-height:1.4}
+#dialogue-panel [hidden],#place-voice [hidden]{display:none!important}
+#place-voice{font-size:13px;border-top:1px solid #9ebcb84d;margin-top:6px;padding-top:5px}
+#place-voice-hud{z-index:22}
+#place-voice-hud[hidden]{display:none}
+body.driving #place-voice-hud{bottom:calc(230px + env(safe-area-inset-bottom))!important}

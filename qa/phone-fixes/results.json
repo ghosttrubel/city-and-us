@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "scope": "Actual game handlers, rig/mesh geometry and camera projection with synthetic DOM/media/renderer; not browser pixels, physical iPhone audio or touch.",
+  "checks": [
+    "Daily review: ingredients → preparation → simmer → automatic plating; duplicate finish and interrupted/reloaded plating create exactly one visible, camera-framed plate at the hand.",
+    "Physical plate remains visible after walking, doors, street reload, serving, moving away and home reload; table approach reachable. Animated eating removes one quarter and applies one quarter nutrition; cancelled bite gives none. Main save, wardrobe and furniture preserved.",
+    "Bisi walks from her formerly blocked stop, stops/faces/gestures in conversation, and resumes after Exit.",
+    "Audio double: NPC → selected female player line → intended NPC reply; end, rejection, synchronous decode error, media error, unresolved play and stalled playback recover to text. Exit/restart and stale callbacks remain safe.",
+    "Ayo has distinct work, directions and break replies, all follow-ups resolve, another question restores the main choices, and goodbye/later exit."
+  ]
+}

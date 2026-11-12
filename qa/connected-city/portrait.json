@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": [
+    "Portrait startup submits the scene while simulation/movement remain paused",
+    "Phone navigation/settings and Help usable in portrait; no currency/needs progression",
+    "Held joystick clears; landscape sizing/resume and settings/ownership reload preserved"
+  ],
+  "scope": "Shipped handlers with DOM/GPU/input doubles and CSS source assertion. Not a live browser layout or device rendering test."
+}

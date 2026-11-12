@@ -1,0 +1,17 @@
+import {renderOffline} from './catalogue-preview-runtime.mjs';
+import * as T from '../dist/vendor/three.module.js';
+import {buildStreet} from '../dist/street.js';
+import {makeCharacter} from '../dist/character.js';
+import {migrate} from '../dist/life.js';
+import {createServiceExperience} from '../dist/service-experience.js';
+import {createCameraRig} from '../dist/camera.js';
+import {createHomeProps} from '../dist/home-props.js';
+import {buildInterior} from '../dist/interior.js';
+import {newMeal} from '../dist/home-life.js';
+import {writeFile} from 'node:fs/promises';
+const nodes=new Map();function node(id){const n={textContent:'',value:0,disabled:false,children:[],classList:{toggle(){},add(){},remove(){}},set innerHTML(html){for(const id of this.children)nodes.delete(id);this.children=[...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1]);for(const id of this.children)node(id);}};nodes.set(id,n);return n;}for(const id of ['service-strip','service-status','service-progress','service-buttons'])node(id);document.getElementById=id=>nodes.get(id)||null;
+const world=buildStreet(),city=world.city,scene=new T.Scene();scene.add(city);const rig=createCameraRig();rig.register(city);const person=makeCharacter({name:'Amara',sex:'female',characterStyle:'natural',hair:'bob',shirt:'#ede1cb',bottom:'#52665e',outfit:'streetwear'});city.add(person);person.position.set(12,.17,13.3);
+const seed={name:'QA',location:'city',money:15000,food:80,energy:90,mood:70,time:600,day:1,x:12,z:13.3,rentDay:1,skills:{trader:0,rider:0,chef:0}},state=migrate(seed,seed,'LS-0123456789ABCDEF');state.foodService={version:1,serial:2,active:true,stock:{rice:0,tomato:0,beans:1,plantain:1},customers:[{id:1,recipe:'jollof',stage:'queue',delay:0,patience:95,depart:0,x:12,z:14.7},{id:2,recipe:'beans',stage:'queue',delay:0,patience:98,depart:0,x:12,z:15.95}],order:{id:1,recipe:'jollof',stage:'prepare',chops:0,stirs:0,elapsed:0,sinceStir:2,mealId:null,spent:true},completed:0,earned:0};
+const controller=createServiceExperience({state,city,player:()=>person,location:()=> 'city',commit(){},save(){},toast(){},stopInput(){}}),home=buildInterior('studio',false),foodProps=createHomeProps(scene,home),camera=new T.PerspectiveCamera(43,1000/650,.1,200);const results=[];
+for(const name of ['prepare','stir','serve']){controller.stop();if(name==='stir'){state.foodService.order.stage='cook';state.foodService.order.sinceStir=.1;}if(name==='serve'){state.foodService.order.stage='carried';state.daily.cookSerial=1;newMeal(state,'cook-1','home-jollof',{carry:true});state.daily.meals[0].serviceOrder=1;state.foodService.order.mealId='cook-1';}controller.tick(.3,true);document.getElementById('service-next').onclick();controller.tick(.5,true);foodProps.update(state,person,'city',null,null);rig.update(camera,new T.Vector3(12,1.1,13.9),new T.Vector3(17.8,6,19),1,{subject:person.position.clone().add(new T.Vector3(0,1.1,0))});results.push(await renderOffline(scene,camera,1000,650,'../../../qa/food-service/'+name+'.png'));console.log(name);}
+await writeFile(new URL('../qa/food-service/renders.json',import.meta.url),JSON.stringify({scope:'Software mesh renders of actual service controller poses; no browser or device rendering, touch or FPS evidence.',frames:results},null,2));

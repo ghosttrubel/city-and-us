@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-31T12:16:27.588Z",
+  "build": "0.8.1-visual.1 (10)",
+  "checkpoint": "checkpoints/2026-10-31-visual-review-0.8.1",
+  "manifestEntries": 195,
+  "mismatches": [],
+  "protectedFiles": [
+    {
+      "path": ".local-signing/city-and-us-upload.p12",
+      "unchanged": true
+    },
+    {
+      "path": ".local-signing/password.dpapi",
+      "unchanged": true
+    },
+    {
+      "path": ".local-signing/android-user/debug.keystore",
+      "unchanged": true
+    },
+    {
+      "path": "dist/vendor/THREE-LICENSE.txt",
+      "unchanged": true
+    },
+    {
+      "path": ".openai/hosting.json",
+      "unchanged": true
+    }
+  ],
+  "apk": {
+    "path": "artifacts/android/city-and-us-device-test.apk",
+    "sha256": "32a9d7cc9dfa8556f2df3c4e8b18f77d99994b05645923ac9ca9a0252590ee07",
+    "bundledFiles": 192
+  },
+  "physicalDeviceAccepted": false
+}

@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-12",
+  "status": "passed-local-checks",
+  "syntax": {
+    "command": "npm.cmd run check",
+    "exitCode": 0,
+    "log": "npm-check.log"
+  },
+  "gameplay": {
+    "report": "gameplay-results.json",
+    "status": "passed"
+  },
+  "media": {
+    "command": "node tools/verify-phone-media.mjs",
+    "exitCode": 0,
+    "log": "media-final.log",
+    "report": "media-results.json"
+  },
+  "preservation": {
+    "command": "node tools/verify-retail-preservation.mjs",
+    "exitCode": 0,
+    "log": "preservation-final.log"
+  },
+  "retainedRegressions": "regressions.json",
+  "snapshot": "checkpoints/2026-11-12-shops-phone/after/manifest.json",
+  "unverified": [
+    "Live browser rendering and layouts",
+    "Android touch and modest-device performance",
+    "Actual IndexedDB durability, gameplay pixels, recording codecs, exports and speaker playback"
+  ],
+  "blocked": [
+    "Authenticated player messaging service and identity backend",
+    "Approved Nigerian voice performances or approved speech solution"
+  ],
+  "notDelivered": [
+    "Further places beyond this salon/showroom batch",
+    "Publication or APK rebuild"
+  ]
+}

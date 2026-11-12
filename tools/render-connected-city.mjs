@@ -1,0 +1,19 @@
+import {renderOffline} from './catalogue-preview-runtime.mjs';
+import * as T from '../dist/vendor/three.module.js';
+import {buildDistrict} from '../dist/districts.js';
+import {buildDestinationInterior} from '../dist/destination-interiors.js';
+import {buildInterior} from '../dist/interior.js';
+import {createDestinationPlay} from '../dist/destination-play.js';
+import {createHomeProps} from '../dist/home-props.js';
+import {carryMotion} from '../dist/home-motion.js';
+import {makeCharacter,animateCharacter,appearanceDefaults} from '../dist/character.js';
+import {createCameraRig} from '../dist/camera.js';
+import {migrate} from '../dist/life.js';
+import {buyTakeaway,DESTINATION_STATIONS} from '../dist/destinations-state.js';
+import {writeFile} from 'node:fs/promises';
+const results=[];
+for(const [id,name,eye,target] of [['island','hotel-exterior',[121,12,-12],[111,2,-28]],['ajah','coast-exterior',[198,14,33],[177,1,12]]]){const w=buildDistrict(id),scene=new T.Scene(),camera=new T.PerspectiveCamera(44,900/620,.1,150);scene.add(w.root);camera.position.set(...eye);camera.lookAt(...target);results.push(await renderOffline(scene,camera,900,620,'../../../qa/connected-city/'+name+'.png'));console.log(name);}
+const nodes=new Map();function node(id){const n={textContent:'',value:0,disabled:false,children:[],classList:{toggle(){},add(){},remove(){}},set innerHTML(html){for(const id of this.children)nodes.delete(id);this.children=[...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1]);for(const id of this.children)node(id);}};nodes.set(id,n);return n;}node('destination-ui');document.getElementById=id=>nodes.get(id)||null;
+const seed={...appearanceDefaults,name:'Amara',characterStyle:'natural',sex:'female',skin:'#885037',shirt:'#ede1cb',bottom:'#52665e',hair:'bob',location:'city',money:15000,food:40,energy:45,mood:50,time:480,day:1,x:0,z:6,rentDay:1,skills:{trader:0,rider:0,chef:0}},state=migrate(seed,seed,'LS-0123456789ABCDEF');let view='island-house';const scene=new T.Scene(),rooms=Object.fromEntries(['island-house','club','beach','islandfood'].map(id=>[id,buildDestinationInterior(id)])),person=makeCharacter(state);for(const r of Object.values(rooms)){r.room.position.x=0;scene.add(r.room);}const dummy=buildInterior('studio',false),props=createHomeProps(scene,dummy);const controller=createDestinationPlay({state,scene,player:()=>person,location:()=>view,rooms:()=>rooms,commit(){},save(){},toast(){},stopInput(){}});
+for(const [id,name,station,time] of [['island-house','hotel-rest','bed',2],['club','club-dance','dance',.5],['beach','beach-pickup','litter0',.5],['islandfood','eatery-takeaway','counter',0]]){controller.stop();view=id;for(const [key,r] of Object.entries(rooms))r.room.visible=key===id;const room=rooms[id];person.removeFromParent();const rig=createCameraRig();rig.register(room.room);room.room.add(person);const p=DESTINATION_STATIONS[id][station];person.position.set(p.x,.16,p.z);person.rotation.set(0,0,0);if(id==='island-house'){state.cityVisits.hotel={id:1,status:'booked'};state.cityVisits.hotelSerial=1;}if(id==='islandfood'){buyTakeaway(state,0,id,p);animateCharacter(person,.016,false);carryMotion(person);}else{controller.station(station);controller.tick(time);}props.update(state,person,id,null,null);const camera=new T.PerspectiveCamera(44,900/620,.1,100),target=id==='island-house'?new T.Vector3(-1,1,-1):new T.Vector3(0,1,-.5);rig.update(camera,target,new T.Vector3(7,9,11),1,{overview:true,subject:person.position.clone().add(new T.Vector3(0,1,0))});results.push(await renderOffline(scene,camera,900,620,'../../../qa/connected-city/'+name+'.png'));rig.reset();console.log(name);}
+await writeFile(new URL('../qa/connected-city/renders.json',import.meta.url),JSON.stringify({scope:'Software mesh renders using shipped interiors/activity controllers; not browser screenshots or device verification.',frames:results},null,2));

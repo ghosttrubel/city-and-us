@@ -1,0 +1,101 @@
+{
+  "scope": "CPU skinning and independent topology checks. No visual acceptance or proof of cloth drape.",
+  "results": [
+    {
+      "sex": "female",
+      "build": "slim",
+      "triangles": 976,
+      "skinWeights": "normalised",
+      "poses": [
+        "idle",
+        "walk",
+        "eat",
+        "cook"
+      ]
+    },
+    {
+      "sex": "female",
+      "build": "average",
+      "triangles": 976,
+      "skinWeights": "normalised",
+      "poses": [
+        "idle",
+        "walk",
+        "eat",
+        "cook"
+      ]
+    },
+    {
+      "sex": "female",
+      "build": "athletic",
+      "triangles": 976,
+      "skinWeights": "normalised",
+      "poses": [
+        "idle",
+        "walk",
+        "eat",
+        "cook"
+      ]
+    },
+    {
+      "sex": "female",
+      "build": "broad",
+      "triangles": 976,
+      "skinWeights": "normalised",
+      "poses": [
+        "idle",
+        "walk",
+        "eat",
+        "cook"
+      ]
+    },
+    {
+      "sex": "male",
+      "build": "slim",
+      "triangles": 976,
+      "skinWeights": "normalised",
+      "poses": [
+        "idle",
+        "walk",
+        "eat",
+        "cook"
+      ]
+    },
+    {
+      "sex": "male",
+      "build": "average",
+      "triangles": 976,
+      "skinWeights": "normalised",
+      "poses": [
+        "idle",
+        "walk",
+        "eat",
+        "cook"
+      ]
+    },
+    {
+      "sex": "male",
+      "build": "athletic",
+      "triangles": 976,
+      "skinWeights": "normalised",
+      "poses": [
+        "idle",
+        "walk",
+        "eat",
+        "cook"
+      ]
+    },
+    {
+      "sex": "male",
+      "build": "broad",
+      "triangles": 976,
+      "skinWeights": "normalised",
+      "poses": [
+        "idle",
+        "walk",
+        "eat",
+        "cook"
+      ]
+    }
+  ]
+}

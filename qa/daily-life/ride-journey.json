@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "steps": [
+    "Met the physical vehicle, boarded, reloaded in transit, followed its world position and alighted at Provisions without a second fare.",
+    "Early cancellation drove to the next safe stop, survived reload and retained the already agreed fare."
+  ],
+  "scope": "Shipped ride handlers and synthetic joystick/DOM/GPU doubles, not browser/device evidence."
+}

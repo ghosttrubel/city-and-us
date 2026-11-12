@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-30T15:07:18.362Z",
+  "status": "passed",
+  "apk": "artifacts/android/city-and-us-device-test.apk",
+  "sha256": "5d29c77b1e82269c4bb86bd0986e003edf3f50a1e9bcd6092626f033c5c990d5",
+  "bytes": 8347958,
+  "versionName": "0.7.1-portrait.1-debug",
+  "versionCode": 8,
+  "bundledFilesMatched": 187,
+  "voiceClips": 39,
+  "finalRepairCheckpointMatches": true,
+  "signatureVerified": true,
+  "portraitOrientationVerified": true,
+  "keyboardAdjustResizeVerified": true,
+  "targetSdk": 36,
+  "unexpectedPermissions": false,
+  "ordinaryAccountBuild": {
+    "date": "2026-10-30T15:02:20.715Z",
+    "results": [
+      {
+        "step": "debug-build",
+        "exit": 0,
+        "signingUnchanged": true
+      },
+      {
+        "step": "debug-verification",
+        "exit": 0,
+        "signingUnchanged": true
+      }
+    ],
+    "deviceVerified": false
+  },
+  "needsRebuild": false,
+  "deviceVerified": false,
+  "scope": "Fresh verify-android --debug-only compares each bundled dist file byte-for-byte, verifies debug signature and manifest; current dist also matches final repair checkpoint. Handoff-only edits do not affect APK."
+}

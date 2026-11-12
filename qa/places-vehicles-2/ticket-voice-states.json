@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": [
+    "All six fare amounts follow changed selectors",
+    "Insufficient funds, mounted bike and leaving the ticket desk have distinct audible response IDs",
+    "Booking/refund, waiting, remote boarding refusal, boarding, early stop, premature alighting, arrival and completed trip have the correct player/attendant sequences"
+  ],
+  "scope": "Actual ticket UI/state with recorded-line IDs; synthetic DOM, no listening/device certification."
+}

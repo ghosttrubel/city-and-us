@@ -1,0 +1,38 @@
+[
+  {
+    "item": "outfit-f-crop-joggers",
+    "path": "reference/outfits/Female_Wardrobe_Collection/01_Casual_Streetwear/Fitted_Tops_and_Baggy_Joggers.png",
+    "selection": "Left: cream cropped crew tee and grey cuffed joggers.",
+    "sha256": "06d6d932548448027adfdf6a298b07634230a82933cadebf57dbb241fc7eb87a"
+  },
+  {
+    "item": "outfit-f-square-denim",
+    "path": "reference/outfits/Female_Wardrobe_Collection/01_Casual_Streetwear/Denim_and_Everyday_Tops.png",
+    "selection": "Right: dark square-neck long sleeve top and wide jeans.",
+    "sha256": "0e598a28b8c15e1b7ebe283005b540612c6d6577daa5e86af441babdc399aadb"
+  },
+  {
+    "item": "outfit-m-relaxed-denim",
+    "path": "reference/outfits/Male_Wardrobe_Collection/01_Casual/Everyday_Tops.png",
+    "selection": "Bottom row, second: relaxed dropped-shoulder tee.",
+    "sha256": "ef7018bd18962cefedb7671f02d30490220fffe45ae1c456a464e80163d61f6d"
+  },
+  {
+    "item": "outfit-m-relaxed-denim",
+    "path": "reference/outfits/Male_Wardrobe_Collection/01_Casual/Baggy_Trousers_Shorts.png",
+    "selection": "Top row, right: light blue baggy jeans.",
+    "sha256": "7fc824ed2f747022fa51c2ffa92da4832bb2694b6954fffb954d61b64d596c14"
+  },
+  {
+    "item": "outfit-m-camp-cargo",
+    "path": "reference/outfits/Male_Wardrobe_Collection/01_Casual/Everyday_Tops.png",
+    "selection": "Top row, right: pale blue open-collar short sleeve shirt.",
+    "sha256": "ef7018bd18962cefedb7671f02d30490220fffe45ae1c456a464e80163d61f6d"
+  },
+  {
+    "item": "outfit-m-camp-cargo",
+    "path": "reference/outfits/Male_Wardrobe_Collection/01_Casual/Baggy_Trousers_Shorts.png",
+    "selection": "Bottom row, third: cargo shorts.",
+    "sha256": "7fc824ed2f747022fa51c2ffa92da4832bb2694b6954fffb954d61b64d596c14"
+  }
+]

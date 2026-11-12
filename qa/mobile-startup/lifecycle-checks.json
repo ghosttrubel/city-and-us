@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-12T14:11:03.833Z",
+  "status": "passed",
+  "scope": "Actual game module with DOM, GPU and storage doubles; not Safari, rendered pixels or device touch verification.",
+  "checks": [
+    "LAN-like crypto API: fresh identity and successful game initialisation without randomUUID",
+    "Conservative mobile graphics and visual-viewport canvas/aspect sizing",
+    "A held joystick resets during rotation and does not continue moving after resume",
+    "Background/native pause preserves cooking, food delivery, money and frame count; resume uses current timestep without catch-up",
+    "Resize while paused, landscape resume after Safari-bar-sized viewport change",
+    "Reload preserves identity, food order, money, wardrobe and furniture"
+  ]
+}

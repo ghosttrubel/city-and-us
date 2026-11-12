@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-25",
+  "status": "passed",
+  "sequence": [
+    "Walked to Boutique & Salon; preview/cancel, confirmed purchase twice with one charge, equipped cornrows, saved a named look and reloaded",
+    "Returned through the matching home door and found the same purchased item and saved look in the home wardrobe",
+    "Bought a table once despite repeated confirmation, placed/rotated/moved/stored/replaced it, stored a purchased lamp, saved finishes and reloaded with exact money, ownership, look and layout",
+    "Cooking, washing, study, sleep, wardrobe and the same exit door remain reachable after decorating"
+  ],
+  "money": 12100,
+  "fashionOwned": 17,
+  "savedLooks": [
+    {
+      "id": "look-1",
+      "name": "Bode afternoon",
+      "equipped": {
+        "hair": "hair-cornrows"
+      },
+      "appearance": {
+        "shirt": "#e58b55",
+        "hair": "braids",
+        "hairColor": "#241b19",
+        "outfit": "jacket",
+        "bottom": "#324c64",
+        "shoes": "#efe8da",
+        "accessory": "earrings"
+      }
+    }
+  ],
+  "decor": {
+    "version": 1,
+    "serial": 2,
+    "items": [
+      {
+        "id": "furn-1",
+        "item": "coffee-table",
+        "placed": true,
+        "x": 1.5,
+        "z": 0.1,
+        "turn": 2
+      },
+      {
+        "id": "furn-2",
+        "item": "floor-lamp",
+        "placed": false,
+        "x": 0,
+        "z": 0,
+        "turn": 0
+      }
+    ],
+    "receipts": [
+      {
+        "order": "decor-bba441dd-8fe9-490c-83ef-d42d29919826",
+        "id": "furn-1"
+      },
+      {
+        "order": "decor-dd33f43b-14ef-4d0b-b701-228ca7c72320",
+        "id": "furn-2"
+      }
+    ]
+  },
+  "scope": "Actual game code and scene meshes driven through synthetic joystick and UI handlers, with DOM/WebGLRenderer/storage doubles. Not live browser or device evidence.",
+  "userSaveTouched": false
+}

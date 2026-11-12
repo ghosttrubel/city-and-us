@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "scope": "Actual exported GLB, source-image identity, skinning/pose geometry and ownership checks. No browser pixels or visual acceptance asserted.",
+  "referenceSha256": "0e598a28b8c15e1b7ebe283005b540612c6d6577daa5e86af441babdc399aadb",
+  "materialBatches": 5,
+  "vertices": 12201,
+  "triangles": 18839,
+  "poses": [
+    {
+      "pose": "front",
+      "maxEdge": 0.14557842778865085
+    },
+    {
+      "pose": "side",
+      "maxEdge": 0.14168106346932496
+    },
+    {
+      "pose": "back",
+      "maxEdge": 0.14043559256357044
+    },
+    {
+      "pose": "seated",
+      "maxEdge": 0.21076037758526903
+    }
+  ],
+  "legacyOwnershipPreserved": true
+}

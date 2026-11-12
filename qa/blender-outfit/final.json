@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "asset": "dist/assets/garments/Square_Denim_Blender.glb",
+  "source": "art/blender/Square_Denim.blend",
+  "checks": {
+    "rig": 0,
+    "recolour": 0,
+    "game": 0,
+    "check": 0,
+    "snapshots": 0
+  },
+  "renders": [
+    "front",
+    "side",
+    "back",
+    "seated",
+    "recolour"
+  ],
+  "scope": "Blender renders of exported game meshes; live game screenshots unavailable",
+  "review": "http://localhost:3000/?review=outfit"
+}

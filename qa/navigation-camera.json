@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-08T16:38:44.817Z",
+  "status": "passed",
+  "routes": 121,
+  "movementSamples": 165020,
+  "maxRouteNodes": 8,
+  "cameraSweeps": 352,
+  "checks": [
+    "All 121 entrance pairs walked through collision, 165020 movement steps; water excluded and deviation recalculates",
+    "Circular and expanded map use actual footprints, roads, entrances, route and facing",
+    "All current open doorways have actual body/head-width recesses; no facade or sign blocks threshold",
+    "District road, pavement, waterfront and bridge heights match actual CPU ray intersections",
+    "352 camera turns beside real buildings: intersecting geometry cut, player head/feet in frame, all opacity restored when clear",
+    "Public-room counters/exits clear; camera entries released when districts unload"
+  ],
+  "scope": "CPU geometry/pathfinding only. Does not verify browser pixels, CSS, real touch or Android speed.",
+  "note": "Legacy fixed report date corrected after the successful current run."
+}

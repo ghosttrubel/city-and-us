@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": [
+    "Camera renders the gameplay canvas before photo; supported recorder exposes status, stops tracks and saves once.",
+    "Storage failure retains capture, blocks replacement and supports export / retry.",
+    "Gallery shows stored media, exports, requires delete confirmation and refreshes after deletion.",
+    "Unsupported recording and unavailable persistent storage are explicitly reported.",
+    "Music play/pause, track and volume controls call playback and persist preferences (audio API double).",
+    "Bundled tracks contain 24 seconds of non-silent PCM; server supplies audio/image MIME types and range playback."
+  ],
+  "limits": "Controller/API doubles and HTTP asset tests. Actual WebGL pixels, IndexedDB persistence, codec playback, browser download and Android audio require device verification."
+}

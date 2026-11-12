@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-24",
+  "method": "libVLC CPU callback frames; no audio listening",
+  "source_stills_reviewed": 41,
+  "video_frames_reviewed": 170,
+  "earlier_home_video_duration_ms": 50966.633,
+  "earlier_home_audio_container_duration_ms": 88298.646,
+  "videos": [
+    {
+      "directory": "1001988060-clean",
+      "count": 42,
+      "first_ms": 0,
+      "last_ms": 129759,
+      "duration_ms": 130148
+    },
+    {
+      "directory": "primary-detail",
+      "count": 9,
+      "first_ms": 0,
+      "last_ms": 25065,
+      "duration_ms": 25334
+    },
+    {
+      "directory": "1001988125-clean",
+      "count": 6,
+      "first_ms": 0,
+      "last_ms": 15076,
+      "duration_ms": 15200
+    },
+    {
+      "directory": "1001988127-clean",
+      "count": 58,
+      "first_ms": 0,
+      "last_ms": 181161,
+      "duration_ms": 181267
+    },
+    {
+      "directory": "1001988234-clean",
+      "count": 28,
+      "first_ms": 0,
+      "last_ms": 83062,
+      "duration_ms": 83196
+    },
+    {
+      "directory": "1001988235-clean",
+      "count": 10,
+      "first_ms": 0,
+      "last_ms": 27568,
+      "duration_ms": 27767
+    },
+    {
+      "directory": "earlier-home-clean",
+      "count": 17,
+      "first_ms": 0,
+      "last_ms": 50833,
+      "duration_ms": 88299
+    }
+  ]
+}

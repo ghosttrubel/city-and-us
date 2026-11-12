@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-23",
+  "status": "passed",
+  "url": "http://localhost:3000",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "bytes": 3286,
+      "matches": true
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "mime": "text/css; charset=utf-8",
+      "bytes": 12938,
+      "matches": true
+    },
+    {
+      "file": "game.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 49126,
+      "matches": true
+    },
+    {
+      "file": "controls.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 1255,
+      "matches": true
+    },
+    {
+      "file": "neighbourhood.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 7107,
+      "matches": true
+    },
+    {
+      "file": "interior.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 7098,
+      "matches": true
+    },
+    {
+      "file": "life.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 7582,
+      "matches": true
+    },
+    {
+      "file": "character.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 13073,
+      "matches": true
+    },
+    {
+      "file": "garments.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 5110,
+      "matches": true
+    },
+    {
+      "file": "street.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 18397,
+      "matches": true
+    },
+    {
+      "file": "vendor/three.module.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "bytes": 687458,
+      "matches": true
+    },
+    {
+      "file": "vendor/THREE-LICENSE.txt",
+      "status": 200,
+      "mime": "text/plain; charset=utf-8",
+      "bytes": 1081,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/animation-bind.json",
+      "status": 200,
+      "mime": "application/json",
+      "bytes": 7178,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/female-normal.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 34954,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/female-skin.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 18054,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/Hair_Buns.glb",
+      "status": 200,
+      "mime": "model/gltf-binary",
+      "bytes": 133356,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/Hair_Buzzed.glb",
+      "status": 200,
+      "mime": "model/gltf-binary",
+      "bytes": 21296,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/Hair_BuzzedFemale.glb",
+      "status": 200,
+      "mime": "model/gltf-binary",
+      "bytes": 21428,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/License_Animations.txt",
+      "status": 200,
+      "mime": "text/plain; charset=utf-8",
+      "bytes": 332,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/License_Standard.txt",
+      "status": 200,
+      "mime": "text/plain; charset=utf-8",
+      "bytes": 806,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/locomotion.glb",
+      "status": 200,
+      "mime": "model/gltf-binary",
+      "bytes": 165732,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/male-normal.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 44864,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/male-skin.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 19978,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/Superhero_Female_FullBody.glb",
+      "status": 200,
+      "mime": "model/gltf-binary",
+      "bytes": 573936,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/Superhero_Male_FullBody.glb",
+      "status": 200,
+      "mime": "model/gltf-binary",
+      "bytes": 550820,
+      "matches": true
+    },
+    {
+      "file": "assets/characters/T_Eye_Brown.webp",
+      "status": 200,
+      "mime": "image/webp",
+      "bytes": 5334,
+      "matches": true
+    }
+  ],
+  "previousOrigin": "http://127.0.0.1:3001",
+  "scope": "Exact served bytes and MIME types only; no browser execution or rendering."
+}

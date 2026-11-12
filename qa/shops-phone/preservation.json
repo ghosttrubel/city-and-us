@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": [
+    "Character/outfit sources, prior assets, ownership and rental permission implementations are byte-for-byte retained.",
+    "Supplied reference collections, MIT licenses and existing hosting identity match the earlier manifest.",
+    "Full previous README and ROADMAP retained."
+  ],
+  "limits": "No user browser saves were accessed. Save behavior is covered separately with isolated fixtures."
+}

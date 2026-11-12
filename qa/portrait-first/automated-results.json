@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-30T14:57:55.649Z",
+  "build": "0.7.1-portrait.1 (8)",
+  "results": [
+    {
+      "command": "npm run check",
+      "exit": 0
+    },
+    {
+      "command": "npm run check:portrait",
+      "exit": 0
+    },
+    {
+      "command": "npm run check:portrait-quality",
+      "exit": 0
+    },
+    {
+      "command": "npm run check:physical-home",
+      "exit": 0
+    },
+    {
+      "command": "node tools/verify-street-service.mjs --portrait",
+      "exit": 0
+    },
+    {
+      "command": "npm run check:mobile",
+      "exit": 0
+    },
+    {
+      "command": "node tools/android-build.mjs --offline",
+      "exit": 1,
+      "reason": "Tool account denied installed Android SDK android-36/android.jar"
+    }
+  ],
+  "retainedSigningUnchanged": true,
+  "deviceVerified": false,
+  "browserAvailable": false,
+  "visualAcceptance": "Failed supplied Android build; new identified build pending device retest",
+  "apkConfirmation": {
+    "date": "2026-10-30T15:07:18.362Z",
+    "status": "passed",
+    "sha256": "5d29c77b1e82269c4bb86bd0986e003edf3f50a1e9bcd6092626f033c5c990d5",
+    "bundledFilesMatched": 187,
+    "finalRepairCheckpointMatches": true,
+    "needsRebuild": false,
+    "evidence": "apk-source-comparison.json"
+  }
+}

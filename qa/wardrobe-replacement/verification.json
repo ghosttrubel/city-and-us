@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "scope": "CPU geometry, save and asset checks. Software diagnostic images are NOT browser captures. Visual acceptance and phone frame-rate testing pending.",
+  "poses": 60,
+  "maxEdge": 0.22361079567753162,
+  "passed": [
+    "Every retired item migrates for both bodies; original wardrobe archive, money, identity, progress and customisation retained; exported saves reload idempotently",
+    "Full outfits split into independently selectable parts; swapping one preserves the other; cross-body equip is refused",
+    "Unique cropped item IDs; source reference hashes preserved; active thumbnails match their own crops",
+    "All body builds and female mix combinations animate in idle, walking and seated poses without invalid or exploded vertices; geometry shared and dyes independent"
+  ]
+}

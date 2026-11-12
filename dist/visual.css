@@ -1,0 +1,12 @@
+/* Calm interface palette. Gameplay geometry, hit areas and skin tones are separate. */
+:root{color:#263e4b;background:#bccbd3}
+.sheet,.needs-panel{background:#f0f4f6;color:#263e4b}.sheet p{color:#4b626f}
+.card,.choice,.destination,.secondary,.view-tools button,.view-tools label{background:#dce6eb;color:#263e4b}.primary,.card button,.choice.selected{background:#3b7082;color:#f5f8fa}
+.field input,.field select{background:#f9fbfc;border-color:#b5c7d1;color:#263e4b}
+.game-header,.objective-panel button,#waypoint,#toast,#home-strip,#service-strip,#meal-actions,#street-actions{background:#263f4ded;color:#f3f7fa;border-color:#a9bfcb}
+.game-header #quick-menu{background:#eaf0f4;border-color:#b8cbd5}.game-header #quick-menu button{background:#d8e4eb;color:#263e4b}
+#home-strip button,#home-drawer button,#service-strip button,#street-actions button,#meal-actions button,.activity button{background:#dce8ef;color:#263e4b;border-color:#aec5d2}
+#home-strip progress,#service-strip progress,.activity progress{accent-color:#7faebc}.eyebrow{color:#4c7d91}.sheet .eyebrow{color:#4c7d91}
+.context-action{background:#30596bec;border-color:#d8e7ee;color:#f5f8fa}.joystick{background:#2b465b60;border-color:#dce8efaa}.joystick-thumb{background:#dae7efdf;border-color:#f5f8fa}.zoom button{background:#293f50ed;color:#f5f8fa}
+.phone-sheet{background:#edf3f6}.phone-sheet .card{background:#fafcfd}.phone-sheet .primary,.phone-sheet .card button{background:#3b7082}.phone-sheet .secondary{background:#dce8ef;color:#263e4b}.phone-home-screen .phone-welcome .eyebrow{color:#d7e8f1}
+button:focus-visible,input:focus-visible,select:focus-visible{outline-color:#4d91ad}.character-stage{background:#c8d7e2}

@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+let s=fs.readFileSync('dist/place-voice.js','utf8');
+s=s.replace('let audio=null,queue=[]','let audio=null,media=null,queue=[]');
+s=s.replace("const current=audio=new AudioClass(new URL('./assets/dialogue/places/'+id+suffix+'.wav',import.meta.url).href);","const url=new URL('./assets/dialogue/places/'+id+suffix+'.wav',import.meta.url).href,current=audio=media||(media=new AudioClass(url));current.src=url;");
+fs.writeFileSync('dist/place-voice.js',s);
+s=fs.readFileSync('tools/verify-place-voice.mjs','utf8');
+s=s.replace('play(){return Promise.resolve();}','play(){this.paused=false;return Promise.resolve();}');
+s=s.replace("instances[0].onended();assert(instances[1].src.endsWith('shopConfirm.wav'));","instances[0].onended();assert.equal(instances.length,1,'Queue should reuse one media element');assert(instances[0].src.endsWith('shopConfirm.wav'));");
+s=s.replaceAll('instances[1]','instances[0]');
+s=s.replace("assert(old.paused);","assert.equal(old,current,'Conversation should reuse the media element');");
+s=s.replace("'Sequential player/attendant playback, female/male recorded variants and exact subtitles'","'Sequential player/attendant playback reuses one media element, with female/male variants and exact subtitles'");
+fs.writeFileSync('tools/verify-place-voice.mjs',s);
+console.log('Sequential service speech reuses one media element across lines and conversations.');

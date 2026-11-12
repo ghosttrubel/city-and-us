@@ -1,0 +1,23 @@
+{
+  "status": "audited, incomplete",
+  "catalogueCount": 35,
+  "beachCategory": false,
+  "usableCasualItems": [
+    "top-tee",
+    "bottom-shorts",
+    "accessory-glasses"
+  ],
+  "notSwimwear": "Court shorts are sports shorts; round frames are not verified UV-protective sunglasses.",
+  "missing": [
+    "dedicated Beach filter",
+    "swim trunks",
+    "swimsuits/bikinis",
+    "modest swimwear",
+    "cover-ups",
+    "sandals/flip-flops",
+    "beach sunhat",
+    "beach bag"
+  ],
+  "checks": "Male/female preview does not charge or mutate equipment; purchase charges once; equip/named look/reload persist.",
+  "scope": "Catalogue/state audit. No swimwear placeholders added, no live rendered fit or device verification."
+}

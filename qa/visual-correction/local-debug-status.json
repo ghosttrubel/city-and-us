@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-31T12:15:01.046Z",
+  "results": [
+    {
+      "step": "debug-build",
+      "exit": 0,
+      "signingUnchanged": true
+    },
+    {
+      "step": "debug-verification",
+      "exit": 0,
+      "signingUnchanged": true
+    }
+  ],
+  "deviceVerified": false
+}

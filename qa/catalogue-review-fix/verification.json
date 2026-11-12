@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "scope": "Shipped game with DOM/WebGLRenderer/storage doubles. No screenshot capture or pixel validation.",
+  "tests": [
+    "normal story uses original appearance",
+    "outfit review loads the actual five-batch GLB in salon",
+    "front/side/back/seated controls operate",
+    "walk mode restores position",
+    "review and reload never change main save or identity",
+    "all three outfit cards visible in owned/shop for both body fits and in standalone study",
+    "cross-fit preview loads the correct garment without changing character, colours, ownership or money",
+    "review tools closed by default and after reload; closing restores movement pose"
+  ],
+  "userSaveTouched": false
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-24",
+  "status": "passed",
+  "checks": [
+    "Main story and identity unchanged by apartment review",
+    "Bob/natural style and saved finishes survive reload/export",
+    "Sofa cancel, exactly-once completion and computer progress through actual handlers",
+    "Sleeping head above mattress and within bed; cancellation returns to safe standing position",
+    "Customisation retained after review reload"
+  ],
+  "scope": "Actual game handlers and real meshes with DOM/renderer/storage doubles; no browser or device claim."
+}

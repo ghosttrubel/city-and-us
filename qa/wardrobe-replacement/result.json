@@ -1,0 +1,77 @@
+{
+  "status": "implemented batch 1; visual review pending",
+  "automatedChecks": "passed",
+  "commands": [
+    "npm run wardrobe:catalogue",
+    "npm run wardrobe:export",
+    "npm run check:outfit",
+    "npm run check",
+    "node tools/verify-fashion-review.mjs"
+  ],
+  "assets": [
+    {
+      "name": "Square_Denim",
+      "status": "passed",
+      "triangles": 18839,
+      "materialBatches": 5,
+      "bones": 65,
+      "maxJointPositionError": 0.00000122375535840041,
+      "bytes": 1067644,
+      "sha256": "e53ad23a0dfdbb0a2790bee9b8eb17180519dee9015bbfe0d579c11679a85189",
+      "materials": [
+        "Top_Knit",
+        "Jeans_Denim",
+        "Top_Binding",
+        "Jeans_Stitch",
+        "Hardware"
+      ],
+      "sex": "female",
+      "profile": "square"
+    },
+    {
+      "name": "Tank_Denim",
+      "status": "passed",
+      "triangles": 16471,
+      "materialBatches": 5,
+      "bones": 65,
+      "maxJointPositionError": 0.00000122375535840041,
+      "bytes": 986344,
+      "sha256": "c97aca06f766776a132620207c8b731fe3380d3b8ca5aa16056e0ae36e2d1237",
+      "materials": [
+        "Top_Knit",
+        "Jeans_Denim",
+        "Top_Binding",
+        "Jeans_Stitch",
+        "Hardware"
+      ],
+      "sex": "female",
+      "profile": "tank"
+    },
+    {
+      "name": "Male_Everyday",
+      "status": "passed",
+      "triangles": 16663,
+      "materialBatches": 5,
+      "bones": 65,
+      "maxJointPositionError": 7.463402417756282e-7,
+      "bytes": 998128,
+      "sha256": "60e189460068f43030ef878080d2c7ce5145cd97465d5be3995306972554dbe2",
+      "materials": [
+        "Top_Knit",
+        "Jeans_Denim",
+        "Top_Binding",
+        "Jeans_Stitch",
+        "Hardware"
+      ],
+      "sex": "male",
+      "profile": "tee"
+    }
+  ],
+  "designRecords": 470,
+  "implementedGarments": 6,
+  "implementedOutfitCards": 3,
+  "automatedVisualCapture": "pending per user instruction; user will provide screenshots",
+  "deviceFrameRate": "pending",
+  "originalsPreserved": true,
+  "localServer": "http://localhost:3000/"
+}

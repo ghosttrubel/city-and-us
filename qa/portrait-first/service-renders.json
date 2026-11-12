@@ -1,0 +1,17 @@
+{
+  "scope": "Software mesh renders of actual service controller poses; no browser or device rendering, touch or FPS evidence.",
+  "frames": [
+    {
+      "name": "../../../qa/portrait-first/service-prepare.png",
+      "triangles": 20772
+    },
+    {
+      "name": "../../../qa/portrait-first/service-stir.png",
+      "triangles": 14631
+    },
+    {
+      "name": "../../../qa/portrait-first/service-serve.png",
+      "triangles": 24382
+    }
+  ]
+}

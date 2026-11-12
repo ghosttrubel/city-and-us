@@ -1,0 +1,293 @@
+{
+  "characterStyle": "natural",
+  "sex": "female",
+  "build": "average",
+  "face": "soft",
+  "skin": "#885037",
+  "shirt": "#ede1cb",
+  "hair": "bob",
+  "hairColor": "#241b19",
+  "outfit": "streetwear",
+  "bottom": "#52665e",
+  "shoes": "#efe8da",
+  "accessory": "earrings",
+  "name": "Amara",
+  "money": 15000,
+  "food": 42.9,
+  "energy": 93.8,
+  "mood": 79.4,
+  "time": 510,
+  "day": 1,
+  "x": 0,
+  "z": 6,
+  "skills": {
+    "trader": 0,
+    "rider": 0,
+    "chef": 1
+  },
+  "job": "Your story starts here",
+  "furniture": true,
+  "rentDay": 1,
+  "studyFocus": "trader",
+  "resolution": "balanced",
+  "graphics": "balanced",
+  "homeStyle": "warm",
+  "onboarded": true,
+  "location": "home",
+  "inside": {
+    "x": 5.2,
+    "z": -3.9
+  },
+  "localPlayerId": "LS-68F286AF510A861C",
+  "nearbyNames": true,
+  "traits": [
+    "industrious",
+    "curious"
+  ],
+  "goal": "saver",
+  "home": "studio",
+  "hygiene": 84.25,
+  "pantry": 2,
+  "study": 0,
+  "stats": {
+    "cooked": 1,
+    "washed": 0,
+    "studied": 0,
+    "slept": 0,
+    "shifts": 0,
+    "purchases": 0
+  },
+  "claimedTasks": [],
+  "goalClaimed": false,
+  "phoneAppearance": {
+    "wallpaper": "lagoon"
+  },
+  "weather": {
+    "kind": "clear",
+    "mode": "auto",
+    "nextAt": 2100,
+    "seed": 7321
+  },
+  "effects": {
+    "rain": "light",
+    "ambience": 0.25
+  },
+  "dialogue": {
+    "volume": 0.8,
+    "muted": false,
+    "subtitles": true,
+    "textOnly": false
+  },
+  "wardrobe": {
+    "version": 2,
+    "owned": [
+      "hair-braids",
+      "hair-locs",
+      "hair-afro",
+      "hair-fade",
+      "hair-bob",
+      "hair-bun",
+      "hair-bald",
+      "shoe-trainers",
+      "accessory-hoops",
+      "accessory-glasses",
+      "accessory-chain",
+      "outfit-f-square-denim",
+      "outfit-f-tank-denim",
+      "outfit-m-relaxed-denim",
+      "top-f-square-charcoal",
+      "bottom-f-washed-black",
+      "top-f-scoop-tank",
+      "bottom-f-blue-wide",
+      "top-m-relaxed-tee",
+      "bottom-m-blue-baggy"
+    ],
+    "equipped": {
+      "full": "outfit-f-square-denim"
+    },
+    "looks": [],
+    "serial": 0
+  },
+  "decor": {
+    "version": 1,
+    "serial": 0,
+    "items": [],
+    "receipts": []
+  },
+  "homeLayoutVersion": 2,
+  "layoutMoved": [],
+  "daily": {
+    "version": 1,
+    "foodSerial": 0,
+    "rideSerial": 0,
+    "cookSerial": 1,
+    "order": null,
+    "ride": null,
+    "cook": null,
+    "meals": [
+      {
+        "id": "cook-1",
+        "recipe": "home-jollof",
+        "phase": "carried",
+        "place": "hand",
+        "bites": 0,
+        "opened": true
+      }
+    ],
+    "guide": null,
+    "stats": {
+      "received": 0,
+      "eaten": 0,
+      "rides": 0,
+      "cooked": 1
+    }
+  },
+  "homeLife": {
+    "version": 1,
+    "stockSerial": 3,
+    "ingredients": {
+      "bag": {
+        "rice": 0,
+        "tomato": 0,
+        "beans": 0,
+        "plantain": 0
+      },
+      "fridge": {
+        "rice": 0,
+        "tomato": 0,
+        "beans": 0,
+        "plantain": 0
+      },
+      "cupboard": {
+        "rice": 0,
+        "tomato": 0,
+        "beans": 0,
+        "plantain": 0
+      }
+    },
+    "job": {
+      "id": 1,
+      "recipe": "jollof",
+      "stage": "done",
+      "reserved": {
+        "rice": 1,
+        "tomato": 1
+      },
+      "origins": {
+        "rice": "bag",
+        "tomato": "bag"
+      },
+      "spent": true,
+      "chops": 3,
+      "heat": 64.93282098402884,
+      "burner": 65,
+      "elapsed": 12.050000000000036,
+      "green": 9.900000000000006,
+      "stirs": 2,
+      "sinceStir": 8.999999999999993
+    }
+  },
+  "foodService": {
+    "version": 1,
+    "serial": 0,
+    "active": false,
+    "stock": {
+      "rice": 0,
+      "tomato": 0,
+      "beans": 0,
+      "plantain": 0
+    },
+    "customers": [],
+    "order": null,
+    "completed": 0,
+    "earned": 0
+  },
+  "cityVisits": {
+    "version": 1,
+    "hotelSerial": 0,
+    "mealSerial": 0,
+    "clubSerial": 0,
+    "hotel": null,
+    "club": null,
+    "beach": {
+      "day": 1,
+      "collected": [],
+      "deposited": false
+    },
+    "stats": {
+      "rested": 0,
+      "danced": 0,
+      "cleaned": 0,
+      "takeaways": 0
+    }
+  },
+  "deliverySerial": 0,
+  "delivery": null,
+  "waypoint": null,
+  "completedDeliveries": 0,
+  "streetLayoutVersion": 2,
+  "dispatchBike": {
+    "id": "dispatch-bike",
+    "version": 1,
+    "profile": "bike",
+    "mode": "parked",
+    "x": 13.2,
+    "z": -28.1,
+    "heading": 0,
+    "speed": 0,
+    "distance": 0,
+    "handling": {},
+    "access": {
+      "type": "permission",
+      "active": true,
+      "grantedTo": "LS-68F286AF510A861C",
+      "job": "parcel"
+    },
+    "deliveryId": 0
+  },
+  "roadVehicles": {
+    "version": 1,
+    "serial": 0,
+    "vehicles": {
+      "dispatch-compact": {
+        "id": "dispatch-compact",
+        "version": 1,
+        "profile": "compact",
+        "mode": "parked",
+        "x": 22,
+        "z": -24,
+        "heading": 0,
+        "speed": 0,
+        "distance": 0,
+        "handling": {},
+        "access": {
+          "type": "rental",
+          "active": false,
+          "renterId": null
+        }
+      }
+    }
+  },
+  "provisions": {
+    "version": 1,
+    "serial": 0,
+    "stockDay": 1,
+    "stock": {
+      "rice": 20,
+      "tomato": 20,
+      "beans": 20,
+      "plantain": 20,
+      "water": 15,
+      "biscuits": 15,
+      "soap": 10,
+      "bundle": 10
+    },
+    "basket": {},
+    "items": {
+      "water": 0,
+      "biscuits": 0,
+      "soap": 0
+    },
+    "lastReceipt": null
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-23",
+  "automated": "passed",
+  "commands": [
+    "npm.cmd run check",
+    "npm.cmd run check:neighbourhood",
+    "npm.cmd run check:navigation",
+    "npm.cmd run check:life",
+    "npm.cmd run check:gameplay",
+    "npm.cmd run check:visuals"
+  ],
+  "processResults": {
+    "v06-release-syntax": {
+      "code": 0,
+      "finished": "2026-10-23T14:35:07.924Z"
+    },
+    "v06-release-neighbourhood": {
+      "code": 0,
+      "finished": "2026-10-23T14:34:37.370Z"
+    },
+    "v06-release-life": {
+      "code": 0,
+      "finished": "2026-10-23T14:34:37.596Z"
+    },
+    "v06-release-geometry": {
+      "code": 0,
+      "finished": "2026-10-23T14:35:08.431Z"
+    },
+    "v06-release-journey": {
+      "code": 0,
+      "finished": "2026-10-23T14:36:54.009Z"
+    },
+    "v06-handoff-syntax": {
+      "code": 0,
+      "finished": "2026-10-23T14:38:10.874Z"
+    }
+  },
+  "navigation": {
+    "date": "2026-10-23",
+    "status": "passed",
+    "routes": 49,
+    "movementSamples": 39353,
+    "maxRouteNodes": 10,
+    "cameraSweeps": 304,
+    "checks": [
+      "All 49 entrance pairs walked through collision, 39353 movement steps; water excluded and deviation recalculates",
+      "Circular and expanded map use actual footprints, roads, entrances, route and facing",
+      "District road, pavement, waterfront and bridge heights match actual CPU ray intersections",
+      "304 camera turns beside real buildings: intersecting geometry cut, player head/feet in frame, all opacity restored when clear",
+      "Public-room counters/exits clear; camera entries released when districts unload"
+    ],
+    "scope": "CPU geometry/pathfinding only. Does not verify browser pixels, CSS, real touch or Android speed."
+  },
+  "http": "14 files match, status 200, correct MIME",
+  "renderedBrowser": "NOT RUN: Browser iab unavailable; discovery returned []",
+  "physicalDevice": "NOT RUN",
+  "preview": "http://localhost:3000",
+  "manualChecklist": "qa/PLAYTEST-v0.6.md",
+  "userSaveTouched": false,
+  "deployed": false
+}

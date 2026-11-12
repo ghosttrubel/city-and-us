@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-23",
+  "status": "passed",
+  "checks": [
+    "Trait choices affect successful pay and needs drain; a completed introduction cannot overwrite choices",
+    "Home/Curious study bonuses, cooking skill/grocery use, low-resource rejection, sleep/wash restoration and midnight rollover",
+    "Version-1 migration retains progress/appearance and rejects malformed imported simulation fields",
+    "All three original interiors have finite geometry, a bounded triangle count and ray-pickable activity objects (CPU only)"
+  ],
+  "scope": "Pure simulation and CPU scene checks. No rendered browser or device-performance claim."
+}

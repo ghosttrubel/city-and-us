@@ -1,0 +1,33 @@
+{
+  "clip": "C:\\Users\\SeniorBaby\\OneDrive\\Documents\\projects\\lagos-street\\city-and-us-references\\videos\\1001988125.mp4",
+  "method": "libVLC CPU video memory callbacks; no audio",
+  "duration_ms": 15200,
+  "decoded_frames": 457,
+  "captures": [
+    {
+      "milliseconds": 0,
+      "file": "at-000000000.bmp"
+    },
+    {
+      "milliseconds": 3159,
+      "file": "at-000003159.bmp"
+    },
+    {
+      "milliseconds": 6159,
+      "file": "at-000006159.bmp"
+    },
+    {
+      "milliseconds": 9401,
+      "file": "at-000009401.bmp"
+    },
+    {
+      "milliseconds": 12664,
+      "file": "at-000012664.bmp"
+    },
+    {
+      "milliseconds": 15076,
+      "file": "at-000015076.bmp"
+    }
+  ],
+  "terminal_state": 6
+}

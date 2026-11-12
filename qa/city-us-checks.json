@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-24",
+  "status": "passed",
+  "commands": {
+    "check": {
+      "status": 0,
+      "output": "\n> lagos-street@0.6.0 check\n> node --check dist/game.js && node --check dist/life.js && node --check dist/interior.js && node --check dist/character.js && node --check dist/garments.js && node --check dist/street.js && node --check server.mjs && node --check server-core.mjs && node --check dist/neighbourhood.js && node --check dist/controls.js && node --check dist/navigation.js && node --check dist/camera.js && node --check dist/districts.js && node --check dist/activity-pose.js && node --check dist/home-style.js\n\n"
+    },
+    "check:gameplay": {
+      "status": 0,
+      "output": "Sequence: Exited Home through animated door to its matching street doorway\nSequence: Walked street route with joystick, approached Dispatch and entered\nSequence: Walked to parcel desk and collected a physical carried parcel without payment\nSequence: Resumed saved parcel, left the matching workplace doorway and walked to the shop address\nSequence: Reached the correct shop counter and handed over for one payment\nSequence: Returned on foot and entered Home through its street entrance, completing the round\nSequence: Followed live green route into Yaba Reading Room; studied and reloaded inside with progress intact\nSequence: Walked to Yaba Works and completed the ordered records job for pay\nSequence: Walked across the mainland bridge into the Island Trading Arcade and bought groceries; distant Yaba scenery unloaded\nSequence: Reached Marina Kitchen, ate and resumed the saved Lagos Island room\nSequence: Returned on foot to the original Home with avatar, completed delivery and progress preserved\n{\n  \"date\": \"2026-10-23\",\n  \"status\": \"passed\",\n  \"checks\": [\n    \"Preserved creator selections and colours; introduction choices persist and start inside Home\",\n    \"Joystick dead zone and immediate release/cancel; independent right-side camera touch while movement pointer is active\",\n    \"Complete required sequence via actual joystick and contextual handlers; proximity doors; save/reload while carrying; exact-once payment; return-home completion\",\n    \"Retained cooking, washing, selected study, resting pose and complete wardrobe reached on foot inside collision-enabled Home\",\n    \"Phone grid/back/app screens, stable local ID, one-time task rewards, graphics setting, export and validated confirmed import\",\n    \"Modal focus wrapping/restoration and direct desktop key movement with immediate release\",\n    \"Finite portrait/landscape camera matrices and in-frame player at four sizes (CPU projection, not rendered layout)\",\n    \"Live-route joystick journey through Yaba and Lagos Island, four working venues, district unloading, public-room save/reload, reserved phone apps and home control\",\n    \"Version-1/v0.4 migration retains progress and look; skipped new story applies defaults without replacing local ID\"\n  ],\n  \"acceptanceSequence\": [\n    \"Exited Home through animated door to its matching street doorway\",\n    \"Walked street route with joystick, approached Dispatch and entered\",\n    \"Walked to parcel desk and collected a physical carried parcel without payment\",\n    \"Resumed saved parcel, left the matching workplace doorway and walked to the shop address\",\n    \"Reached the correct shop counter and handed over for one payment\",\n    \"Returned on foot and entered Home through its street entrance, completing the round\",\n    \"Followed live green route into Yaba Reading Room; studied and reloaded inside with progress intact\",\n    \"Walked to Yaba Works and completed the ordered records job for pay\",\n    \"Walked across the mainland bridge into the Island Trading Arcade and bought groceries; distant Yaba scenery unloaded\",\n    \"Reached Marina Kitchen, ate and resumed the saved Lagos Island room\",\n    \"Returned on foot to the original Home with avatar, completed delivery and progress preserved\"\n  ],\n  \"viewports\": [\n    {\n      \"width\": 390,\n      \"height\": 844,\n      \"playerInViewport\": true\n    },\n    {\n      \"width\": 844,\n      \"height\": 390,\n      \"playerInViewport\": true\n    },\n    {\n      \"width\": 320,\n      \"height\": 568,\n      \"playerInViewport\": true\n    },\n    {\n      \"width\": 1280,\n      \"height\": 900,\n      \"playerInViewport\": true\n    }\n  ],\n  \"scope\": \"Actual shipped game, real meshes and scene geometry with DOM/WebGLRenderer/timer/storage doubles. Joystick pointer events are synthetic. This is not real-browser, visual, native-touch, Android-performance or multiplayer verification.\",\n  \"userSaveTouched\": false\n}\n"
+    },
+    "check:visuals": {
+      "status": 0,
+      "output": "{\n  \"combinations\": 32,\n  \"character\": {\n    \"maximumDraws\": 22,\n    \"maximumTriangles\": 27014\n  },\n  \"street\": {\n    \"draws\": 119,\n    \"triangles\": 68955,\n    \"obstacles\": 25\n  },\n  \"sampleBounds\": [\n    {\n      \"sex\": \"female\",\n      \"build\": \"slim\",\n      \"outfit\": \"streetwear\",\n      \"minY\": -0.003681910555749346,\n      \"maxY\": 2.3504635947122985\n    },\n    {\n      \"sex\": \"female\",\n      \"build\": \"slim\",\n      \"outfit\": \"jacket\",\n      \"minY\": -0.003681910555749346,\n      \"maxY\": 2.3504635947122985\n    },\n    {\n      \"sex\": \"female\",\n      \"build\": \"slim\",\n      \"outfit\": \"native\",\n      \"minY\": -0.003681910555749346,\n      \"maxY\": 2.3344700642294844\n    },\n    {\n      \"sex\": \"female\",\n      \"build\": \"slim\",\n      \"outfit\": \"dress\",\n      \"minY\": -0.003681910555749346,\n      \"maxY\": 2.4382009791709525\n    }\n  ],\n  \"limitation\": \"CPU rig/geometry checks only; browser rendering and real Android performance still require testing.\"\n}\n"
+    },
+    "check:life": {
+      "status": 0,
+      "output": "{\n  \"date\": \"2026-10-23\",\n  \"status\": \"passed\",\n  \"checks\": [\n    \"Trait choices affect successful pay and needs drain; a completed introduction cannot overwrite choices\",\n    \"Home/Curious study bonuses, cooking skill/grocery use, low-resource rejection, sleep/wash restoration and midnight rollover\",\n    \"Version-1 migration retains progress/appearance and rejects malformed imported simulation fields\",\n    \"All three original interiors have finite geometry, a bounded triangle count and ray-pickable activity objects (CPU only)\"\n  ],\n  \"scope\": \"Pure simulation and CPU scene checks. No rendered browser or device-performance claim.\"\n}\n"
+    },
+    "check:review": {
+      "status": 0,
+      "output": "{\n  \"date\": \"2026-10-24\",\n  \"status\": \"passed\",\n  \"combinations\": 8,\n  \"apartmentTriangles\": 3508,\n  \"checks\": [\n    \"Legacy look/money retained; natural style, bob and finishes round-trip; malformed styles rejected; sitting/computer apply bounded effects\",\n    \"All seven furniture stations reachable with/without sofa; apartment below 10k triangles; finish changes retain cutaway material; whole floor fits four CPU viewports\",\n    \"Eight natural-style sex/outfit combinations with bob retain finite idle/walk/activity transforms and return to walking\"\n  ],\n  \"scope\": \"CPU geometry/logic only; no rendered browser, native touch or Android performance claim.\"\n}\n"
+    },
+    "check:review-gameplay": {
+      "status": 0,
+      "output": "{\n  \"date\": \"2026-10-24\",\n  \"status\": \"passed\",\n  \"checks\": [\n    \"Main story and identity unchanged by apartment review\",\n    \"Bob/natural style and saved finishes survive reload/export\",\n    \"Sofa cancel, exactly-once completion and computer progress through actual handlers\",\n    \"Sleeping head above mattress and within bed; cancellation returns to safe standing position\",\n    \"Customisation retained after review reload\"\n  ],\n  \"scope\": \"Actual game handlers and real meshes with DOM/renderer/storage doubles; no browser or device claim.\"\n}\n"
+    },
+    "check:neighbourhood": {
+      "status": 0,
+      "report": {
+        "date": "2026-10-23",
+        "status": "passed",
+        "checks": [
+          "Joystick dead zone, proportional/clamped magnitude and camera-relative movement; collision sliding and no large-step tunnelling",
+          "Entrances derive from building footprints; room exits and parcel/counter stations have collision-free standing space",
+          "Collection and handover reject wrong space/range; carrying survives serialization; exact-once pay; home return completes round before another pickup",
+          "Invalid spatial/delivery save fields rejected; map includes shared footprints, roads, entrances, waypoint and facing marker"
+        ],
+        "scope": "Pure logic and CPU geometry only. No browser/touch/visual verification or multiplayer claim."
+      }
+    },
+    "check:navigation": {
+      "status": 0,
+      "report": {
+        "date": "2026-10-23",
+        "status": "passed",
+        "routes": 49,
+        "movementSamples": 39353,
+        "maxRouteNodes": 10,
+        "cameraSweeps": 304,
+        "checks": [
+          "All 49 entrance pairs walked through collision, 39353 movement steps; water excluded and deviation recalculates",
+          "Circular and expanded map use actual footprints, roads, entrances, route and facing",
+          "District road, pavement, waterfront and bridge heights match actual CPU ray intersections",
+          "304 camera turns beside real buildings: intersecting geometry cut, player head/feet in frame, all opacity restored when clear",
+          "Public-room counters/exits clear; camera entries released when districts unload"
+        ],
+        "scope": "CPU geometry/pathfinding only. Does not verify browser pixels, CSS, real touch or Android speed."
+      }
+    }
+  },
+  "notes": [
+    "Exact sleep Euler assertion changed to 1e-10 tolerance for harmless quaternion rounding.",
+    "No browser or physical-device verification."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-24",
+  "implemented": [
+    "Phone heading",
+    "Remove six disabled Soon icons; retain five working screens"
+  ],
+  "requirementsOnly": [
+    "Smartphone customisation/redesign",
+    "Ride",
+    "Food",
+    "Games",
+    "Chat",
+    "Friends",
+    "Events",
+    "Government",
+    "Voting"
+  ],
+  "unchangedRepairFiles": [
+    "dist/character.js",
+    "dist/camera.js",
+    "dist/interior.js",
+    "dist/interior-camera.js",
+    "dist/doorway.js",
+    "dist/navigation.js",
+    "dist/street.js",
+    "dist/districts.js",
+    "dist/index.html",
+    "dist/style.css"
+  ],
+  "gameSha256": "2edc06c46f8b8456445f0fb05e00fa1b7d45614f4ed028699437dc6685cea07c",
+  "visualAcceptance": "pending",
+  "browserEvidence": "Not obtained for this update"
+}

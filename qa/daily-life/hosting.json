@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-26T12:48:35.275Z",
+  "project_id": "appgprj_6ad69f265ecc81918e0dd480bb25c496",
+  "status": "blocked-source-host-connectivity",
+  "newSiteCreated": false,
+  "deployed": false,
+  "existingAudiencePreserved": true,
+  "error": "Source workflow could not connect to git.chatgpt-team.site:443. No source push, saved version or deployment.",
+  "localReview": "http://localhost:3000/?review=daily",
+  "currentHostedVersionContainsThisMilestone": false
+}

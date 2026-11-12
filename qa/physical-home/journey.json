@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-12T14:07:55.615Z",
+  "status": "passed",
+  "sequence": [
+    "Received exactly once, carried the visible package through a reload and the physical home doorway.",
+    "Placed/opened/seated eating, two-bite leftovers stored in fridge and reloaded, then consumed with no replayed reward.",
+    "Played jollof: unpack/store/reload, physically collect, continuous preparation with pause/reload, heat/two stirs, plate and store; no double ingredient deduction or plate.",
+    "Played beans: unpack/store/reload, physically collect, continuous preparation with pause/reload, heat/two stirs, plate and store; no double ingredient deduction or plate.",
+    "Demonstrated seated reading/typing, shower entry/privacy/water/exit, compact progress strip and cancellation, all reached on foot.",
+    "Protected ownership, inventory, settings and recipe/meal state across reload; conflicting owned furniture migrated to storage without deletion."
+  ],
+  "scope": "Actual shipped game handlers and meshes with synthetic joystick, DOM/WebGL/audio/storage doubles. Not browser/device pixels, real audio or touch evidence.",
+  "userStorageTouched": false
+}

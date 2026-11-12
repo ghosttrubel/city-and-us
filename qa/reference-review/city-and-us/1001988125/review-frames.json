@@ -1,0 +1,31 @@
+{
+  "clip": "1001988125.mp4",
+  "method": "Installed libVLC CPU callbacks; sampled frames only, no audio listening",
+  "duration_ms": 15200,
+  "captures": [
+    {
+      "milliseconds": 0,
+      "file": "at-000000000.bmp"
+    },
+    {
+      "milliseconds": 3440,
+      "file": "at-000003440.bmp"
+    },
+    {
+      "milliseconds": 6660,
+      "file": "at-000006660.bmp"
+    },
+    {
+      "milliseconds": 9660,
+      "file": "at-000009660.bmp"
+    },
+    {
+      "milliseconds": 12672,
+      "file": "at-000012672.bmp"
+    },
+    {
+      "milliseconds": 15250,
+      "file": "at-000015250.bmp"
+    }
+  ]
+}

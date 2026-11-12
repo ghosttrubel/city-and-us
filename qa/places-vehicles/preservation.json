@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "protectedFiles": 258,
+  "checks": [
+    "original place/transport/outfit references intact",
+    "character and outfit assets and editable Blender sources untouched",
+    "home, wardrobe, decor ownership and colour state unchanged",
+    "hosting identity retained",
+    "complete historical roadmap and owner requirements retained"
+  ],
+  "scope": "Disk source/asset hashes. Real browser saves were not accessed."
+}

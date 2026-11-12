@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-01T10:20:01.859Z",
+  "build": "0.8.2-wardrobe.1 (11)",
+  "checks": [
+    {
+      "command": "npm.cmd run check",
+      "exit": 0
+    },
+    {
+      "command": "node tools/verify-wardrobe-batch.mjs",
+      "exit": 0
+    },
+    {
+      "command": "node tools/verify-visual-milestone.mjs",
+      "exit": 0
+    },
+    {
+      "command": "node tools/render-wardrobe-batch.mjs",
+      "exit": 0
+    }
+  ],
+  "checkpointMismatches": [],
+  "scope": "Automated/test-double checks and labelled software pose inspection, not physical acceptance."
+}

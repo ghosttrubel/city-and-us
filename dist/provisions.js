@@ -1,0 +1,22 @@
+import {HOME_STATIONS} from './home-layout.js';
+import {near,SHOP_COUNTER} from './neighbourhood.js';
+export const PRODUCTS={
+ rice:{name:'Rice portion',price:125,stock:20,ingredient:true},tomato:{name:'Tomatoes',price:100,stock:20,ingredient:true},beans:{name:'Beans portion',price:125,stock:20,ingredient:true},plantain:{name:'Plantain',price:125,stock:20,ingredient:true},
+ water:{name:'Drinking water',price:100,stock:15},biscuits:{name:'Biscuits',price:150,stock:15},soap:{name:'Bath soap',price:200,stock:10},bundle:{name:'Pantry grocery bag (3 portions)',price:500,stock:10}
+};
+const no=message=>({ok:false,message}),ok=message=>({ok:true,message});
+export function migrateProvisions(s,data){s.provisions=data?.provisions?structuredClone(data.provisions):{version:1,serial:0,stockDay:s.day,stock:Object.fromEntries(Object.entries(PRODUCTS).map(([k,p])=>[k,p.stock])),basket:{},items:{water:0,biscuits:0,soap:0},lastReceipt:null};return s;}
+export function validProvisions(p){if(p===undefined)return true;const counts=(o,limit)=>o&&typeof o==='object'&&!Array.isArray(o)&&Object.entries(o).every(([k,n])=>PRODUCTS[k]&&Number.isInteger(n)&&n>=0&&n<=limit);
+return !!p&&p.version===1&&Number.isSafeInteger(p.serial)&&p.serial>=0&&Number.isSafeInteger(p.stockDay)&&p.stockDay>=1&&counts(p.stock,100)&&Object.keys(PRODUCTS).every(k=>Number.isInteger(p.stock[k]))&&counts(p.basket,100)&&counts(p.items,40)&&['water','biscuits','soap'].every(k=>Number.isInteger(p.items[k]));}
+export function restock(s){const p=s.provisions;if(s.day>p.stockDay){p.stock=Object.fromEntries(Object.entries(PRODUCTS).map(([k,v])=>[k,v.stock]));p.stockDay=s.day;p.serial++;}}
+export function basketChange(s,id,delta){const p=s.provisions;if(!PRODUCTS[id]||!Number.isInteger(delta))return no('Unknown product.');const n=(p.basket[id]||0)+delta;if(n<0||n>p.stock[id])return no('That quantity is not in stock.');if(n)p.basket[id]=n;else delete p.basket[id];p.serial++;return ok('Basket updated.');}
+export function quoteBasket(s){const p=s.provisions,entries=Object.entries(p.basket).filter(([,n])=>n>0),total=entries.reduce((sum,[k,n])=>sum+PRODUCTS[k].price*n,0),summary=entries.map(([k,n])=>n+' × '+PRODUCTS[k].name).join(', ')||'Basket empty';
+let reason='';if(!entries.length)reason='Choose goods first.';else if(entries.some(([k,n])=>n>p.stock[k]))reason='Some selected goods are no longer in stock.';else if(s.money<total)reason='Total ₦'+total+'; balance ₦'+s.money+'. You need ₦'+(total-s.money)+' more.';
+else if(entries.filter(([k])=>PRODUCTS[k].ingredient).reduce((sum,[,n])=>sum+n,0)+Object.values(s.homeLife.ingredients.bag).reduce((a,b)=>a+b,0)>120)reason='Ingredient bag limit: 120 portions.';
+else if((p.basket.bundle||0)*3+s.pantry+(s.daily.cook?.status==='prep'?1:0)>99)reason='Your pantry cannot hold these grocery bags.';
+else if(['water','biscuits','soap'].some(k=>(p.items[k]||0)+(p.basket[k]||0)>40))reason='Maximum 40 of each consumable.';
+return {serial:p.serial,basket:JSON.stringify(p.basket),entries,total,summary,reason,ok:!reason};}
+export function checkout(s,quote,location,position,channel='counter'){if(channel!=='phone'&&(location!=='shop'||!near(position,SHOP_COUNTER)))return no('Return to the checkout before paying.');const current=quoteBasket(s);if(quote.serial!==current.serial||quote.basket!==current.basket||quote.total!==current.total)return no('Basket changed. Review the new total.');if(!current.ok)return no(current.reason);
+s.money-=current.total;for(const [k,n]of current.entries){s.provisions.stock[k]-=n;if(PRODUCTS[k].ingredient){s.homeLife.ingredients.bag[k]+=n;s.homeLife.stockSerial++;}else if(k==='bundle')s.pantry+=n*3;else s.provisions.items[k]+=n;}
+s.provisions.serial++;s.provisions.lastReceipt={serial:s.provisions.serial,total:current.total,summary:current.summary};s.provisions.basket={};s.stats.purchases++;return ok('Paid ₦'+current.total+' for '+current.summary+'. Goods added to your inventory.');}
+export function useProvision(s,id,location,position){if(!['water','biscuits','soap'].includes(id)||s.provisions.items[id]<1)return no('You do not have this item.');if(id==='soap'&&(location!=='home'||!near(position,HOME_STATIONS.wash.stand,1.1)))return no('Take the soap to your home bathroom to use it.');s.provisions.items[id]--;if(id==='water')s.energy=Math.min(100,s.energy+8);if(id==='biscuits')s.food=Math.min(100,s.food+20);if(id==='soap'){s.hygiene=Math.min(100,s.hygiene+30);s.stats.washed++;}s.provisions.serial++;return ok('Used one '+PRODUCTS[id].name+'.');}

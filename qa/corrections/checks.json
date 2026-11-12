@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-24",
+  "visualAcceptance": "pending",
+  "evidence": "CPU software previews; no live browser/device evidence",
+  "suites": {
+    "syntax": {
+      "code": 0,
+      "date": "2026-10-24T13:27:43.951Z",
+      "log": "syntax.log"
+    },
+    "neighbourhood": {
+      "code": 0,
+      "date": "2026-10-24T13:01:58.808Z",
+      "log": "neighbourhood.log"
+    },
+    "navigation": {
+      "code": 0,
+      "date": "2026-10-24T12:58:38.240Z",
+      "log": "navigation.log"
+    },
+    "life": {
+      "code": 0,
+      "date": "2026-10-24T13:01:59.039Z",
+      "log": "life.log"
+    },
+    "visuals": {
+      "code": 0,
+      "date": "2026-10-24T12:58:13.628Z",
+      "log": "visuals.log"
+    },
+    "gameplay": {
+      "code": 0,
+      "date": "2026-10-24T12:59:27.991Z",
+      "log": "gameplay.log"
+    },
+    "review": {
+      "code": 0,
+      "date": "2026-10-24T13:17:54.405Z",
+      "log": "review.log"
+    },
+    "review-gameplay": {
+      "code": 0,
+      "date": "2026-10-24T13:02:16.944Z",
+      "log": "review-gameplay.log"
+    },
+    "corrections": {
+      "code": 0,
+      "date": "2026-10-24T12:42:45.105Z",
+      "log": "corrections.log"
+    }
+  }
+}

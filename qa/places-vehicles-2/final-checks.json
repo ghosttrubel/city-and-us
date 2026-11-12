@@ -1,0 +1,10 @@
+{
+    "date":  "2026-11-08T16:50:23.8543743Z",
+    "status":  "passed",
+    "scope":  "Source, geometry, state, UI/Audio/rendering doubles and local HTTP. No live browser, listening or device certification.",
+    "commands":  [
+                     "npm run check",
+                     "npm run check:places-vehicles",
+                     "node tools/verify-places-review-http.mjs"
+                 ]
+}

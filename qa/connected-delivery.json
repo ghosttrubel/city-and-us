@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-23",
+  "status": "passed",
+  "checks": [
+    "Preserved creator selections and colours; introduction choices persist and start inside Home",
+    "Joystick dead zone and immediate release/cancel; independent right-side camera touch while movement pointer is active",
+    "Complete required sequence via actual joystick and contextual handlers; proximity doors; save/reload while carrying; exact-once payment; return-home completion",
+    "Retained cooking, washing, selected study, resting pose and complete wardrobe reached on foot inside collision-enabled Home",
+    "Phone grid/back/app screens, stable local ID, one-time task rewards, graphics setting, export and validated confirmed import",
+    "Modal focus wrapping/restoration and direct desktop key movement with immediate release",
+    "Finite portrait/landscape camera matrices and in-frame player at four sizes (CPU projection, not rendered layout)",
+    "Live-route joystick journey through Yaba and Lagos Island, four working venues, district unloading, public-room save/reload, working phone apps without unfinished icons, and home control",
+    "Version-1/v0.4 migration retains progress and look; skipped new story applies defaults without replacing local ID"
+  ],
+  "acceptanceSequence": [
+    "Exited Home through animated door to its matching street doorway",
+    "Walked street route with joystick, approached Dispatch and entered",
+    "Walked to parcel desk and collected a physical carried parcel without payment",
+    "Resumed saved parcel, left the matching workplace doorway and walked to the shop address",
+    "Reached the correct shop counter and handed over for one payment",
+    "Returned on foot and entered Home through its street entrance, completing the round",
+    "Followed live green route into Yaba Reading Room; studied and reloaded inside with progress intact",
+    "Walked to Yaba Works and completed the ordered records job for pay",
+    "Walked across the mainland bridge into the Island Trading Arcade and bought groceries; distant Yaba scenery unloaded",
+    "Reached Marina Kitchen, ate and resumed the saved Lagos Island room",
+    "Returned on foot to the original Home with avatar, completed delivery and progress preserved"
+  ],
+  "viewports": [
+    {
+      "width": 390,
+      "height": 844,
+      "playerInViewport": true
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "playerInViewport": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "playerInViewport": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "playerInViewport": true
+    }
+  ],
+  "scope": "Actual shipped game, real meshes and scene geometry with DOM/WebGLRenderer/timer/storage doubles. Joystick pointer events are synthetic. This is not real-browser, visual, native-touch, Android-performance or multiplayer verification.",
+  "userSaveTouched": false
+}

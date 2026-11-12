@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "protectedFiles": 259,
+  "checks": [
+    "Legacy Dispatch, shop and park coordinates migrate once; newly occupied footprints escape safely; all four active passenger states retain money, fare, ID and progress.",
+    "Bike requires a parcel, city location and no passenger booking; moving dismount and mounted handover denied; reload brakes; wall collision cannot tunnel; blocked dismount keeps rider mounted.",
+    "Approved Provisions visual modules, character/outfit sources and references, property/colour modules and hosting identity unchanged; full prior roadmap retained."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "checks": [
+    "Full daily-review portrait journey: startup, walking/doors, cook → visible hand plate → reload → reachable table → animated bite/portions/hunger; preserved main save and character ownership",
+    "Bisi and Ayo branches, complete sequencer and media-error recovery at portrait dimensions",
+    "320/360/390/414px portrait head/feet projection, camera drag without movement, zoom, rotation input reset and tablet/desktop framing",
+    "Complete in-world portrait conversation; all phone apps; wardrobe preview/cancel, saved-look text input at keyboard-sized viewport, physical shopping confirmation/back/cancel, and reload preservation"
+  ],
+  "submittedFrames": 2034,
+  "scope": "Actual game/rig/mesh/camera and handlers with DOM/GPU/media/input doubles; CSS declarations inspected, not browser pixels, native scrolling, touch or physical-device performance."
+}

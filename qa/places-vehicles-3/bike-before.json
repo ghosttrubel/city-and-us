@@ -1,0 +1,25 @@
+{
+  "status": "reproduced",
+  "before": {
+    "version": 1,
+    "mode": "mounted",
+    "x": 12,
+    "z": 13.001999999999997,
+    "heading": 3.141592653589793,
+    "speed": 0,
+    "deliveryId": 1,
+    "distance": 6.998000000000002
+  },
+  "after": {
+    "version": 1,
+    "mode": "mounted",
+    "x": 12,
+    "z": 13.001999999999997,
+    "heading": 3.141592653589793,
+    "speed": 0,
+    "deliveryId": 1,
+    "distance": 6.998000000000002
+  },
+  "escapeDistance": 0,
+  "explanation": "The bike enters the pedestrian terrace under the buka canopy and stops nose-first at the building/counter. Direction-only controls offer no reverse; rotating the front corners intersects the wall, so opposite stick input cannot escape. This reproduces the visible trapped-bike behavior, not passage through a sealed room transition."
+}

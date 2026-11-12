@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "build": "0.8.1-visual.1 (10)",
+  "checks": [
+    "Portrait camera: each of 52 taps changes actual camera distance; hold/release/cancel/lost capture/blur/pagehide/menu/Phone stop; chosen zoom survives joystick walking; overview and inspect differ. Synthetic pointer events, not physical touch hit-testing.",
+    "One Eat opens and consumes four seated portions without standing; full/cancel stop without extra nutrition; leftover portions persist through reload and storage.",
+    "Wallpaper gallery/preview/apply/reload and legacy migration pass; saves, wardrobe, furniture, custom colours and local identity preserved."
+  ],
+  "scope": "Actual source handlers, skeletons and camera projection with DOM/WebGL/media/storage doubles. No physical-device acceptance or browser hit testing."
+}

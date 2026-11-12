@@ -1,0 +1,29 @@
+{
+  "scope": "Software mesh renders using shipped interiors/activity controllers; not browser screenshots or device verification.",
+  "frames": [
+    {
+      "name": "../../../qa/connected-city/hotel-exterior.png",
+      "triangles": 293
+    },
+    {
+      "name": "../../../qa/connected-city/coast-exterior.png",
+      "triangles": 464
+    },
+    {
+      "name": "../../../qa/connected-city/hotel-rest.png",
+      "triangles": 11393
+    },
+    {
+      "name": "../../../qa/connected-city/club-dance.png",
+      "triangles": 12106
+    },
+    {
+      "name": "../../../qa/connected-city/beach-pickup.png",
+      "triangles": 23478
+    },
+    {
+      "name": "../../../qa/connected-city/eatery-takeaway.png",
+      "triangles": 24037
+    }
+  ]
+}

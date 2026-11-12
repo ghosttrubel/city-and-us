@@ -1,0 +1,32 @@
+[
+  {
+    "path": "reference/ChatGPT Image Oct 30, 2026, 03_54_09 PM.jpg",
+    "sha256": "dee420074b00b37d6e42eba41882b255cac623936c94229bae92499e68bea2ab",
+    "classification": "Owner-supplied iPhone defect baseline, not acceptance of current build",
+    "finding": "Portrait home and visible +/− controls; room cropped at follow distance."
+  },
+  {
+    "path": "reference/ChatGPT Image Oct 30, 2026, 03_54_20 PM.png",
+    "sha256": "f85d2f1c571b50c2447216860d993dc5df77c88bcc28e1f6c982c31eb014090e",
+    "classification": "Owner-supplied iPhone defect baseline, not acceptance of current build",
+    "finding": "Standing beside 3/4 leftover plate; repeated Eat action visible."
+  },
+  {
+    "path": "reference/ChatGPT Image Oct 30, 2026, 03_54_30 PM.png",
+    "sha256": "cade0c6515831ba76e6c1df91a8681ea3e885cbed2b381994ef9c75ea55777f4",
+    "classification": "Owner-supplied iPhone defect baseline, not acceptance of current build",
+    "finding": "Seated bite 2/4 and cancel strip; spoon/food visible."
+  },
+  {
+    "path": "reference/ChatGPT Image Oct 30, 2026, 03_55_00 PM.png",
+    "sha256": "f927477afb4667c2d3ebacc2e614bb21b9d840a232cc9109c36c65ee4144a900",
+    "classification": "Owner-supplied iPhone defect baseline, not acceptance of current build",
+    "finding": "Standing again beside 2/4 leftover plate; per-bite finish defect."
+  },
+  {
+    "path": "reference/ChatGPT Image Oct 30, 2026, 03_55_10 PM.jpg",
+    "sha256": "265f7bc89200e852a41885b1f86ae8f0db80aa0b1d3d98b1179884f553f74203",
+    "classification": "Owner-supplied iPhone defect baseline, not acceptance of current build",
+    "finding": "Seven working Phone apps, no Wallpaper; welcome text low contrast."
+  }
+]

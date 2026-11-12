@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "lineCount": 52,
+  "clips": 66,
+  "seconds": 281.47499999999997,
+  "bytes": 13513704,
+  "scope": "Actual complete PCM recordings, script equality, model/clip hashes, licensing and audible waveform levels. Does not certify pronunciation or device playback.",
+  "listeningReview": false,
+  "devicePlayback": false,
+  "coverage": {
+    "shop": [
+      "shopHello",
+      "shopProduce",
+      "shopShelves",
+      "shopConfirm",
+      "shopPaid",
+      "shopCancelled",
+      "shopFunds",
+      "shopFull",
+      "shopParcel",
+      "shopDelivered",
+      "shopReturn"
+    ],
+    "parcel": [
+      "parcelHello",
+      "parcelCollected",
+      "parcelCarrying",
+      "parcelReturn",
+      "parcelNeeds",
+      "parcelBikeInfo"
+    ],
+    "ticket": [
+      "ticketParkBike",
+      "ticketHello",
+      "ticketDispatching",
+      "ticketWaiting",
+      "ticketTravelling",
+      "ticketArrived",
+      "ticketComplete",
+      "ticketRefund",
+      "ticketFunds",
+      "ticketHandled",
+      "ticketEarly",
+      "ticketBoardFirst",
+      "ticketWaitStop",
+      "ticketChoose",
+      "ticketCounter",
+      "fare125",
+      "fare200",
+      "fare225",
+      "fare300",
+      "fare450",
+      "fare500"
+    ],
+    "player": [
+      "playerBag",
+      "playerPay",
+      "playerCancel",
+      "playerHandover",
+      "playerCollect",
+      "playerBikeInfo",
+      "playerMount",
+      "playerDismount",
+      "playerReturnBike",
+      "playerBook",
+      "playerCancelRide",
+      "playerEarly",
+      "playerBoard",
+      "playerAlight"
+    ]
+  }
+}

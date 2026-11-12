@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "triangles": 25376,
+  "materialBatches": 5,
+  "bones": 65,
+  "maxJointPositionError": 0.00000122375535840041,
+  "bytes": 1257716,
+  "sha256": "759c04a162f792b70d6f4510349fb5d0426fb5ac133b2d0230aeca835d443f97",
+  "materials": [
+    "Top_Knit",
+    "Jeans_Denim",
+    "Top_Binding",
+    "Jeans_Stitch",
+    "Hardware"
+  ],
+  "normalWardrobeUnchanged": true
+}

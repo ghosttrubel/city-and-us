@@ -1,0 +1,17 @@
+{
+  "scope": "Portrait camera with current scene meshes/poses, offline software rendering. No HUD/CSS, browser or phone verification.",
+  "frames": [
+    {
+      "name": "../../../qa/portrait-first/cooked-at-stove.png",
+      "triangles": 14540
+    },
+    {
+      "name": "../../../qa/portrait-first/visible-bite.png",
+      "triangles": 13912
+    },
+    {
+      "name": "../../../qa/portrait-first/preparation.png",
+      "triangles": 14159
+    }
+  ]
+}

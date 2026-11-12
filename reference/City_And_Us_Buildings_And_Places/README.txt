@@ -1,0 +1,1 @@
+32 original PNG reference sheets organised by category. Each sheet contains multiple designs. Images are design references; 3D modelling and game integration are separate tasks. Religious architecture is illustrative, not exhaustive. Vacant plots are visual references for player-buildable properties.

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-27T09:40:37.724Z",
+  "status": "passed",
+  "scope": "Policy, deterministic frame-timing fixtures and actual game handlers with renderer/storage doubles. Timing fixtures are not phone performance measurements.",
+  "checks": [
+    "1 / 1.25 / 1.5 steps; no full-DPR jump; two-million-pixel mobile cap",
+    "15-second frame interval summaries, warm-up exclusion, p95 and slow-frame counts",
+    "Sampling cancels on pause, viewport/profile change, menu or location change",
+    "Both resolution controls save immediately and survive reload; graphics preference/shadows and ownership/layout/money/daily state preserved",
+    "Older saves migrate safely; invalid resolution import rejected"
+  ],
+  "iphone11BufferEstimates": [
+    {
+      "setting": "low",
+      "ratio": 1,
+      "width": 896,
+      "height": 414
+    },
+    {
+      "setting": "balanced",
+      "ratio": 1.25,
+      "width": 1120,
+      "height": 517
+    },
+    {
+      "setting": "sharp",
+      "ratio": 1.5,
+      "width": 1344,
+      "height": 621
+    }
+  ],
+  "actualDevicePerformance": "pending owner comparison"
+}

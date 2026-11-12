@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+let s=fs.readFileSync('dist/place-voice-lines.js','utf8');
+s=s.replace('export const PLACE_LINES={','export const PLACE_LINES={\n "ticketParkBike": {"speaker":"ticket","text":"Please park and dismount the dispatch bike before booking a passenger ride."},');
+fs.writeFileSync('dist/place-voice-lines.js',s);
+s=fs.readFileSync('dist/daily-ui.js','utf8');
+s=s.replace("act=(r,reply)=>","act=(r,reply,response)=>");
+s=s.replace("...(reply?[reply]:[]),voiceStatus()","...(reply?[reply]:[]),response||voiceStatus()");
+s=s.replace("[/currency|balance/.test(message)","[/dispatch bike/.test(message)?'ticketParkBike':/currency|balance/.test(message)");
+s=s.replace("/stops/.test(message)?'ticketChoose':/stops\\.|stopped|Wait until/.test(message)?'ticketWaitStop'","/Wait until|stopped/.test(message)?'ticketWaitStop':/stops/.test(message)?'ticketChoose'");
+s=s.replace("act(result,'playerEarly');if(result.ok)speak(['playerEarly','ticketEarly']);","act(result,'playerEarly','ticketEarly');");
+s=s.replace("destination=el('ride-destination').value;quote();","destination=el('ride-destination').value;quote();const q=rideQuote(pickup,destination,service);speak([q?'fare'+q.fare:'ticketChoose']);");
+fs.writeFileSync('dist/daily-ui.js',s);
+console.log('Passenger speech now distinguishes parking the bike, waiting for a stop and changed fares.');

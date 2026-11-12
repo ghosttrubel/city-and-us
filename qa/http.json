@@ -1,0 +1,92 @@
+{
+  "url": "http://127.0.0.1:3001",
+  "responses": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 2499
+    },
+    {
+      "path": "/game.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 27677
+    },
+    {
+      "path": "/character.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 13073
+    },
+    {
+      "path": "/garments.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 5110
+    },
+    {
+      "path": "/street.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 18444
+    },
+    {
+      "path": "/style.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8",
+      "bytes": 9832
+    },
+    {
+      "path": "/vendor/addons/GLTFLoader.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 110035
+    },
+    {
+      "path": "/assets/characters/Superhero_Female_FullBody.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 573936,
+      "magic": "glTF"
+    },
+    {
+      "path": "/assets/characters/Superhero_Male_FullBody.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 550820,
+      "magic": "glTF"
+    },
+    {
+      "path": "/assets/characters/locomotion.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 165732,
+      "magic": "glTF"
+    },
+    {
+      "path": "/assets/characters/animation-bind.json",
+      "status": 200,
+      "type": "application/json",
+      "bytes": 7178
+    },
+    {
+      "path": "/assets/characters/female-skin.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 18054
+    },
+    {
+      "path": "/assets/characters/male-normal.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 44864
+    },
+    {
+      "path": "/assets/characters/T_Eye_Brown.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 5334
+    }
+  ]
+}

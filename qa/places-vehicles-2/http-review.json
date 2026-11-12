@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "url": "http://localhost:3000/?review=places",
+  "listening": "http://localhost:3000/places-voice-review.html",
+  "pages": [
+    "/?review=places",
+    "/places-voice-review.html",
+    "/game.js",
+    "/dispatch-bike.js",
+    "/dispatch-bike-world.js",
+    "/place-voice.js",
+    "/ride-roads.js"
+  ],
+  "recordings": 66,
+  "scope": "Local HTTP responses, audio MIME types and byte-range delivery; not browser autoplay or listening verification."
+}

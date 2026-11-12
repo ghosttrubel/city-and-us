@@ -1,0 +1,55 @@
+{
+  "build": "0.8.1-visual.1 (10)",
+  "date": "2026-10-31T12:12:27.510Z",
+  "scope": "Automated source/CPU/test-double checks; no browser or physical-device acceptance.",
+  "results": [
+    {
+      "name": "syntax",
+      "exit": 0
+    },
+    {
+      "name": "garment-geometry",
+      "exit": 0
+    },
+    {
+      "name": "interaction",
+      "exit": 0
+    },
+    {
+      "name": "physical-state",
+      "exit": 0
+    },
+    {
+      "name": "physical-journey",
+      "exit": 0
+    },
+    {
+      "name": "portrait-journey",
+      "exit": 0
+    },
+    {
+      "name": "portrait-quality",
+      "exit": 0
+    },
+    {
+      "name": "street-service",
+      "exit": 0
+    },
+    {
+      "name": "mobile-startup",
+      "exit": 0
+    },
+    {
+      "name": "mobile-lifecycle",
+      "exit": 0
+    },
+    {
+      "name": "wardrobe",
+      "exit": 0
+    },
+    {
+      "name": "decor",
+      "exit": 0
+    }
+  ]
+}

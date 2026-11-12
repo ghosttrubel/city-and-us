@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "scope": "Shipped game and synthetic joystick/UI with DOM, WebGL and storage doubles; not live screenshots.",
+  "steps": [
+    "Browsed produce, cancelled checkout, confirmed groceries twice with one charge, and reloaded the receipt state.",
+    "Booked/cancelled/refunded at the attendant desk, then boarded the danfo, reloaded in transit and alighted at Provisions with the courier parcel intact.",
+    "Completed the original courier handover exactly once and returned home; colours, ownership, decor and main story/identity stayed unchanged."
+  ]
+}

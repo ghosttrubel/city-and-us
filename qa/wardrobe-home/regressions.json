@@ -1,0 +1,61 @@
+[
+  {
+    "test": "verify-decor.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-life.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-neighbourhood.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-navigation.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-review.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-review-gameplay.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-corrections.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-visuals.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-gameplay.mjs",
+    "code": 0
+  },
+  {
+    "test": "verify-wardrobe-home.mjs",
+    "code": 0
+  },
+  {
+    "test": "npm run check",
+    "code": 0
+  },
+  {
+    "test": "verify-fashion.mjs — final hair/headwear/garment matrix",
+    "code": 0,
+    "report": "fashion.json"
+  },
+  {
+    "test": "verify-wardrobe-home.mjs — final body-customisation and furniture-camera checks",
+    "code": 0,
+    "report": "journey.json"
+  },
+  {
+    "test": "npm run check — final source",
+    "code": 0,
+    "report": "check-final.log"
+  }
+]

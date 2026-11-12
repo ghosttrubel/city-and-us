@@ -1,0 +1,1 @@
+This accelerated decode is superseded. Some frames have stale/corrupt buffers. Do not use it as review evidence. Use the corresponding -clean directory (or primary-detail for 1001988093) and ../REVIEW.md. Original source media is untouched.

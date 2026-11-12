@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checks": [
+    "Sequential player/attendant playback reuses one media element, with female/male variants and exact subtitles",
+    "Volume follows settings; mute/text-only stop and prevent audio without losing subtitles",
+    "New conversations invalidate stale audio callbacks; explicit Stop pauses playback",
+    "Rejected autoplay and stalled audio expose Replay with subtitles; replay restarts"
+  ],
+  "scope": "Audio API doubles; not listening review or real browser autoplay verification."
+}

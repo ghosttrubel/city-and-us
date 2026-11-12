@@ -1,0 +1,48 @@
+{
+  "scope": "LAN HTTP delivery check, not device/browser rendering",
+  "url": "http://10.126.70.116:3000/?review=daily",
+  "health": [
+    {
+      "path": "/?review=daily",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 6259
+    },
+    {
+      "path": "/game.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 76380
+    },
+    {
+      "path": "/mobile-runtime.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 12621
+    },
+    {
+      "path": "/destinations-state.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 5788
+    },
+    {
+      "path": "/destination-interiors.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 4050
+    },
+    {
+      "path": "/destination-play.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 7680
+    },
+    {
+      "path": "/public-names.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 1555
+    }
+  ]
+}

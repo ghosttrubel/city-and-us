@@ -1,0 +1,17 @@
+{
+  "scope": "Offline software renders of current scene meshes/poses, not browser or phone screenshots.",
+  "frames": [
+    {
+      "name": "../../../qa/phone-fixes/cooked-at-stove.png",
+      "triangles": 12442
+    },
+    {
+      "name": "../../../qa/phone-fixes/visible-bite.png",
+      "triangles": 12198
+    },
+    {
+      "name": "../../../qa/phone-fixes/preparation.png",
+      "triangles": 12442
+    }
+  ]
+}

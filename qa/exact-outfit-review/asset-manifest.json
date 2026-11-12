@@ -1,0 +1,74 @@
+{
+  "file": "dist/assets/garments/Square_Denim_Review.glb",
+  "bytes": 1218968,
+  "parts": [
+    {
+      "name": "square-neck-top-continuous-shoulders",
+      "parts": [
+        "square-neck-top-continuous-shoulders"
+      ],
+      "vertices": 2613,
+      "triangles": 4506
+    },
+    {
+      "name": "washed-black-wide-leg-jeans",
+      "parts": [
+        "washed-black-wide-leg-jeans",
+        "belt-loop",
+        "belt-loop",
+        "belt-loop",
+        "belt-loop"
+      ],
+      "vertices": 4366,
+      "triangles": 8038
+    },
+    {
+      "name": "neck-binding-cuffs-and-top-hem",
+      "parts": [
+        "neck-binding-cuffs-and-top-hem",
+        "curved-front-pocket-binding",
+        "curved-front-pocket-binding"
+      ],
+      "vertices": 1068,
+      "triangles": 1452
+    },
+    {
+      "name": "waistband-stitching",
+      "parts": [
+        "waistband-stitching",
+        "waistband-stitching",
+        "waistband-stitching",
+        "waistband-stitching",
+        "curved-pocket-stitches",
+        "outer-leg-seam",
+        "inseam",
+        "stitched-wide-hem",
+        "stitched-wide-hem",
+        "curved-pocket-stitches",
+        "outer-leg-seam",
+        "inseam",
+        "stitched-wide-hem",
+        "stitched-wide-hem",
+        "stitched-fly",
+        "coin-pocket"
+      ],
+      "vertices": 7638,
+      "triangles": 12570
+    },
+    {
+      "name": "waist-metal-button",
+      "parts": [
+        "waist-metal-button"
+      ],
+      "vertices": 68,
+      "triangles": 64
+    }
+  ],
+  "reference": {
+    "reference": "Female_Wardrobe_Collection/01_Casual_Streetwear/Denim_and_Everyday_Tops.png",
+    "position": "rightmost column",
+    "status": "unapproved single-outfit review candidate",
+    "back": "plain matching construction inferred with owner permission"
+  },
+  "sha256": "b4ae5dadc5980431512fd3f0a2a9c3b5f534c25101f47fbb93ac83cf91d9a1c8"
+}

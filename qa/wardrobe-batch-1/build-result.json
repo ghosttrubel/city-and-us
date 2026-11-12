@@ -1,0 +1,11 @@
+{
+  "build": "0.8.2-wardrobe.1 (11)",
+  "status": "source-ready-apk-blocked",
+  "reason": "AccessDeniedException: SDK platforms/android-36/android.jar",
+  "ordinaryTerminalCommand": "node tools/android-local-build.mjs --debug-only",
+  "existingApk": {
+    "versionCode": 10,
+    "sha256": "32a9d7cc9dfa8556f2df3c4e8b18f77d99994b05645923ac9ca9a0252590ee07"
+  },
+  "signingUnchanged": true
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "sequence": [
+    "Actual canvas touch-pointer selection hit the home facade; entry rejected away from the physical door; background building has no entry action.",
+    "Approached Bisi, greeted her, asked for a landmark direction and started the existing route.",
+    "Approached Ayo, followed the parcel-work branch, returned for a break question and ended with his distinct goodbye.",
+    "Accepted a visible customer order, reloaded preparation, visibly prepared/stirred/collected/served; background pause froze the shift; stale serve/reload paid once.",
+    "Cancelled the second order after preparation, ended the shift and watched both customers leave; reload preserves pay, wardrobe, furniture and resolution."
+  ],
+  "scope": "Actual game handlers, ray casting and synthetic touch/joystick with DOM/WebGL/storage doubles. Not real browser/device pixels, touch, animation quality or FPS."
+}

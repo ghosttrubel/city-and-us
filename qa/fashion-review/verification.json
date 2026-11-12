@@ -1,0 +1,58 @@
+{
+  "completedAt": "2026-10-26T11:52:40.246Z",
+  "status": "partial-visual-pass-asset-quality-blocked",
+  "syntax": {
+    "command": "npm run check",
+    "exitCode": 0
+  },
+  "wardrobeHome": {
+    "command": "npm run check:wardrobe-home",
+    "exitCode": 0,
+    "scope": "Synthetic UI/state/geometry; no user storage accessed"
+  },
+  "appearance": {
+    "command": "npm run check:fashion-review",
+    "exitCode": 0,
+    "scope": "Draft isolation, legacy skin, ownership/layout preservation and UV makeup reset"
+  },
+  "finalGeometry": {
+    "command": "node tools/verify-fashion.mjs",
+    "exitCode": 0,
+    "reason": "Rerun after correcting the natural garment neckline",
+    "scope": "CPU skeleton/geometry only; no aesthetic approval"
+  },
+  "softwareRendering": {
+    "before": 0,
+    "portraits": 0,
+    "thumbnails": 0,
+    "source": "Actual shipped models and UV maps; approximate software rasteriser"
+  },
+  "browser": {
+    "available": false,
+    "discovery": [],
+    "screenshots": 0,
+    "cssVerified": false
+  },
+  "device": {
+    "tested": false,
+    "touchVerified": false,
+    "androidPerformanceMeasured": false
+  },
+  "checkpoint": {
+    "path": "checkpoints/2026-10-26-before-fashion-review",
+    "files": 161,
+    "hashMismatches": 0
+  },
+  "retainedAssetAndLicenseChanges": [],
+  "hosting": {
+    "project_id": "appgprj_6ad69f265ecc81918e0dd480bb25c496",
+    "newSiteCreated": false,
+    "deployed": false,
+    "blocker": "Existing source Git host could not be reached on port 443"
+  },
+  "costs": {
+    "assetPurchases": 0,
+    "paidServiceCommitments": 0
+  },
+  "note": "Historical regression scripts print 2026-10-25 internally; completedAt records this run. Test success is not a reference-quality claim."
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "suite": "verify-life",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-shops-phone",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-phone-media",
+    "exitCode": 0,
+    "initialExitCode": 1,
+    "finalLog": "media-final.log",
+    "retestNote": "Corrected test-harness timers for HTTP and allowed Windows native resources to close naturally. Final standalone process exited 0."
+  },
+  {
+    "suite": "verify-road-vehicles",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-decor",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-physical-home-state",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-physical-home",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-daily-life",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-street-service",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-mobile-lifecycle",
+    "exitCode": 0
+  },
+  {
+    "suite": "verify-wardrobe-replacement",
+    "exitCode": 0
+  }
+]

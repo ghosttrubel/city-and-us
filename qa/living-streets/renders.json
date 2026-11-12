@@ -1,0 +1,21 @@
+{
+  "scope": "Software renders of retained game meshes and procedural poses. No CSS, browser WebGL, audio, touch or phone acceptance.",
+  "frames": [
+    {
+      "name": "../../../qa/living-streets/plated-carry.png",
+      "triangles": 12201
+    },
+    {
+      "name": "../../../qa/living-streets/visible-bite.png",
+      "triangles": 12198
+    },
+    {
+      "name": "../../../qa/living-streets/preparation.png",
+      "triangles": 12442
+    },
+    {
+      "name": "../../../qa/living-streets/handover-pose.png",
+      "triangles": 23235
+    }
+  ]
+}

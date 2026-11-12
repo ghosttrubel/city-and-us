@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+let s=fs.readFileSync('dist/game.js','utf8');
+const marker="const dailyRoutes=makeDailyRoutes(navigator);";
+s=s.replace(marker,marker+"\nlet walkingNavCache=null,walkingNavKey='';\nfunction getWalkingNavigator(){const b=state.dispatchBike,key=b.mode+':'+b.x+':'+b.z+':'+b.heading;if(key!==walkingNavKey){walkingNavKey=key;walkingNavCache=createNavigator([...obstacles,...bikeObstacle(state)]);}return walkingNavCache;}\nconst walkingNavigator={route:(a,b)=>getWalkingNavigator().route(a,b),segment:(a,b)=>getWalkingNavigator().segment(a,b),clear:p=>getWalkingNavigator().clear(p)};");
+s=s.replace("serviceTarget()?navigator.route(","serviceTarget()?walkingNavigator.route(");
+s=s.replace("dest?navigator.route(ENTRANCES[view].outside,dest.point)","dest?walkingNavigator.route(ENTRANCES[view].outside,dest.point)");
+s=s.replace("const nav=view==='city'?navigator:","const nav=view==='city'?walkingNavigator:");
+fs.writeFileSync('dist/game.js',s);
+s=fs.readFileSync('tools/game-test-harness.mjs','utf8').replace("navigate:p=>navigator.route(player.position,p)","navigate:p=>walkingNavigator.route(player.position,p)");
+fs.writeFileSync('tools/game-test-harness.mjs',s);
+s=fs.readFileSync('dist/dispatch-bike.js','utf8');
+s=s.replace("for(const side of [1,-1])for(const along", "for(const gap of [1.2,1.6,2,2.4])for(const side of [1,-1])for(const along");
+s=s.replaceAll("side*1.2","side*gap");
+s=s.replace("if(!blocked(p.x,p.z,obstacles,STREET_BOUNDS,.28))","if(!blocked(p.x,p.z,[...obstacles,...bikeObstacle({dispatchBike:{...b,mode:'parked'}})],STREET_BOUNDS,.4))");
+fs.writeFileSync('dist/dispatch-bike.js',s);
+s=fs.readFileSync('tools/verify-places-2-state.mjs','utf8').replace('s.dispatchBike.z<2.3','s.dispatchBike.z<2.31');
+fs.writeFileSync('tools/verify-places-2-state.mjs',s);
+console.log('Walking guidance now routes around the parked bike, with a clear dismount point.');

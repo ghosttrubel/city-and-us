@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-08T18:20:27.227Z",
+  "status": "passed",
+  "commands": [
+    "npm run check",
+    "npm run check:places-vehicles",
+    "npm run check:daily-life",
+    "npm run check:mobile",
+    "npm run check:physical-home",
+    "npm run check:street-service"
+  ],
+  "finalFocusedChecks": [
+    "node tools/verify-road-vehicles.mjs",
+    "node tools/verify-places-3-game.mjs",
+    "node tools/verify-places-preservation.mjs"
+  ],
+  "sources": {
+    "dist/game.js": "70087e949f06c1ffdfa5152a129d71210e747705d7f10d89e0de559df273c2a1",
+    "dist/life.js": "46a67d9cefb68a3248e8e0062628114bd1f7a6c6cd7f05fa2acab81dfe0457d5",
+    "dist/road-vehicles.js": "014e874b1aa221a4576c9d3c4bd825d9647ed84de61d6ff5980e743c496d07ef",
+    "dist/vehicle-controls.js": "63355c1b98fe8de95caef49a08783f6fc405c91fdbdbbd9c0e79d9d48e051508",
+    "dist/road-vehicle-world.js": "ee44f2132016d80d9949021ee5f7c63eff9718917a5c116e621ac86e1bed424a",
+    "dist/dispatch-bike.js": "52c280cc69126812b4e712fc541896c15e755807eb4a825f4267ba7b23bba5ea",
+    "dist/provisions.js": "25275029ff910bf621de626f5911b8f91d1757ef80f4b6cfd9674beac1430234",
+    "dist/provisions-ui.js": "e8e6f03bca84dbddb2ccb96649bd8d5cff0028ea77630ec2fc81a5f3993b622f",
+    "dist/place-voice.js": "d3449db6c1de3664414f2b4a5dae15442c1c6644f24f4f9ae844ecaf785f1b57",
+    "dist/dialogue.js": "08ba3a0ad5ae81c242bd98e56ea7d05d09aca81a90ace8e9aa97dce44e68dfc0",
+    "dist/daily-ui.js": "e28951eebfc49416775e34946fa75b6841176bb1febe978141c2d49114afcf1f",
+    "dist/daily-life.js": "84c421593a9e2304bdfb6c0efb4df9ee41cee54fb6e4a03076b265cbafe979af",
+    "dist/neighbourhood.js": "3b66737e6706927a51331457529a166465303c3fe558d6ae90f7f749b7ff2807",
+    "dist/food-service.js": "35b420827c9d847375cebceb13ac3fbeced90d58df41696e008e869cc1adaec4",
+    "dist/service-experience.js": "4cef30df56872bee4e2ffd67777e08b81606bfaa425b290066054c4dba5bc470",
+    "dist/road-ui.css": "503e9c5f2acf555537739c5a00eef870b08e80bca39387fcbd0d1f72830e16d4"
+  },
+  "limits": [
+    "DOM/WebGL/storage doubles and geometry checks; no live browser/device verification.",
+    "Generic voice assets retained, playback disabled in street/service controllers. Authentic Nigerian voices pending.",
+    "No deployment or APK build."
+  ],
+  "review": "http://localhost:3000/?review=places"
+}

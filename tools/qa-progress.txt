@@ -1,0 +1,65 @@
+CURRENT — 27 October 2026: connected destinations implemented for bounded review. Read qa/connected-city/REPORT.md for exact statuses: reused Mainland/VI, Ajah connection; hotel rest, physical eatery takeaway, club beats and beach clean-up. Religious/police/government-residence sites are mapped CLOSED. Portrait blocker removed; scene/utility menus visible, simulation pauses. Nearby NPC names/privacy implemented locally, no fake online players. Beachwear missing dedicated swim items/filter. Next milestone ONLY: saved action-led tutorial, interviews/employment and fictional economy review. Full shared systems/ageing/server-time/enforcement/travel remain planned. 209-file pre-city checkpoint preserved. Automated checks and software renders are separate from pending device/browser testing.
+
+CURRENT — Connected destinations requested. Preserve 209-file before-connected-city checkpoint. Deliver compact reused Mainland/VI + Ajah coast expansion and nonblocking portrait notice first; tutorial/interviews/economy are NEXT, accounts/social/ageing/server-time/enforcement/international travel are PLANNED. Full merged requirements are at the top of ROADMAP.md.
+
+CURRENT — 26 October 2026: home completed/reported first, then bounded street and Mama T service implementation. Read qa/physical-home/REPORT.md and qa/street-life/REPORT.md. Required syntax, physical-home, street/service and daily delivery/ride regressions pass. Recoverable checkpoints: before-physical-home (193 files), home-before-street (201 files, hashes verified). All ownership and accepted character assets preserved. Software renders only; no available browser sessions and new iPhone/Android touch/audio/FPS verification remains pending. Phone: http://10.126.70.116:3000/?review=daily . No purchases/deployment/new Site. Native Android, police and financial-crime agency remain roadmap-only. Original idle/walk asset clips plus procedural activities; wrist/grip/clothing art limitations documented.
+
+CURRENT — 26 October 2026: physical home implementation and automated acceptance complete; actual browser/device verification pending. Read qa/physical-home/REPORT.md. Home state, handler journey, mobile lifecycle and npm run check passed. Original procedural activity actions, not mocap; wrist/transitions remain art limitations. No available browser sessions. Preserved checkpoint before physical home and all ownership/mobile settings. Next authorized work: street comparison/routines/selection and Mama T customer-flow job; confirmed idle/no-customer gap recorded in ROADMAP.
+
+CURRENT — Owner-confirmed iPhone works; mobile resolution comparison, 26 October 2026.
+
+The owner confirms startup/rendering and controls work on iPhone 11. Preserve that fix. World blur is the current concern. Added independently saved Low 1×, Balanced 1.25×, Sharp 1.5× buffer resolution, mobile pixel budget, no full-DPR auto upgrade and no mobile shadows/AA. Text/SVG UI unchanged. Phone → Settings (or Needs) selects resolution; Settings measures a 15-second walk after two-second warm-up, reporting frame intervals/FPS/slow frames. Changing viewport/resolution, pause, menus or locations cancels the sample. Actual new iPhone clarity/performance remains pending owner comparison; no measured phone FPS is claimed.
+
+Link http://10.126.70.116:3000/?review=daily . Report qa/resolution/REPORT.md. Owner-confirmed checkpoint checkpoints/2026-10-26-working-iphone-before-resolution/ has 191 hashed files. Character assets untouched; saves/ownership/layout/mobile startup/landscape controls retained. No Android project, purchases or deployment. Older notes below are historical and do not override this confirmation.
+
+CURRENT — Mobile Safari startup and landscape-only web, 26 October 2026.
+
+Priority is the reported blank iPhone world, separately from landscape layout. Reproduced old newPlayerId failure when crypto.randomUUID is absent on LAN HTTP; replaced with getRandomValues, preserving existing IDs/keys. Classic mobile-runtime.js starts before game imports and reports errors/assets/progress/WebGL/shaders/context loss/canvas metrics, Retry and a bounded copyable log. Do not infer actual iPhone success from tests or frame counts.
+
+Phones/tablets require landscape; portrait pauses simulation/input, resets held joystick/keys and resumes without catch-up. Visual viewport and safe-area layout, capped DPR, no mobile AA/shadows; saved graphics choice retained. Character and fashion assets untouched. Current Wi-Fi review: http://10.126.70.116:3000/?review=daily&diagnostics=1 . Full steps/results: qa/mobile-startup/REPORT.md. Actual browser/device verification pending owner confirmation; browser discovery returned no sessions. Host HTTP module/asset audit passed.
+
+Checkpoint checkpoints/2026-10-26-before-mobile-startup/ preserves 188 files. Old checkpoints and saved ownership/layout/daily-life flows retained. Owner confirmed no Android wrapper exists: DO NOT create one now. Record native packaging/landscape as later work only. No purchases, paid services or deployment.
+
+Historical notes below do not override this priority.
+
+CURRENT — Daily life and phone fulfilment, 26 October 2026.
+
+Owner accepts the current appearance sufficiently to continue. Defer replacement/polish; keep art issues in ROADMAP and qa/fashion-review/ASSET-PLAN.md. Do not resume the old art acceptance gate.
+
+Implemented local Food delivery (two Mama T meals, three entrances, physical courier and handover/storage/eating), one Ride service (three stops, physical pickup/boarding/travel/alighting and early stop), and playable cooking (chop/heat/stir/serve/pause). Needs, game-currency payments/refunds, new Tasks and saves connected. Full details and exact limits: qa/daily-life/REPORT.md. Local play http://localhost:3000/?review=daily (isolated save); main story http://localhost:3000/.
+
+Required npm run check, daily domain and actual-handler synthetic journey, life, existing gameplay and wardrobe/decor journey pass. Actual browser/device testing unavailable: browser discovery returned []. No new screenshots or device performance claims. Existing server and new modules return HTTP 200. Hosting attempt/status in qa/daily-life/hosting.json; do not call the earlier hosted version this build.
+
+Accepted-appearance checkpoint checkpoints/2026-10-26-before-daily-life/ (182 files) and earlier fashion checkpoint (161 files) hash-verified; 88 selected art/wardrobe/decor/license files unchanged. User browser storage untouched by isolated tests. Police and fictional Civic Financial Integrity Bureau recorded in ROADMAP only; no implementation. No purchases, paid services, new Site or unrelated city redesign.
+
+Historical notes below do not override this update.
+
+CURRENT — Character/fashion visual review, 26 October 2026. REFERENCE QUALITY NOT ACHIEVED.
+
+Read qa/fashion-review/REPORT.md, ASSET-PLAN.md and ROADMAP.md first. Local study: http://localhost:3000/fashion-review.html. Twelve natural skin swatches, neutral lighting, a bounded male/female collection using existing assets, narrower iro/senator silhouettes and corrected natural neckline, UV makeup study (not persistent, no lashes), headwear tuck notices. Broader categories stay in the roadmap. No placeholder items added.
+
+Checkpoint: checkpoints/2026-10-26-before-fashion-review/ (161 files, SHA-256 verified). User saves, purchases, inventory, named outfits and furniture preserved. Existing asset quality is a blocker; prefer MPFB/MakeHuman core CC0 assets and proper garment/hair authoring before expansion. Software comparisons are in qa/fashion-review/review.html; no actual browser/device verification was available. Existing Site identity recovered in .openai/hosting.json; publication failed on Git-host connectivity. No new Site, spend or deployment.
+
+The notes below are historical and do not override this priority.
+
+CURRENT — Focused corrections, 24 October 2026. VISUAL ACCEPTANCE PENDING.
+
+The owner rejected the last build. Pause features and district expansion. Read README, ROADMAP, all four owner reference notes, qa/corrections/REPORT.md and qa/VALIDATION.md.
+
+Checkpoint: checkpoints/2026-10-24-before-corrections/ (94 files + hashes/restore instructions). Main/review saves and source ownership preserved. No purchase, new Site or deployment.
+
+Implemented: authored two-sided hair shells and avatar cutaway exclusion; closer normal apartment camera and fitted overview; room/furniture construction, grain/weave, trim and toned-down point light; real doorway recesses, approach/open/walking threshold/covered switch/continued movement/same entrance; atomic transition saves; circular street-aligned route/facing/reroute minimap and world-derived expanded map. Existing districts only repaired, not expanded.
+
+Evidence: qa/corrections/review.html and REPORT.md. CPU mesh/SVG previews only. All selectable hair states rendered idle/walk/turn/cooking; 112 combinations/2,688 poses tested; 14 door timelines; 49 routes; actual game handler journey, save interruptions, finish/cancel and payment checks. See checks.json for exit results.
+
+Known limits: full reported hair disappearance was NOT reproduced live; confirmed FrontSide replacement of authored two-sided shells was fixed. Portrait whole-room view remains width-limited. Software previews approximate materials/lighting and do not establish visual quality. Browser discovery returned no sessions; no WebGL, real touch or Android performance acceptance. Do not call this visually accepted or advance the roadmap. Review URL: http://localhost:3000/?review=apartment after npm start.
+
+Preserve MIT/CC0 licenses. .openai/hosting.json and Git metadata absent; never create another Site for this checkout.
+
+PHONE REQUIREMENTS UPDATE — 24 October 2026
+Current repairs retain priority and visual acceptance remains pending. Visible title is now Phone; removed six disabled Soon icons, retaining the five existing working app screens. ROADMAP.md has the full Phone inventory/status matrix, polished customisable smartphone/distinct-screen requirements, playable mini-games, physical ride pickup/boarding/travel/alighting and restaurant pickup/delivery/receipt requirements. No Ride, Food, Games, social or government gameplay is claimed implemented. Future apps ship only with working gameplay and save/acceptance tests. Synced city-and-us-references/AGREED-PLAN.md. Small-change checkpoint: checkpoints/2026-10-24-before-phone-requirements/.
+Validation for phone update: npm run check and full verify-gameplay.mjs passed; see qa/phone-requirements/README.md. No new browser/device evidence or repair visual acceptance.
+
+FINAL VERIFICATION 26 October: npm run check, check:physical-home, check:street-service, check:daily-life, check:mobile and check:resolution all exit 0. Home/street/service software renders exit 0. Both source checkpoints verified unchanged. LAN URL confirmed HTTP 200. New device acceptance remains pending.
+
+FINAL connected-city checks: required syntax, destination state/routes and handler journey, portrait utility UI, beachwear audit, home/street/daily/mobile/resolution regressions all exit 0. Source checkpoint verified, LAN files HTTP 200. Software renders inspected; no browser sessions or new device claim. Reports in qa/connected-city.

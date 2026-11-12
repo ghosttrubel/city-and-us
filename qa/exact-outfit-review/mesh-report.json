@@ -1,0 +1,48 @@
+{
+  "scope": "Diagnostic software render of game geometry; not actual browser/game screenshot evidence.",
+  "meshes": [
+    {
+      "name": "square-denim-0",
+      "vertices": 2613,
+      "triangles": 4506
+    },
+    {
+      "name": "square-denim-1",
+      "vertices": 4366,
+      "triangles": 8038
+    },
+    {
+      "name": "square-denim-2",
+      "vertices": 1068,
+      "triangles": 1452
+    },
+    {
+      "name": "square-denim-3",
+      "vertices": 7638,
+      "triangles": 12570
+    },
+    {
+      "name": "square-denim-4",
+      "vertices": 68,
+      "triangles": 64
+    }
+  ],
+  "rows": [
+    {
+      "name": "../../../qa/exact-outfit-review/diagnostic-front.png",
+      "triangles": 36931
+    },
+    {
+      "name": "../../../qa/exact-outfit-review/diagnostic-side.png",
+      "triangles": 35762
+    },
+    {
+      "name": "../../../qa/exact-outfit-review/diagnostic-back.png",
+      "triangles": 35656
+    },
+    {
+      "name": "../../../qa/exact-outfit-review/diagnostic-seated.png",
+      "triangles": 36823
+    }
+  ]
+}

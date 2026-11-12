@@ -1,0 +1,4 @@
+import fs from 'node:fs/promises';
+let s=await fs.readFile('dist/road-vehicles.js','utf8');s=s.replace("let target=gas?profile.maxSpeed*gas:brake?-profile.reverseSpeed*brake:0;","let target=brake?(gas?0:-profile.reverseSpeed*brake):gas?profile.maxSpeed*gas:0;");await fs.writeFile('dist/road-vehicles.js',s);
+let test=await fs.readFile('tools/verify-road-vehicles.mjs','utf8');test=test.replace("assert.equal(tuned.speed,2);assert(V.validRoadVehicle(tuned));","assert.equal(tuned.speed,2);for(let i=0;i<30;i++)V.stepRoadVehicle(configured,tuned,{accelerator:1,brake:1},.05,[]);assert.equal(tuned.speed,0,'Brake must override simultaneous accelerator');assert(V.validRoadVehicle(tuned));");await fs.writeFile('tools/verify-road-vehicles.mjs',test);
+console.log('Brake priority verified by regression case.');

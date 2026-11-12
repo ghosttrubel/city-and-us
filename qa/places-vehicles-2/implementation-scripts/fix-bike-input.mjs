@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+let s=fs.readFileSync('dist/game.js','utf8'),a=s.indexOf('function contextAction(){'),b=s.indexOf("\n if(view==='city'&&state.daily.order",a),part=s.slice(a,b),lines=part.split('\n');
+const mounted=lines.find(l=>l.includes("id:'bike-dismount'")),parked=lines.find(l=>l.includes("id:'bike-mount'")),passenger=lines.find(l=>l.includes("if(passenger(state))")),board=lines.find(l=>l.includes("id:'ride-board'"));
+if(!mounted||!parked||!passenger||!board)throw Error('context markers');
+const parkedSafe=parked.replace("near(player.position,state.dispatchBike,1.9)","near(player.position,state.dispatchBike,1.9)&&!Object.values(ENTRANCES).some(e=>near(player.position,e.outside,1.4)&&Math.hypot(player.position.x-e.outside.x,player.position.z-e.outside.z)<Math.hypot(player.position.x-state.dispatchBike.x,player.position.z-state.dispatchBike.z))");
+s=s.slice(0,a)+['function contextAction(){',' if(!freeControl())return null;',passenger,mounted,board,parkedSafe].join('\n')+s.slice(b);
+s=s.replace("function deliveryConversation(){","const startStreetDialogue=dialogue.start;\ndialogue.start=config=>{if(bikeMounted(state)){toast('Dismount before talking here.');return;}placeVoice.stop();voiceHUD.hidden=true;return startStreetDialogue(config);};\nfunction deliveryConversation(){");
+s=s.replace("Collect a parcel at Dispatch. Carry it to the provisions shop and hand it over at the counter.","Collect a parcel at Dispatch. Use the red work bike outside, or walk to Provisions. Stop and dismount before taking the parcel inside.");
+s=s.replace("Bring the parcel to the provisions counter to get paid.","Bring the parcel to the provisions counter to get paid. Return the work bike to Dispatch, and go home to finish your round.");
+fs.writeFileSync('dist/game.js',s);
+s=fs.readFileSync('tools/verify-dispatch-bike-journey.mjs','utf8').replace("space,stickEvent,worldRenderer","space,stickEvent,worldRenderer,nav");
+s=s.replace("step('Collected once", "nav('phone');assert(el('action').disabled);const beforeMenu={...globalThis.__livingQa().state.dispatchBike};frames(30);assert.deepEqual(globalThis.__livingQa().state.dispatchBike,beforeMenu);click('close');\nstep('Collected once");
+fs.writeFileSync('tools/verify-dispatch-bike-journey.mjs',s);
+console.log('Bike actions respect menus/pauses, passenger alighting and nearby entrances; overlapping conversations stop cleanly.');

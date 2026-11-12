@@ -1,0 +1,12 @@
+import {releaseEnvironment} from './android-signing.mjs';
+import {join} from 'node:path';
+// Read-only metadata and a boolean DPAPI check; no secrets printed.
+import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const command="# Read-only DPAPI/account diagnosis. Never outputs plaintext or encrypted passwords.\n$ErrorActionPreference = 'Stop'\n$cityRoot = $env:CITY_SIGNING_ROOT\n$citySecretPath = Join-Path $cityRoot '.local-signing/password.dpapi'\n$cityIdentity = [Security.Principal.WindowsIdentity]::GetCurrent()\n$cityReport = [ordered]@{ account = $cityIdentity.Name; sid = $cityIdentity.User.Value; profile = $env:USERPROFILE; computer = $env:COMPUTERNAME; authentication = $cityIdentity.AuthenticationType; impersonation = [string]$cityIdentity.ImpersonationLevel; passwordFileExists = (Test-Path -LiteralPath $citySecretPath); fileOwner = $null; dpapiFormat = $false; decryptable = $false; failureType = $null }\ntry { $cityReport.fileOwner = (Get-Acl -LiteralPath $citySecretPath).Owner } catch { $cityReport.fileOwner = 'unavailable in this context' }\ntry {\n $cityEncrypted = [IO.File]::ReadAllText($citySecretPath).Trim()\n $cityReport.dpapiFormat = $cityEncrypted.StartsWith('01000000d08c9ddf0115d1118c7a00c04fc297eb')\n $citySecure = ConvertTo-SecureString -String $cityEncrypted -ErrorAction Stop\n $cityReport.decryptable = $citySecure.Length -gt 0\n} catch { $cityReport.failureType = $_.Exception.GetType().FullName }\nfinally { if ($citySecure) { $citySecure.Dispose() }; $cityEncrypted = $null }\n$cityReport | ConvertTo-Json\n";
+const result=spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-Command',command],{encoding:'utf8',windowsHide:true,env:{...process.env,CITY_SIGNING_ROOT:root}});
+if(result.status!==0){console.error('Signing context diagnosis could not run. No signing files changed.');process.exit(1);}
+console.log(result.stdout.trim());
+
+if(process.argv.includes('--validate-key')){try{const env=releaseEnvironment(root),java=join(env.JAVA_HOME||'C:/Program Files/Android/Android Studio/jbr','bin/java.exe'),checked=spawnSync(java,[join(root,'tools/android/SigningCheck.java')],{encoding:'utf8',windowsHide:true,env});delete env.CITY_KEY_PASSWORD;if(checked.status!==0)throw Error();console.log('Retained private-key validation: '+checked.stdout.trim());}catch{console.error('Retained key/password/alias validation did not pass; no signing files changed.');process.exitCode=1;}}

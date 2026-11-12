@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-23",
+  "origin": "http://localhost:3000",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "mime": "text/css; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "game.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "camera.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "navigation.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "districts.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "neighbourhood.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "street.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "interior.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "life.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "controls.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "character.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "garments.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    },
+    {
+      "file": "vendor/three.module.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "matches": true
+    }
+  ],
+  "scope": "HTTP bytes and MIME only; not browser rendering."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "poses": [
+    "slim/idle",
+    "slim/walk",
+    "slim/sit",
+    "average/idle",
+    "average/walk",
+    "average/sit",
+    "athletic/idle",
+    "athletic/walk",
+    "athletic/sit",
+    "broad/idle",
+    "broad/walk",
+    "broad/sit"
+  ],
+  "framesPerPose": 12,
+  "maxEdge": 0.2121874914715434,
+  "independentRecolour": true,
+  "hardwareUnchanged": true,
+  "editableBlend": true,
+  "scope": "Rig/geometry/material regression only; not visual acceptance or phone performance"
+}

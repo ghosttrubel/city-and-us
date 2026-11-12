@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-26T14:04:10.698Z",
+  "syntaxExit": 0,
+  "resolutionChecks": "passed",
+  "startupChecks": "passed",
+  "mobileLifecycleChecks": "passed",
+  "http": "200 for comparison page and modules",
+  "priorIphone11Build": "owner confirmed working",
+  "newPhoneResolutionPerformance": "pending in-device measurement",
+  "assetsChanged": false,
+  "controlsModuleChanged": false
+}

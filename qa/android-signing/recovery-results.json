@@ -1,0 +1,10 @@
+{
+  "status": "password-recovered-and-protected-for-owner",
+  "account": "GHOSTTRUBEL\\SeniorBaby",
+  "sid": "S-1-5-21-2133158106-2309644057-4184904215-1001",
+  "alias": "city-and-us-upload",
+  "certificateSHA256": "8d464379876b377dbc1001ef79156a13051dc3fec4740c1e08ddf991d20f7c85",
+  "keystoreUnchanged": true,
+  "debugAPKUnchanged": true,
+  "originalEncryptedPasswordBackupRetained": true
+}

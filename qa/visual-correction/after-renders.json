@@ -1,0 +1,61 @@
+{
+  "scope": "CPU software rasterisation of current game meshes. No CSS, WebGL material acceptance, physical touch or device evidence.",
+  "records": [
+    {
+      "name": "../../../qa/visual-correction/after-female-idle.png",
+      "triangles": 11465
+    },
+    {
+      "name": "../../../qa/visual-correction/after-female-walk.png",
+      "triangles": 11479
+    },
+    {
+      "name": "../../../qa/visual-correction/after-female-seated.png",
+      "triangles": 11475
+    },
+    {
+      "name": "../../../qa/visual-correction/after-female-cook.png",
+      "triangles": 11549
+    },
+    {
+      "name": "../../../qa/visual-correction/after-male-idle.png",
+      "triangles": 9551
+    },
+    {
+      "name": "../../../qa/visual-correction/after-male-walk.png",
+      "triangles": 9469
+    },
+    {
+      "name": "../../../qa/visual-correction/after-male-seated.png",
+      "triangles": 9514
+    },
+    {
+      "name": "../../../qa/visual-correction/after-male-cook.png",
+      "triangles": 9347
+    },
+    {
+      "name": "../../../qa/visual-correction/after-legacy-dress-idle.png",
+      "triangles": 12989
+    },
+    {
+      "name": "../../../qa/visual-correction/after-legacy-dress-walk.png",
+      "triangles": 13014
+    },
+    {
+      "name": "../../../qa/visual-correction/after-legacy-dress-seated.png",
+      "triangles": 13046
+    },
+    {
+      "name": "../../../qa/visual-correction/after-home-overview.png",
+      "triangles": 8693
+    },
+    {
+      "name": "../../../qa/visual-correction/after-home-follow.png",
+      "triangles": 12453
+    },
+    {
+      "name": "../../../qa/visual-correction/after-mama-t.png",
+      "triangles": 14759
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+import * as T from './vendor/three.module.js';
+import {CROWD_LIMIT} from './environment-state.js';
+import {BUILDINGS,KIOSKS,ENTRANCES,near} from './neighbourhood.js';
+import {animateCharacter} from './character.js';
+import {aimHand} from './home-motion.js';
+import {streetGroundHeight} from './street.js';
+export function createStreetLife({city,npcs,navigator,player,location,guide,enter,venue,toast,stopInput,selectOther,onTalk,graphics=()=>'battery'}){
+ const card=document.getElementById('street-card');let selected=null,clock=0;
+ const routines=[
+ {id:'bisi',name:'Bisi',purpose:'Walking from home to Provisions',stops:[{...ENTRANCES.home.outside},{...ENTRANCES.shop.outside}]},
+ {id:'ayo',name:'Ayo',purpose:'Taking a dispatch break',stops:[{x:6.7,z:-17},{x:6.7,z:-2}]},
+ {id:'sade',name:'Sade',purpose:'Checking the market produce',stops:[{x:-12,z:-4.3},{x:-24,z:-4.3}]},
+ {id:'kunle',name:'Kunle',purpose:'Walking to the garden',stops:[{x:22,z:20},{x:28,z:33}]},
+ {id:'zainab',name:'Zainab',purpose:'Returning from provisions',stops:[{x:6.8,z:22},{x:6.8,z:32}]},
+ {id:'emeka',name:'Emeka',purpose:'Stretching on a work break',stops:[{x:-6.8,z:-24},{x:-6.8,z:-34}]}
+ ];
+ const people=npcs.map((model,i)=>({...routines[i],model,stop:0,path:[],node:0,wait:3+i*1.7,wave:0,idleGesture:4+i,activity:'idle'}));
+ for(const p of people){p.model.position.set(p.stops[0].x,.17,p.stops[0].z);p.model.userData.selection={kind:'person',id:p.id};}
+ function hide(){selected=null;card.classList.add('hidden');card.innerHTML='';}
+ function show(html){card.innerHTML='<button id="street-close" aria-label="Close selection">×</button>'+html;card.classList.remove('hidden');document.getElementById('street-close').onclick=hide;stopInput();}
+ function talk(id){const p=people.find(p=>p.id===id);if(!p||!p.model.visible||location()!=='city'||!near(player().position,p.model.position,2.2)){toast('Approach this person to talk.');return;}selected={kind:'person',id,chat:true};card.classList.add('hidden');stopInput();onTalk?.(p);}
+ function select(value){if(value.kind==='customer'){selectOther?.(value);return;}selected=value;if(value.kind==='person'){const p=people.find(p=>p.id===value.id);if(!p)return;if(!['bisi','ayo'].includes(p.id)){show('<strong>'+p.name+'</strong><small>'+p.purpose+'</small><p>Busy with their day.</p>');return;}show('<strong>'+p.name+'</strong><small>'+p.purpose+'</small><button id="selected-talk">Talk nearby</button>');document.getElementById('selected-talk').onclick=()=>talk(p.id);return;}
+ const b=[...BUILDINGS,...KIOSKS].find(b=>b.id===value.id);if(!b)return;const e=ENTRANCES[b.id],outdoor=['food','clinic'].includes(b.id);show('<strong>'+b.name+'</strong><small>'+(e?'Enterable · approach the physical front door':outdoor?'Outdoor service · approach the counter':b.planned?'Planned site · no interior or visits yet':'Background building · no public entrance')+'</small>'+(e?'<button id="selected-route">Show route to door</button><button id="selected-enter">Enter nearby</button>':outdoor?'<button id="selected-service">Use service nearby</button>':b.planned?'<button id="selected-site-route">Route to planned site</button>':''));if(e){document.getElementById('selected-route').onclick=()=>{guide(b.id);hide();};document.getElementById('selected-enter').onclick=()=>{if(!near(player().position,e.outside,1.4)){toast('Walk to the physical front door first.');return;}hide();enter(b.id);};}if(b.planned)document.getElementById('selected-site-route').onclick=()=>{guide(b.id);hide();};if(outdoor)document.getElementById('selected-service').onclick=()=>{hide();venue(b.id);};}
+ function pick(ray){const hits=ray.intersectObjects(city.children,true).filter(h=>{let o=h.object;while(o){if(!o.visible||o===player())return false;o=o.parent;}return (Array.isArray(h.object.material)?h.object.material[0]:h.object.material)?.opacity>.15;});const hit=hits[0];if(!hit){hide();return null;}let o=hit.object;while(o&&o!==city){if(o.userData.selection){select(o.userData.selection);return o.userData.selection;}o=o.parent;}const b=[...BUILDINGS,...KIOSKS].find(b=>Math.abs(hit.point.x-b.x)<b.w/2+.35&&Math.abs(hit.point.z-b.z)<b.d/2+.6&&hit.point.y>.4);if(b){const v={kind:'building',id:b.id};select(v);return v;}hide();return null;}
+ function context(){if(location()!=='city')return null;const p=people.filter(p=>['bisi','ayo'].includes(p.id)&&p.model.visible&&near(player().position,p.model.position,2)).sort((a,b)=>a.model.position.distanceTo(player().position)-b.model.position.distanceTo(player().position))[0];return p?{id:'talk-'+p.id,label:'Talk · '+p.name,run:()=>talk(p.id)}:null;}
+ return {people,pick,select,talk,context,hide,get selected(){return selected;},tick(dt,active){
+ clock+=dt;if(location()!=='city'){hide();people.forEach(p=>p.model.visible=false);return;}
+ for(const [index,p] of people.entries()){
+  const distance=p.model.position.distanceTo(player().position);p.model.visible=index<(CROWD_LIMIT[graphics()]||2)&&distance<24;if(index>=(CROWD_LIMIT[graphics()]||2))continue;
+  if(p.id==='bisi')p.purpose=p.wait>0?(p.stop===1?'Choosing provisions at the shop':'Putting groceries away at home'):(p.destination===1?'Walking to Provisions for groceries':'Returning home with groceries');
+  const chatting=selected?.kind==='person'&&selected.id===p.id&&near(player().position,p.model.position,3);let moving=false;p.activity=chatting?'talking':'idle';
+  if(active&&!chatting){if(p.wait>0)p.wait=Math.max(0,p.wait-dt);else{
+   if(!p.path.length){const stop=(p.stop+1)%p.stops.length,path=navigator.route(p.model.position,p.stops[stop]);if(path.length>=2){p.destination=stop;p.path=path;p.node=1;}else{p.wait=3;p.activity='route-blocked';}}
+   const goal=p.path[p.node];if(goal){const dx=goal.x-p.model.position.x,dz=goal.z-p.model.position.z,d=Math.hypot(dx,dz),step=Math.min(d,dt*.85),next={x:p.model.position.x+dx/(d||1)*step,z:p.model.position.z+dz/(d||1)*step};
+    const others=[player(),...people.filter(o=>o!==p&&o.model.visible).map(o=>o.model)];
+    const crowded=others.some(o=>{const before=Math.hypot(o.position.x-p.model.position.x,o.position.z-p.model.position.z),after=Math.hypot(o.position.x-next.x,o.position.z-next.z);return after<.85&&after<before;});
+    if(crowded)p.activity='yielding';else if(!navigator.segment(p.model.position,next)){p.path=[];p.wait=2;p.activity='route-blocked';}else if(d>.001){p.model.position.x=next.x;p.model.position.z=next.z;p.model.rotation.y=Math.atan2(dx,dz);moving=true;p.activity='walking';}
+    if(d<.08){p.node++;if(p.node>=p.path.length){p.stop=p.destination;p.path=[];p.wait=p.id==='bisi'?12:5+index*1.3;p.wave=index===2?2:0;}}
+   }
+  }}
+  if(selected?.id===p.id&&selected.kind==='person'&&selected.chat&&!near(player().position,p.model.position,3))hide();
+  if(!p.model.visible)continue;
+  p.model.position.y=streetGroundHeight(p.model.position.x,p.model.position.z);animateCharacter(p.model,dt,moving);
+  if(chatting)p.model.rotation.y=Math.atan2(player().position.x-p.model.position.x,player().position.z-p.model.position.z);
+  if(distance<1.4&&!chatting)p.model.userData.behaviour?.lookAt(()=>player().getWorldPosition(new T.Vector3()));else if(!chatting)p.model.userData.behaviour?.lookAt(null);
+  if(!moving&&!chatting&&active){p.idleGesture-=dt;if(p.idleGesture<=0){p.model.userData.behaviour?.greet();p.idleGesture=6+index;}}
+  if(p.wave>0){p.wave-=dt;aimHand(p.model,'r',p.model.getWorldPosition(new T.Vector3()).add(new T.Vector3(.4+Math.sin(clock*9)*.08,1.9,.1)));}
+ }
+ }};
+}

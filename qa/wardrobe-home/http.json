@@ -1,0 +1,287 @@
+{
+  "url": "http://localhost:3000",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 3509
+    },
+    {
+      "path": "/wardrobe-ui.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 10545
+    },
+    {
+      "path": "/decor-ui.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 9407
+    },
+    {
+      "path": "/furniture-meshes.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 4418
+    },
+    {
+      "path": "/assets/catalogue/accessory-chain.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 20533
+    },
+    {
+      "path": "/assets/catalogue/accessory-glasses.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 20090
+    },
+    {
+      "path": "/assets/catalogue/accessory-hoops.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 20017
+    },
+    {
+      "path": "/assets/catalogue/bottom-shorts.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16510
+    },
+    {
+      "path": "/assets/catalogue/bottom-slim.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16383
+    },
+    {
+      "path": "/assets/catalogue/bottom-wide.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 17679
+    },
+    {
+      "path": "/assets/catalogue/cap-fila.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 19282
+    },
+    {
+      "path": "/assets/catalogue/dress-day.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16578
+    },
+    {
+      "path": "/assets/catalogue/dress-evening.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 17802
+    },
+    {
+      "path": "/assets/catalogue/furniture-bookcase.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 3943
+    },
+    {
+      "path": "/assets/catalogue/furniture-cabinet.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 4616
+    },
+    {
+      "path": "/assets/catalogue/furniture-coffee-table.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2975
+    },
+    {
+      "path": "/assets/catalogue/furniture-floor-lamp.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 3112
+    },
+    {
+      "path": "/assets/catalogue/furniture-plant.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 9227
+    },
+    {
+      "path": "/assets/catalogue/furniture-round-table.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 4147
+    },
+    {
+      "path": "/assets/catalogue/furniture-rug.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2856
+    },
+    {
+      "path": "/assets/catalogue/furniture-runner.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2791
+    },
+    {
+      "path": "/assets/catalogue/hair-afro.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 21087
+    },
+    {
+      "path": "/assets/catalogue/hair-bald.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 18519
+    },
+    {
+      "path": "/assets/catalogue/hair-bob.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 19377
+    },
+    {
+      "path": "/assets/catalogue/hair-braids.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 20017
+    },
+    {
+      "path": "/assets/catalogue/hair-bun.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 19334
+    },
+    {
+      "path": "/assets/catalogue/hair-cornrows.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 19431
+    },
+    {
+      "path": "/assets/catalogue/hair-crown.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 20374
+    },
+    {
+      "path": "/assets/catalogue/hair-fade.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 18652
+    },
+    {
+      "path": "/assets/catalogue/hair-locs.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 19761
+    },
+    {
+      "path": "/assets/catalogue/hair-pixie.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 19553
+    },
+    {
+      "path": "/assets/catalogue/hair-puff.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 22241
+    },
+    {
+      "path": "/assets/catalogue/hair-wig.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 19302
+    },
+    {
+      "path": "/assets/catalogue/headwrap-gele.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 25268
+    },
+    {
+      "path": "/assets/catalogue/native-agbada.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 14961
+    },
+    {
+      "path": "/assets/catalogue/native-ankara.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 17551
+    },
+    {
+      "path": "/assets/catalogue/native-iro.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 17438
+    },
+    {
+      "path": "/assets/catalogue/native-senator.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16059
+    },
+    {
+      "path": "/assets/catalogue/outfit-casual.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16383
+    },
+    {
+      "path": "/assets/catalogue/outfit-track.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 17941
+    },
+    {
+      "path": "/assets/catalogue/outfit-varsity.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16699
+    },
+    {
+      "path": "/assets/catalogue/shoe-boots.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 14256
+    },
+    {
+      "path": "/assets/catalogue/shoe-loafers.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16850
+    },
+    {
+      "path": "/assets/catalogue/shoe-trainers.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 15535
+    },
+    {
+      "path": "/assets/catalogue/top-blazer.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16914
+    },
+    {
+      "path": "/assets/catalogue/top-tee.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16383
+    },
+    {
+      "path": "/assets/catalogue/top-wrap.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 16995
+    }
+  ]
+}

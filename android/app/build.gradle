@@ -1,0 +1,23 @@
+plugins { id 'com.android.application' }
+android {
+ namespace 'com.cityandus.lagosstreet'
+ compileSdk 36
+ defaultConfig { applicationId 'com.cityandus.lagosstreet'; minSdk 26; targetSdk 36; versionCode 11; versionName '0.8.2-wardrobe.1' }
+ buildFeatures { buildConfig true }
+ sourceSets { main { assets.srcDirs = ['../../dist'] } }
+ signingConfigs {
+  release {
+   if (System.getenv('CITY_KEYSTORE')) {
+    storeFile file(System.getenv('CITY_KEYSTORE'))
+    storePassword System.getenv('CITY_KEY_PASSWORD')
+    keyAlias 'city-and-us-upload'
+    keyPassword System.getenv('CITY_KEY_PASSWORD')
+   }
+  }
+ }
+ buildTypes {
+  debug { applicationIdSuffix '.debug'; versionNameSuffix '-debug' }
+  release { minifyEnabled false; signingConfig signingConfigs.release }
+ }
+ compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}

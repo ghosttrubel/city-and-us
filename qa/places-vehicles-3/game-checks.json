@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": [
+    "Actual shop UI: quantities, reviewed total, confirmed inventory and reload.",
+    "Actual car UI: cancellation closes without charging; confirmation closes with once-only payment; multi-pointer pressed feedback and independent cancellation/release; paid rental, entry, simultaneous steering/gas, reverse/brake, moving exit disabled, blur reset, safe exit, saved rental/parking.",
+    "Old mounted stuck-bike save recovered using the visible button; no money or parcel loss.",
+    "Actual recovered bike UI: remount, accelerator, stopped dismount, walking restored and parcel/parking retained on reload.",
+    "Recovered bike parcel explicitly handed over through the shop UI; payment is once only.",
+    "Compact text dialogue: minimise/expand, subtitles, choices, once-only choice effect, replay, close and pause. Generic voice playback remains disabled."
+  ],
+  "limits": "DOM/renderer doubles, not browser layout, touch device, WebGL or audio verification."
+}

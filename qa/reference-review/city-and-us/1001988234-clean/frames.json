@@ -1,0 +1,121 @@
+{
+  "clip": "C:\\Users\\SeniorBaby\\OneDrive\\Documents\\projects\\lagos-street\\city-and-us-references\\videos\\1001988234.mp4",
+  "method": "libVLC CPU video memory callbacks; no audio",
+  "duration_ms": 83196,
+  "decoded_frames": 2496,
+  "captures": [
+    {
+      "milliseconds": 0,
+      "file": "at-000000000.bmp"
+    },
+    {
+      "milliseconds": 3158,
+      "file": "at-000003158.bmp"
+    },
+    {
+      "milliseconds": 6658,
+      "file": "at-000006658.bmp"
+    },
+    {
+      "milliseconds": 10156,
+      "file": "at-000010156.bmp"
+    },
+    {
+      "milliseconds": 13159,
+      "file": "at-000013159.bmp"
+    },
+    {
+      "milliseconds": 16162,
+      "file": "at-000016162.bmp"
+    },
+    {
+      "milliseconds": 19413,
+      "file": "at-000019413.bmp"
+    },
+    {
+      "milliseconds": 22659,
+      "file": "at-000022659.bmp"
+    },
+    {
+      "milliseconds": 25902,
+      "file": "at-000025902.bmp"
+    },
+    {
+      "milliseconds": 28904,
+      "file": "at-000028904.bmp"
+    },
+    {
+      "milliseconds": 32150,
+      "file": "at-000032150.bmp"
+    },
+    {
+      "milliseconds": 35151,
+      "file": "at-000035151.bmp"
+    },
+    {
+      "milliseconds": 38405,
+      "file": "at-000038405.bmp"
+    },
+    {
+      "milliseconds": 41902,
+      "file": "at-000041902.bmp"
+    },
+    {
+      "milliseconds": 44903,
+      "file": "at-000044903.bmp"
+    },
+    {
+      "milliseconds": 48152,
+      "file": "at-000048152.bmp"
+    },
+    {
+      "milliseconds": 51152,
+      "file": "at-000051152.bmp"
+    },
+    {
+      "milliseconds": 54152,
+      "file": "at-000054152.bmp"
+    },
+    {
+      "milliseconds": 57402,
+      "file": "at-000057402.bmp"
+    },
+    {
+      "milliseconds": 60652,
+      "file": "at-000060652.bmp"
+    },
+    {
+      "milliseconds": 63906,
+      "file": "at-000063906.bmp"
+    },
+    {
+      "milliseconds": 67156,
+      "file": "at-000067156.bmp"
+    },
+    {
+      "milliseconds": 70652,
+      "file": "at-000070652.bmp"
+    },
+    {
+      "milliseconds": 73652,
+      "file": "at-000073652.bmp"
+    },
+    {
+      "milliseconds": 76652,
+      "file": "at-000076652.bmp"
+    },
+    {
+      "milliseconds": 79654,
+      "file": "at-000079654.bmp"
+    },
+    {
+      "milliseconds": 82761,
+      "file": "at-000082761.bmp"
+    },
+    {
+      "milliseconds": 83062,
+      "file": "at-000083062.bmp"
+    }
+  ],
+  "terminal_state": 6
+}

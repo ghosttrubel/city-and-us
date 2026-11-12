@@ -1,0 +1,254 @@
+// Logic regression checks using the shipped game module and actual 3D assets.
+// The small DOM and renderer doubles do NOT validate browser layout, pixels,
+// WebGL, touch dispatch or Android performance. No user save is read or written.
+import assert from 'node:assert/strict';
+import {readFile,readdir,mkdir,writeFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import * as T from '../dist/vendor/three.module.js';
+import {GLTFLoader} from '../dist/vendor/addons/GLTFLoader.js';
+import {loadCharacterAssets,appearanceDefaults} from '../dist/character.js';
+
+const root=new URL('../',import.meta.url),ids=new Set();
+const decode=s=>s.replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>').replaceAll('&quot;','"');
+class Element {
+ constructor(tag='div'){
+  this.tagName=tag.toUpperCase();this.children=[];this.parentNode=null;this.attributes={};this.dataset={};this.style={};this.listeners={};this.className='';this.value='';this.disabled=false;this.width=512;this.height=512;this.clientWidth=560;this.clientHeight=520;this._text='';
+  this.classList={contains:c=>this.className.split(/\s+/).includes(c),add:(...cs)=>{this.className=[...new Set([...this.className.split(/\s+/).filter(Boolean),...cs])].join(' ')},remove:(...cs)=>{this.className=this.className.split(/\s+/).filter(c=>!cs.includes(c)).join(' ')},toggle:(c,on)=>{const want=on??!this.classList.contains(c);want?this.classList.add(c):this.classList.remove(c);return want}};
+ }
+ appendChild(el){el.remove();this.children.push(el);el.parentNode=this;return el}
+ remove(){if(this.parentNode)this.parentNode.children=this.parentNode.children.filter(c=>c!==this);this.parentNode=null}
+ setAttribute(k,v){this.attributes[k]=v;if(k==='id'){this.id=v;ids.add(v)}else if(k==='class')this.className=v;else if(k.startsWith('data-'))this.dataset[k.slice(5)]=v;else this[k]=v}
+ getAttribute(k){return this.attributes[k]??null}
+ set innerHTML(html){this.children.forEach(c=>c.parentNode=null);this.children=[];this._text='';parse(html,this)}
+ get textContent(){return this._text+this.children.map(c=>c.textContent).join('')}
+ set textContent(s){this.children.forEach(c=>c.parentNode=null);this.children=[];this._text=String(s)}
+ addEventListener(type,cb){(this.listeners[type]??=[]).push(cb)}
+ dispatch(type,init={}){const e={target:this,preventDefault(){},...init};this['on'+type]?.(e);for(const cb of this.listeners[type]??[])cb(e)}
+ click(){if(this.disabled)return;if(this.tagName==='A')lastDownload={href:this.href,download:this.download};this.dispatch('click')}
+ focus(){doc.activeElement=this}
+ setPointerCapture(){}
+ getContext(){return context}
+ querySelectorAll(selector){return findAll(this,el=>selector==='nav button'?el.tagName==='BUTTON'&&el.parentNode?.tagName==='NAV':selector==='[data-job]'?el.dataset.job!==undefined:selector==='button, input, select, [tabindex]'?['BUTTON','INPUT','SELECT'].includes(el.tagName)||el.attributes.tabindex!==undefined:false)}
+}
+const context=new Proxy({createLinearGradient:()=>({addColorStop(){}}),measureText:t=>({width:t.length*8})},{get:(o,k)=>o[k]??(()=>{}),set:(o,k,v)=>(o[k]=v,true)});
+function parse(html,parent){
+ const stack=[parent],token=/<\/([a-z][\w-]*)\s*>|<([a-z][\w-]*)([^>]*?)>|([^<]+)/gi;
+ for(const m of html.matchAll(token)){
+  if(m[1]){if(stack.length>1)stack.pop();continue}
+  if(m[2]){
+   const el=new Element(m[2]);
+   for(const a of m[3].matchAll(/([\w-]+)(?:="([^"]*)"|'([^']*)'|=([^\s>]+))?/g))el.setAttribute(a[1],decode(a[2]??a[3]??a[4]??''));
+   stack.at(-1).appendChild(el);
+   if(!['INPUT','IMG','BR','HR','META','LINK','AREA','SOURCE'].includes(el.tagName))stack.push(el);
+  }else if(m[4])stack.at(-1)._text+=decode(m[4]);
+ }
+ for(const select of findAll(parent,e=>e.tagName==='SELECT'))select.value=select.children.find(c=>c.tagName==='OPTION')?.value??'';
+}
+function findAll(parent,predicate){return parent.children.flatMap(el=>[...(predicate(el)?[el]:[]),...findAll(el,predicate)])}
+let doc,raf=[],clock=1000,timers=new Map(),timerId=0,events={},renderers=[],lastDownload,reloads=0,bootNumber=0;
+const storage=new Map();
+function resetDom(html){
+ doc=new Element('document');parse(html,doc);
+ doc.createElement=tag=>new Element(tag);doc.getElementById=id=>findAll(doc,e=>e.id===id)[0]??null;
+ globalThis.document=doc;globalThis.self=globalThis;
+ globalThis.innerWidth=1280;globalThis.innerHeight=900;globalThis.devicePixelRatio=1;
+ globalThis.localStorage={getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)};
+ globalThis.location={reload(){reloads++}};
+ globalThis.requestAnimationFrame=cb=>(raf.push(cb),raf.length);
+ globalThis.addEventListener=(type,cb)=>(events[type]??=[]).push(cb);
+}
+class RendererDouble{
+ constructor(){this.domElement=new Element('canvas');this.shadowMap={};this.ratio=1;this.disposed=false;renderers.push(this)}
+ setPixelRatio(n){this.ratio=n}
+ getPixelRatio(){return this.ratio}
+ setSize(w,h){this.domElement.width=Math.round(w*this.ratio);this.domElement.height=Math.round(h*this.ratio)}
+ render(scene,camera){this.scene=scene;this.camera=camera;scene.updateMatrixWorld(true);camera.updateMatrixWorld(true);this.renders=(this.renders??0)+1}
+ dispose(){this.disposed=true}
+ forceContextLoss(){this.contextLost=true}
+}
+globalThis.__gameQaRenderer=RendererDouble;
+const html=await readFile(new URL('../dist/index.html',import.meta.url),'utf8');
+resetDom(html);
+globalThis.ProgressEvent=class {constructor(type,init){this.type=type;Object.assign(this,init)}};
+globalThis.createImageBitmap=async()=>({width:512,height:512,close(){}});
+const nativeFetch=globalThis.fetch;
+globalThis.fetch=async(input,init)=>{
+ const url=typeof input==='string'?input:input.url||String(input);
+ if(url.startsWith('file:')){const bytes=await readFile(fileURLToPath(url));return new Response(bytes,{headers:{'Content-Length':String(bytes.length)}})}
+ return nativeFetch(input,init);
+};
+const originalParse=GLTFLoader.prototype.parse;
+GLTFLoader.prototype.parse=function(data,path,onLoad,onError){
+ if(typeof data!=='string'&&data?.byteLength){
+  const b=Buffer.from(data);
+  if(b.readUInt32LE(0)===0x46546c67){const length=b.readUInt32LE(12),json=JSON.parse(b.subarray(20,20+length)),bin=b.subarray(28+length);json.buffers[0].uri='data:application/octet-stream;base64,'+bin.toString('base64');T.Cache.add(json.buffers[0].uri,new Uint8Array(bin).buffer);data=JSON.stringify(json)}
+ }
+ return originalParse.call(this,data,path,onLoad,onError);
+};
+T.Cache.enabled=true;
+const assetDir=new URL('../dist/assets/characters/',import.meta.url);
+for(const name of await readdir(assetDir)){
+ const url=new URL(name,assetDir).href;
+ if(name.endsWith('.glb'))T.Cache.add(url,new Uint8Array(await readFile(new URL(url))).buffer);
+ else if(name.endsWith('.webp'))T.Cache.add(url,{width:512,height:512,close(){}});
+}
+await loadCharacterAssets();
+GLTFLoader.prototype.parse=originalParse;
+Object.defineProperty(globalThis,'performance',{configurable:true,value:{now:()=>clock}});
+globalThis.setTimeout=(cb,ms=0)=>(timers.set(++timerId,{cb,due:clock+ms}),timerId);
+globalThis.clearTimeout=id=>timers.delete(id);
+globalThis.setInterval=(cb,ms)=>(timers.set(++timerId,{cb,due:clock+ms,interval:ms}),timerId);
+globalThis.clearInterval=id=>timers.delete(id);
+
+const threeURL=new URL('../dist/vendor/three.module.js',import.meta.url).href;
+const shim='data:text/javascript,'+encodeURIComponent('export * from '+JSON.stringify(threeURL)+';export const WebGLRenderer=globalThis.__gameQaRenderer;');
+let source=await readFile(new URL('../dist/game.js',import.meta.url),'utf8');
+source=source.replace(/from '(\.\/[^']+)'/g,(_,path)=>'from '+JSON.stringify(path==='./vendor/three.module.js'?shim:new URL(path,new URL('../dist/game.js',import.meta.url)).href));
+async function boot(){
+ raf=[];timers.clear();events={};renderers=[];resetDom(html);
+ await import('data:text/javascript,'+encodeURIComponent(source+'\n//# sourceURL=game-logic-qa-'+(++bootNumber)+'.js'));
+ tick();
+}
+function tick(ms=50){
+ clock+=ms;
+ for(const [id,t] of [...timers])if(t.due<=clock){if(t.interval)t.due=clock+t.interval;else timers.delete(id);t.cb()}
+ const frames=raf;raf=[];for(const cb of frames)cb(clock);
+}
+function frames(n){for(let i=0;i<n;i++)tick()}
+function el(id){const e=doc.getElementById(id);assert(e,'Missing UI element #'+id);return e}
+function click(id){el(id).click()}
+function choose(id,value,type='change'){el(id).value=value;el(id).dispatch(type);tick()}
+function saved(){return JSON.parse(storage.get('lagos-street-v1')).data}
+function pagehide(){for(const cb of events.pagehide??[])cb()}
+function player(){let p;renderers[0].scene?.traverse(o=>{if(Object.hasOwn(o.userData.appearance??{},'name'))p=o});assert(p,'Player missing from world');return p}
+function nav(view){doc.querySelectorAll('nav button').find(b=>b.dataset.view===view).click();tick()}
+function tapWorld(x,z){
+ const renderer=renderers[0],p=new T.Vector3(x,0,z).project(renderer.camera);
+ assert(Math.abs(p.x)<1&&Math.abs(p.y)<1,'Test tap must be inside the viewport');
+ const event={clientX:(p.x*.5+.5)*innerWidth,clientY:(-.5*p.y+.5)*innerHeight,pointerId:1};
+ renderer.domElement.dispatch('pointerdown',event);renderer.domElement.dispatch('pointerup',event);tick();
+}
+const passed=[];
+await boot();
+assert.equal(doc.getElementById('loading'),null);
+assert(!el('overlay').classList.contains('hidden'));
+assert.equal(renderers.length,2,'Creator must have its own preview');
+const expected={sex:'male',build:'broad',face:'angular',hair:'locs',outfit:'native',accessory:'glasses',skin:'#643d2a',hairColor:'#38231c',shirt:'#278966',bottom:'#263858',shoes:'#e4d9bf'};
+for(const [k,v] of Object.entries(expected))choose(k,v,['skin','hairColor','shirt','bottom','shoes'].includes(k)?'input':'change');
+el('nameinput').value='QA Lagosian';
+click('facepreview');assert.equal(renderers[1].camera.position.z,1.35);
+click('fullpreview');assert.equal(renderers[1].camera.position.z,5.5);
+const preview=renderers[1];click('begin');tick();
+assert(preview.disposed&&preview.contextLost,'Closing wardrobe must release preview renderer');
+assert(el('intronext'));assert.equal(saved().onboarded,false);
+click('trait-industrious');click('trait-curious');click('trait-hearty');click('trait-easygoing');
+click('intronext');click('goal-scholar');click('intronext');click('home-loft');click('intronext');tick();
+assert.deepEqual(saved().traits,['hearty','easygoing']);assert.equal(saved().goal,'scholar');assert.equal(saved().home,'loft');assert.equal(saved().onboarded,true);
+assert.equal(el('place').textContent,'Study loft');nav('city');
+passed.push('Three-step story selection persists two traits, goal and home and enters the selected interior');
+assert(el('overlay').classList.contains('hidden'));
+for(const [k,v] of Object.entries(expected)){assert.equal(saved()[k],v);assert.equal(player().userData.appearance[k],v)}
+assert.equal(el('playername').textContent,'QA Lagosian');
+passed.push('Creator changes all selection fields and five colours; name/save applies to the street player; preview cameras and cleanup');
+await boot();
+for(const [k,v] of Object.entries(expected))assert.equal(player().userData.appearance[k],v);
+assert(el('overlay').classList.contains('hidden'));
+passed.push('Fresh module boot restores appearance and name from a version-1 local save');
+const before=player().position.clone();tapWorld(0,9);frames(45);pagehide();
+assert(player().position.z>8.7&&player().position.distanceTo(before)>2);
+assert(Math.abs(saved().z-player().position.z)<.001);
+const stopped=player().position.clone();tapWorld(-12,7);frames(4);
+assert(el('toast').textContent.includes('clear pavement'));assert(player().position.distanceTo(stopped)<.01);
+passed.push('Tap-to-walk advances the real player and saves its position; a building destination is rejected');
+const canvas=renderers[0].domElement,cam=renderers[0].camera;
+const oldCamera=cam.position.clone();
+canvas.dispatch('pointerdown',{clientX:300,clientY:400,pointerId:1});canvas.dispatch('pointermove',{clientX:400,clientY:400,pointerId:1});canvas.dispatch('pointerup',{clientX:400,clientY:400,pointerId:1});tick();
+assert(cam.position.distanceTo(oldCamera)>1);
+click('portraitview');tick();const near=cam.position.distanceTo(player().position);
+click('streetview');tick();assert(cam.position.distanceTo(player().position)>near+10);
+choose('quality','phone');assert.equal(renderers[0].ratio,1);choose('quality','balanced');
+passed.push('Orbit drag, character/street camera presets and Phone graphics handlers');
+const streetPosition=player().position.clone(),time=saved().time;
+nav('home');assert.equal(el('place').textContent,'Study loft');click('action-sleep');assert(el('home-actions').classList.contains('hidden'));assert(el('hud').classList.contains('activity-playing'));frames(40);assert.equal(player().rotation.x,-Math.PI/2);click('finishactivity');tick();
+assert(!el('home-actions').classList.contains('hidden'));assert(!el('hud').classList.contains('activity-playing'));assert.equal(saved().energy,100);assert.equal(saved().time,(time+480)%1440);
+nav('home');const wallet=saved().money,pantry=saved().pantry;click('action-cook');click('finishactivity');assert.equal(saved().money,wallet);assert.equal(saved().pantry,pantry-1);assert(saved().food>70);
+click('action-wash');click('finishactivity');assert.equal(saved().hygiene,100);
+click('action-study');choose('studyfocus','rider');click('startstudy');click('finishactivity');assert.equal(saved().study,2);assert.equal(saved().skills.rider,2);
+const beforeCancel=JSON.stringify(saved());click('action-cook');click('cancelactivity');assert.equal(JSON.stringify(saved()),beforeCancel);
+passed.push('Home sleep resting pose, cooking grocery consumption, wash, selected study progress and cancellation without resource cost');
+nav('home');click('action-wardrobe');choose('sex','female');click('begin');tick();
+assert.equal(player().userData.appearance.sex,'female');assert.equal(player().parent.position.x,150);
+nav('city');assert.equal(el('place').textContent,'Surulere');assert(player().position.distanceTo(streetPosition)<.01);
+passed.push('Home sleep/food, wardrobe appearance application inside Home and street return position');
+nav('jobs');doc.querySelectorAll('[data-job]').find(e=>e.dataset.job==='trader').click();choose('offer','1250','input');click('deal');assert.equal(saved().skills.trader,1);click('done');
+nav('jobs');doc.querySelectorAll('[data-job]').find(e=>e.dataset.job==='rider').click();
+const route=el('route').textContent.split(' → ');click('ready');
+for(const stop of route)el('stops').children.find(e=>e.textContent===stop).click();
+assert.equal(saved().skills.rider,3);click('done');
+nav('jobs');doc.querySelectorAll('[data-job]').find(e=>e.dataset.job==='chef').click();tick(2800);click('serve');assert.equal(saved().skills.chef,2);click('done');
+passed.push('All three job success paths update skill, money, time and needs using actual UI handlers');
+const foodMarker=el('markers').children.find(e=>e.textContent.startsWith('Mama T'));assert(foodMarker);foodMarker.click();
+const foodWallet=saved().money;click('eat');assert.equal(saved().money,foodWallet-800);
+nav('phone');click('phone-settings');click('export');assert.equal(lastDownload.download,'lagos-street-save.json');
+const exported=await (await nativeFetch(lastDownload.href)).json();assert.equal(exported.data.sex,'female');assert.equal(exported.data.skills.rider,3);
+const storedBefore=storage.get('lagos-street-v1'),reloadBefore=reloads;
+el('import').files=[{text:async()=>JSON.stringify({version:1,data:{...exported.data,skin:'invalid'}})}];
+await el('import').onchange({target:el('import')});assert.equal(storage.get('lagos-street-v1'),storedBefore);assert.equal(reloads,reloadBefore);
+el('import').files=[{text:async()=>JSON.stringify(exported)}];await el('import').onchange({target:el('import')});assert.equal(reloads,reloadBefore);click('confirmimport');assert.equal(reloads,reloadBefore+1);
+passed.push('Food venue payment, JSON save export, valid import and rejection of invalid appearance data');
+const legacy={...exported.data,name:'Legacy Lagosian'};
+for(const key of ['sex','build','face','outfit','accessory','hairColor','bottom','shoes','traits','goal','home','onboarded','localPlayerId','hygiene','pantry','study','stats','claimedTasks','goalClaimed','graphics','studyFocus'])delete legacy[key];
+storage.set('lagos-street-v1',JSON.stringify({version:1,data:legacy}));await boot();
+assert.equal(player().userData.appearance.name,'Legacy Lagosian');
+for(const key of ['sex','build','face','outfit','accessory','hairColor','bottom','shoes'])assert.equal(player().userData.appearance[key],appearanceDefaults[key]);
+passed.push('Older version-1 saves receive missing appearance defaults without losing progress');
+// Complete the shopping/task loop through the same handlers used by the shipped UI.
+const localId=saved().localPlayerId;assert.match(localId,/^LS-[A-F0-9]{16}$/);
+nav('phone');click('phone-profile');assert(el('phonebody').textContent.includes(localId));assert(el('phonebody').textContent.includes('not an online account'));
+click('phone-map');const beforeTravel=saved().time;click('map-market');assert.equal(saved().time,(beforeTravel+10)%1440);const beforeShop=saved().money;
+click('buygroceries');assert.equal(saved().money,beforeShop-500);click('shopsofa');assert.equal(saved().furniture,true);
+nav('phone');click('phone-tasks');const beforeReward=saved().money;click('task-shop');assert.equal(saved().money,beforeReward+400);click('task-shop');assert.equal(saved().money,beforeReward+400);
+click('phone-settings');choose('phonequality','battery');assert.equal(renderers[0].shadowMap.enabled,false);assert.equal(saved().graphics,'battery');
+await boot();assert.equal(saved().localPlayerId,localId);assert.equal(el('quality').value,'battery');
+passed.push('Local Player ID disclosure/reload persistence, free map travel, grocery and sofa purchases, single-claim task rewards and saved battery graphics');
+// Input/camera checks drive handlers with doubles; they do not validate browser dispatch or pixels.
+nav('city');const movementStart=player().position.clone();doc.dispatch('keydown',{key:'w'});frames(6);assert(player().position.distanceTo(movementStart)>.3);
+doc.dispatch('keyup',{key:'w'});const released=player().position.clone();frames(6);assert(player().position.distanceTo(released)<.001,'Releasing the last key must stop keyboard movement');
+doc.dispatch('keydown',{key:'w'});frames(2);for(const cb of events.blur??[])cb();const blurred=player().position.clone();frames(6);assert(player().position.distanceTo(blurred)<.001,'Losing window focus must stop keyboard movement');
+el('objective').focus();click('objective');assert.equal(doc.activeElement,el('close'));
+let controls=el('sheet').querySelectorAll('button, input, select, [tabindex]').filter(e=>!e.disabled);
+controls.at(-1).focus();doc.dispatch('keydown',{key:'Tab'});assert.equal(doc.activeElement,controls[0]);doc.dispatch('keydown',{key:'Tab',shiftKey:true});assert.equal(doc.activeElement,controls.at(-1));
+el('help').focus();doc.dispatch('keydown',{key:'Tab'});assert.equal(doc.activeElement,controls[0]);
+doc.dispatch('keydown',{key:'Escape'});assert(el('overlay').classList.contains('hidden'));assert.equal(doc.activeElement,el('objective'));
+doc.dispatch('keydown',{key:'w'});frames(2);nav('phone');const menuPosition=player().position.clone();frames(5);doc.dispatch('keydown',{key:'Escape'});frames(5);assert(player().position.distanceTo(menuPosition)<.001,'Opening a menu must clear held movement');
+passed.push('Keyboard move/release, blur and menu pause; modal Tab/Shift-Tab containment, Escape and focus restoration (DOM doubles)');
+nav('home');const inputCanvas=renderers[0].domElement;
+function pinch(a,b,c){inputCanvas.dispatch('pointerdown',{pointerId:21,clientX:a,clientY:250});inputCanvas.dispatch('pointerdown',{pointerId:22,clientX:b,clientY:250});inputCanvas.dispatch('pointermove',{pointerId:22,clientX:c,clientY:250});tick();inputCanvas.dispatch('pointerup',{pointerId:22,clientX:c,clientY:250});inputCanvas.dispatch('pointerup',{pointerId:21,clientX:a,clientY:250});tick()}
+const roomCentre=new T.Vector3(150,1,0),zoomBefore=renderers[0].camera.position.distanceTo(roomCentre);pinch(200,300,400);assert(renderers[0].camera.position.distanceTo(roomCentre)<zoomBefore*.65);assert(el('activity').classList.contains('hidden'),'Releasing a pinch must not activate an object');
+const zoomIn=renderers[0].camera.position.distanceTo(roomCentre);click('zout');tick();assert(renderers[0].camera.position.distanceTo(roomCentre)>zoomIn);
+inputCanvas.dispatch('pointerdown',{pointerId:31,clientX:200,clientY:250});inputCanvas.dispatch('pointerdown',{pointerId:32,clientX:300,clientY:250});inputCanvas.dispatch('pointercancel',{pointerId:31});const cancelCamera=renderers[0].camera.position.clone();inputCanvas.dispatch('pointermove',{pointerId:32,clientX:450,clientY:250});tick();assert(renderers[0].camera.position.distanceTo(cancelCamera)<.1);inputCanvas.dispatch('pointerup',{pointerId:32,clientX:450,clientY:250});
+inputCanvas.dispatch('pointerdown',{pointerId:41,clientX:200,clientY:250});inputCanvas.dispatch('lostpointercapture',{pointerId:41});const lostCamera=renderers[0].camera.position.clone();inputCanvas.dispatch('pointermove',{pointerId:41,clientX:350,clientY:250});tick();assert(renderers[0].camera.position.distanceTo(lostCamera)<.1);
+passed.push('Two-pointer home zoom, button zoom, pinch release without accidental action, pointer cancellation and unexpected capture loss');
+function resize(width,height){globalThis.innerWidth=width;globalThis.innerHeight=height;for(const cb of events.resize??[])cb();tick()}
+const cameraChecks=[];
+for(const [width,height] of [[390,844],[844,390],[320,568],[1280,900]]){
+ resize(width,height);nav('home');frames(4);const camera=renderers[0].camera;assert.equal(camera.aspect,width/height);assert(camera.projectionMatrix.elements.every(Number.isFinite));
+ const stations=player().parent.children.filter(o=>o.userData.activity);const positions=[];
+ for(const object of stations){const centre=new T.Box3().setFromObject(object).getCenter(new T.Vector3()).project(camera);assert(Math.abs(centre.x)<.98&&Math.abs(centre.y)<.98,'Home object must project inside viewport: '+object.userData.activity+' '+width+'x'+height);positions.push({id:object.userData.activity,x:Math.round((centre.x*.5+.5)*width),y:Math.round((-.5*centre.y+.5)*height)});}
+ const cooker=stations.find(o=>o.userData.activity==='cook');const centre=new T.Box3().setFromObject(cooker).getCenter(new T.Vector3()).project(camera);const pointer={pointerId:51,clientX:(centre.x*.5+.5)*width,clientY:(-.5*centre.y+.5)*height};inputCanvas.dispatch('pointerdown',pointer);inputCanvas.dispatch('pointerup',pointer);assert(!el('activity').classList.contains('hidden'),'Projected cooker ray must activate cooking');click('cancelactivity');
+ nav('city');click('streetview');tick();const labels=el('markers').children.filter(e=>e.style.visibility==='visible');const rectangles=labels.map(e=>({x:parseFloat(e.style.left)-Math.max(125,e.children.length?e._text.length*6+24:125)/2,y:parseFloat(e.style.top)-48,w:Math.max(125,e._text.length*6+24),h:48}));
+ for(let i=0;i<rectangles.length;i++)for(let j=i+1;j<rectangles.length;j++){const a=rectangles[i],b=rectangles[j];assert(!(a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y),'Venue label guard must hide colliding estimated rectangles')}
+ cameraChecks.push({width,height,homeActivityCentres:positions,visibleVenueLabels:labels.length});
+}
+resize(1280,900);await writeFile(new URL('../qa/input-camera.json',import.meta.url),JSON.stringify({date:'2026-10-23',status:'passed',scope:'Handler and camera projection checks with DOM/renderer doubles. Coordinates are not screenshots, CSS layout verification or real touch testing.',views:cameraChecks},null,2));
+passed.push('Portrait/landscape resize matrices, on-screen home object centres and cooker ray interaction at four viewport sizes; estimated venue label separation');
+// Fresh story skips cleanly; a reset must preserve this browser identity.
+storage.delete('lagos-street-v1');await boot();el('nameinput').value='Skip Tester';click('begin');click('skipintro');
+assert.deepEqual(saved().traits,['industrious','curious']);assert.equal(saved().goal,'saver');assert.equal(saved().home,'studio');assert.equal(saved().localPlayerId,localId);
+await boot();assert(el('overlay').classList.contains('hidden'));
+nav('phone');click('phone-settings');click('reset');click('cancelreset');assert.equal(saved().name,'Skip Tester');click('reset');click('confirmreset');assert.equal(saved().name,'');assert.equal(saved().onboarded,false);assert.equal(saved().localPlayerId,localId);
+passed.push('Skippable introduction applies saved defaults; reset/cancel protects story and reset retains browser-local ID');
+const report={date:'2026-10-23',status:'passed',checks:passed,scope:'Actual game module, real character meshes/animation and street geometry. DOM, timers, localStorage and WebGLRenderer are test doubles. This is not a browser playtest or a visual/performance approval.',userSaveTouched:false};
+await mkdir(new URL('../qa/',import.meta.url),{recursive:true});
+await writeFile(new URL('../qa/gameplay.json',import.meta.url),JSON.stringify(report,null,2));
+console.log(JSON.stringify(report,null,2));

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "Shipped game code with DOM, renderer and storage doubles; not browser screenshots.",
+  "tests": [
+    "joystick walk and physical entry",
+    "preview and cancel",
+    "duplicate purchase charged once",
+    "equip and named look survives reload",
+    "stylist and fitting interactions reachable",
+    "exit returns outside",
+    "interior review cannot overwrite main save or main identity"
+  ],
+  "sequence": [
+    "Walked to Boutique & Salon; preview/cancel, confirmed purchase twice with one charge, equipped cornrows, saved a named look and reloaded"
+  ]
+}

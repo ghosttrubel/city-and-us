@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "positions": 124,
+  "available": {
+    "round-table": {
+      "x": 1.8,
+      "z": -3.4
+    },
+    "coffee-table": {
+      "x": 1.8,
+      "z": -3.4
+    },
+    "bookcase": {
+      "x": 1.8,
+      "z": -3.4
+    },
+    "cabinet": {
+      "x": 1.8,
+      "z": -3.4
+    },
+    "floor-lamp": {
+      "x": 1.8,
+      "z": -3.4
+    },
+    "plant": {
+      "x": 1.8,
+      "z": -3.4
+    },
+    "rug": {
+      "x": 1.8,
+      "z": -3.4
+    },
+    "runner": {
+      "x": 1.8,
+      "z": -3
+    }
+  },
+  "checks": [
+    "Insufficient funds",
+    "Once-only order charging",
+    "Door and installed furniture obstruction rejection",
+    "Reachability-aware placement",
+    "Rotation",
+    "Storage and repositioning",
+    "Ownership, money and layout roundtrip",
+    "Every catalogue item has usable space"
+  ]
+}

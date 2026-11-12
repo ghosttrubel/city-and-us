@@ -1,0 +1,36 @@
+# Agreed City & Us direction
+
+These are requirements/plans, not a claim that features already exist. The owner wants an appealing V1 before the full expansion.
+
+## Life and identity
+Softer stylised natural characters; expressive faces, detailed hair/clothes, relaxed movement, warm lighting. Male/female, skin/body/face/hair/clothes/accessory customisation. Everyday and native clothing: agbada, senator, ankara, iro/buba, gele, fila and kaftans. Traits, attitude, life goal and starting home affect progression and save. Review one updated character first.
+
+## Homes, decoration and ownership
+Start modestly and progress; players may rent large apartments rather than having to buy. Rented space can be decorated. Buy/place/rotate/move/store furniture, change finishes and preserve usable walkways. Distinct rooms, later additional floors/stairs and varied layouts. Invite decorator by Player ID; acceptance, property-scoped permissions, budget, approval and revocation. No ownership transfer or unrestricted access. Progress towards home ownership, rental properties/landlord and club ownership. Clear tenancy terms, NPC tenants/customers for solo play, no devastating offline charges.
+
+## Daily life, jobs and world
+Visible cooking/eating/washing/sleep/study/computer/wardrobe/sitting actions, needs, skills, tasks, purchases and savings. Physical playable jobs rather than long menus. Courier, trading, decorator, DJ and other occupations. Connected enterable shops, workplaces, homes, restaurants and venues. Lagos first, broader cities later (Abuja/Port Harcourt are reference destinations). Walking, danfo, keke, taxi, private cars, ferries, airports/flights and return journeys. Occasional NEPA outages with generators/inverters, balanced interruptions. Useful map and green route. Billboard inventory for future sponsors.
+
+## Friends, couples and families
+Real accounts and stable public Player IDs separate from login secrets/local IDs. Friend requests, accepted-player chat, invitations, block/report/moderation. Visible shared movement, door approach/knock/notification/owner permission, shared interiors. Mutually accepted dating/relationships, optional proposals and marriage, shared household permissions. Optional non-explicit pregnancy with agreed participation and adjustable progression, adoption for solo parents/couples, NPC children initially, household care and saved relationships. Child must actually move into/appear in the home. Optional naming/welcome ceremonies. Never automatically trigger pregnancy from dating; family play remains optional.
+
+## Events, clubs and music
+Player-created weddings, birthdays, housewarmings, naming ceremonies, club nights and gatherings. Venue, date/time/timezone, guest list, RSVP, invitations, dress code, decorating and game-currency gifts. Friday club nights/Saturday disco/Sunday parties plus custom schedules. Dance/socialise/seating/food/music activities, public/NPC events for solo enjoyment. DJ gigs/booth/approved track catalogue and synchronised playback; club ownership/hiring/expenses. Original or properly commercially licensed effects/music only; independent artists can grant appropriate permission. Separate music/effects/ambience controls, mute, clicks, footsteps, knocks, cooking, traffic and neighbourhood sound.
+
+## Government
+Monthly server-clock elections for president, governor and two legislators. Eligible account: one vote per office. Countdown, candidates, manifestos, results and terms. Public virtual-tax treasury, spending logs, budgets and completed projects. Virtual corruption/accountability with consequences. Unique bad-governance reports with anti-spam; threshold enables legislative proposal, not automatic removal. Define removal vote/succession; impeachment can trigger exceptional replacement election outside ordinary monthly schedule. No paid votes/political authority. Government House, presidential residence with private/public areas, appointments, ceremonies/inauguration, NPC security, official vehicles and visits. Official privileges/property pass to next officeholder, not permanent personal rewards.
+
+## Platform, backend and revenue
+Android/Play Store first, web later. Phone joystick/action and separate camera input, desktop controls retained, portrait/landscape, adjustable graphics and modest-device performance. Small real multiplayer sessions first; no minimum eight-player rule, tested configurable maximum. Supabase Free for auth/database and Colyseus with low-cost/free hosting are candidates needing technical evaluation, not guaranteed capacity. Validate money, permissions, voting and shared state on server; portable deployment, backups and save migration. Discuss costs before purchases/subscriptions. Optional rewarded ads planned for launch, later cosmetics and sponsored billboards/events; no forced ads for basic movement/saves/friend visits. Real-cash promotions only future separately reviewed proposal, not current implementation.
+
+## Phone update — 24 October 2026
+Call it **Phone**. Preserve the app inventory: Jobs, Profile, Navigation, Tasks, Settings, Ride, Food, Games, Chat, Friends, Events, Government and Voting. Ride ordering and playable mini-games are required. Create a polished, original smartphone interface with saved wallpaper/theme/accent/app arrangement and distinct app screens. Implement each app with its actual gameplay, persistent state and working interactions. Unfinished apps belong in the roadmap, not as nonfunctional/Soon icons on the phone.
+
+Ride requests require physical vehicle pickup, boarding, travel and alighting. Food requests require restaurant pickup, physical delivery to the correct entrance and receipt; ordering alone does not provide food or restore needs. Validate fares/orders, cancellations, interruptions, saves and exactly-once payment/fulfilment. The detailed app/status matrix and acceptance requirements are in ../ROADMAP.md under Phone. Current repairs remain the priority; this update does not bypass their visual acceptance or authorise implementing the full app list at once.
+
+## What completion means
+Run appropriate regression checks. Also inspect rendered scenes and complete actual home/street/job/social journeys. Report browser, Android touch and performance evidence separately; disclose unavailable verification. Record the next bounded milestone and preserve all these plans without trying to implement everything in one pass.
+
+## 27 October 2026 current-plan merge
+
+The newest bounded delivery order and full follow-up requirements are maintained at the top of ../ROADMAP.md: finish connected destinations first, then saved action-led tutorial, conversational job interviews/employment and fictional economy review. Current nonblocking portrait policy supersedes older full-screen/strict-blocker notes. Names/privacy, optional ageing versus server time, real shared social/events capacity, separate spiritual roles/fictional crime and fair enforcement, residence appointments and international travel are preserved there with implementation/dependency status. See ../qa/connected-city/REPORT.md for exactly which sites/rooms/activities are playable; mapped religious/police/residence sites remain closed.

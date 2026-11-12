@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "files": [
+    {
+      "path": ".local-signing/city-and-us-upload.p12",
+      "unchanged": true,
+      "sha256": "9d558632f5d0d9bcfb921c16ec4a68373f851716653be44d39ff75d8a644d4ac"
+    },
+    {
+      "path": ".local-signing/password.dpapi",
+      "unchanged": true,
+      "sha256": "e0001aab47a301db84fbee7b8853d5c1c78a47dea54310f3478f23452ec471a6"
+    },
+    {
+      "path": ".local-signing/android-user/debug.keystore",
+      "unchanged": true,
+      "sha256": "acb530c12b7ee8a47f4d9e6e279d8e2b8a5685aef34cc1b31781d0791aab911c"
+    },
+    {
+      "path": "dist/vendor/THREE-LICENSE.txt",
+      "unchanged": true,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "unchanged": true,
+      "sha256": "4b157c9e83a0c12c3a0806b9d26077b63c0a4162fb621fd08f74b178aa0be445"
+    }
+  ],
+  "scope": "Signing files, hosting identity and MIT notice only. Save/customisation protection is separately covered by isolated regression journeys."
+}

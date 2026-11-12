@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-25",
+  "status": "passed",
+  "catalogueItems": 35,
+  "combinations": 280,
+  "poseSamples": 1960,
+  "maxTriangles": 26188,
+  "scope": "CPU skeleton, geometry, transactional inventory and save checks; not visual fit or device certification."
+}

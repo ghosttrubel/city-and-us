@@ -1,0 +1,167 @@
+{
+  "clip": "1001988060.mp4",
+  "method": "Installed libVLC CPU callbacks; sampled frames only, no audio listening",
+  "duration_ms": 130148,
+  "captures": [
+    {
+      "milliseconds": 0,
+      "file": "at-000000000.bmp"
+    },
+    {
+      "milliseconds": 3432,
+      "file": "at-000003432.bmp"
+    },
+    {
+      "milliseconds": 6908,
+      "file": "at-000006908.bmp"
+    },
+    {
+      "milliseconds": 10412,
+      "file": "at-000010412.bmp"
+    },
+    {
+      "milliseconds": 13668,
+      "file": "at-000013668.bmp"
+    },
+    {
+      "milliseconds": 17172,
+      "file": "at-000017172.bmp"
+    },
+    {
+      "milliseconds": 20412,
+      "file": "at-000020412.bmp"
+    },
+    {
+      "milliseconds": 23660,
+      "file": "at-000023660.bmp"
+    },
+    {
+      "milliseconds": 26708,
+      "file": "at-000026708.bmp"
+    },
+    {
+      "milliseconds": 30164,
+      "file": "at-000030164.bmp"
+    },
+    {
+      "milliseconds": 33660,
+      "file": "at-000033660.bmp"
+    },
+    {
+      "milliseconds": 36928,
+      "file": "at-000036928.bmp"
+    },
+    {
+      "milliseconds": 40408,
+      "file": "at-000040408.bmp"
+    },
+    {
+      "milliseconds": 43656,
+      "file": "at-000043656.bmp"
+    },
+    {
+      "milliseconds": 46920,
+      "file": "at-000046920.bmp"
+    },
+    {
+      "milliseconds": 50420,
+      "file": "at-000050420.bmp"
+    },
+    {
+      "milliseconds": 53748,
+      "file": "at-000053748.bmp"
+    },
+    {
+      "milliseconds": 57400,
+      "file": "at-000057400.bmp"
+    },
+    {
+      "milliseconds": 60408,
+      "file": "at-000060408.bmp"
+    },
+    {
+      "milliseconds": 63900,
+      "file": "at-000063900.bmp"
+    },
+    {
+      "milliseconds": 67180,
+      "file": "at-000067180.bmp"
+    },
+    {
+      "milliseconds": 70904,
+      "file": "at-000070904.bmp"
+    },
+    {
+      "milliseconds": 74164,
+      "file": "at-000074164.bmp"
+    },
+    {
+      "milliseconds": 77928,
+      "file": "at-000077928.bmp"
+    },
+    {
+      "milliseconds": 81660,
+      "file": "at-000081660.bmp"
+    },
+    {
+      "milliseconds": 84916,
+      "file": "at-000084916.bmp"
+    },
+    {
+      "milliseconds": 88436,
+      "file": "at-000088436.bmp"
+    },
+    {
+      "milliseconds": 92156,
+      "file": "at-000092156.bmp"
+    },
+    {
+      "milliseconds": 95160,
+      "file": "at-000095160.bmp"
+    },
+    {
+      "milliseconds": 98420,
+      "file": "at-000098420.bmp"
+    },
+    {
+      "milliseconds": 101928,
+      "file": "at-000101928.bmp"
+    },
+    {
+      "milliseconds": 105652,
+      "file": "at-000105652.bmp"
+    },
+    {
+      "milliseconds": 109172,
+      "file": "at-000109172.bmp"
+    },
+    {
+      "milliseconds": 112664,
+      "file": "at-000112664.bmp"
+    },
+    {
+      "milliseconds": 115912,
+      "file": "at-000115912.bmp"
+    },
+    {
+      "milliseconds": 119404,
+      "file": "at-000119404.bmp"
+    },
+    {
+      "milliseconds": 122664,
+      "file": "at-000122664.bmp"
+    },
+    {
+      "milliseconds": 125904,
+      "file": "at-000125904.bmp"
+    },
+    {
+      "milliseconds": 129556,
+      "file": "at-000129556.bmp"
+    },
+    {
+      "milliseconds": 130250,
+      "file": "at-000130250.bmp"
+    }
+  ]
+}

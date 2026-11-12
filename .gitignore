@@ -1,0 +1,44 @@
+﻿node_modules/
+.sites-checkout/
+.sites-runtime/
+
+# Local Android builds and signing secrets (never ship these in dist)
+.local-signing/
+android/.gradle/
+android/.gradle-user/
+android/.dependency-cache/
+android/local.properties
+android/app/build/
+android/build/
+artifacts/android/
+tools/voice-build/.model-*/
+tools/voice-build/.npm-cache/
+tools/voice-build/*.log
+*.jks
+*.keystore
+*.p12
+android/.android-user/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Generated output and local recovery copies
+coverage/
+checkpoints/
+*.log
+
+# Local tool settings and accidental command folders
+/.openai/
+/-c/
+/.exe/
+/node --check dist/
+/vlc-help.txt
+
+# Blender backup copies
+*.blend1
+*.blend2

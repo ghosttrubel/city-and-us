@@ -1,0 +1,10 @@
+{
+  "approvedBlendUnchanged": true,
+  "approvedBlendSha256": "7da896eb3aed394cde89b7f1ccd2ef674461f27a53aa209955fa8b7690fd3277",
+  "originalReferenceSheets": 75,
+  "referenceHashes": "art/reference-catalogue/manifest.json",
+  "userStorageTouchedByTools": false,
+  "mainGameSaveIsolation": "qa/exact-outfit-review/game-journey.json",
+  "environmentBoutiqueAndControls": "No environment, boutique geometry or input-control files changed in this batch",
+  "automatedVisualCapture": "pending; user will supply screenshots; do not retry disconnected in-app Browser"
+}

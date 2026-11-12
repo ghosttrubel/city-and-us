@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-29T16:12:18.854Z",
+  "scope": "Automated checks, media doubles and software previews; not real device acceptance.",
+  "results": [
+    {
+      "name": "check:mobile",
+      "exit": 0
+    },
+    {
+      "name": "check:physical-home",
+      "exit": 0
+    },
+    {
+      "name": "check:street-service",
+      "exit": 0
+    },
+    {
+      "name": "check:daily-life",
+      "exit": 0
+    },
+    {
+      "name": "check:destinations",
+      "exit": 0
+    },
+    {
+      "name": "check",
+      "exit": 0
+    },
+    {
+      "name": "check:media",
+      "exit": 0
+    },
+    {
+      "name": "check:living-streets",
+      "exit": 0
+    },
+    {
+      "name": "software-previews",
+      "exit": 0
+    }
+  ]
+}

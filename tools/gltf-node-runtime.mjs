@@ -1,0 +1,13 @@
+import {readFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {createRequire} from 'node:module';
+import * as T from '../dist/vendor/three.module.js';
+import {GLTFLoader} from '../dist/vendor/addons/GLTFLoader.js';
+const require=createRequire(import.meta.url),sharp=require('sharp');
+globalThis.self=globalThis;globalThis.ProgressEvent=class{constructor(type,init){Object.assign(this,init);this.type=type;}};
+globalThis.createImageBitmap=async blob=>{const {data,info}=await sharp(Buffer.from(await blob.arrayBuffer())).ensureAlpha().raw().toBuffer({resolveWithObject:true});return {width:info.width,height:info.height,pixels:data,close(){}};};
+const originalFetch=globalThis.fetch;
+globalThis.fetch=async(input,init)=>{const url=typeof input==='string'?input:(input?.url||String(input));return url.startsWith('file:')?new Response(await readFile(fileURLToPath(url))):originalFetch(input,init);};
+const parse=GLTFLoader.prototype.parse;
+GLTFLoader.prototype.parse=function(data,path,loaded,error){if(typeof data!=='string'){const b=Buffer.from(data);if(b.readUInt32LE(0)===0x46546c67){const len=b.readUInt32LE(12),doc=JSON.parse(b.subarray(20,20+len)),bin=b.subarray(28+len);doc.buffers[0].uri='data:application/octet-stream;base64,'+bin.toString('base64');T.Cache.add(doc.buffers[0].uri,new Uint8Array(bin).buffer);data=JSON.stringify(doc);}}return parse.call(this,data,path,loaded,error);};
+T.Cache.enabled=true;

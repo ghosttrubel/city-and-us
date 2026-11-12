@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-26T14:01:40.687Z",
+  "checkpoint": "checkpoints/2026-10-26-working-iphone-before-resolution",
+  "fileCount": 191,
+  "checkpointFailures": [],
+  "protectedAssetAndControlsChanges": [],
+  "changed": [
+    "dist/game.js",
+    "dist/index.html",
+    "dist/life.js",
+    "dist/mobile-runtime.js",
+    "dist/style.css",
+    "tools/qa-progress.txt",
+    "tools/verify-mobile-lifecycle.mjs",
+    "tools/verify-mobile-startup.mjs",
+    "README.md",
+    "ROADMAP.md",
+    "CHANGELOG.md",
+    "package.json"
+  ],
+  "browserSavesAccessed": false
+}

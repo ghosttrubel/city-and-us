@@ -1,0 +1,2 @@
+# Lagos Street handoff
+Read README.md and ROADMAP.md before editing. Preserve user ownership and the original game direction. Do not silently add branding or watermarks. Do not claim multiplayer/elections are functional until backend implementations are tested. Keep full source portable in VS Code. Keep touch controls and performance on modest Android phones a priority. Run npm run check after edits. Use no secrets in client files. Preserve the third-party MIT license. Current hosting identity is in .openai/hosting.json; never create another Site for this same checkout.

@@ -1,0 +1,77 @@
+{
+  "clip": "C:\\Users\\SeniorBaby\\OneDrive\\Documents\\projects\\lagos-street\\reference\\references\\04-recording\\home-gameplay.mp4",
+  "method": "libVLC CPU video memory callbacks; no audio",
+  "duration_ms": 88299,
+  "decoded_frames": 1529,
+  "captures": [
+    {
+      "milliseconds": 0,
+      "file": "at-000000000.bmp"
+    },
+    {
+      "milliseconds": 3402,
+      "file": "at-000003402.bmp"
+    },
+    {
+      "milliseconds": 6651,
+      "file": "at-000006651.bmp"
+    },
+    {
+      "milliseconds": 9652,
+      "file": "at-000009652.bmp"
+    },
+    {
+      "milliseconds": 12902,
+      "file": "at-000012902.bmp"
+    },
+    {
+      "milliseconds": 16153,
+      "file": "at-000016153.bmp"
+    },
+    {
+      "milliseconds": 19403,
+      "file": "at-000019403.bmp"
+    },
+    {
+      "milliseconds": 22404,
+      "file": "at-000022404.bmp"
+    },
+    {
+      "milliseconds": 25651,
+      "file": "at-000025651.bmp"
+    },
+    {
+      "milliseconds": 28654,
+      "file": "at-000028654.bmp"
+    },
+    {
+      "milliseconds": 31902,
+      "file": "at-000031902.bmp"
+    },
+    {
+      "milliseconds": 35151,
+      "file": "at-000035151.bmp"
+    },
+    {
+      "milliseconds": 38152,
+      "file": "at-000038152.bmp"
+    },
+    {
+      "milliseconds": 41401,
+      "file": "at-000041401.bmp"
+    },
+    {
+      "milliseconds": 44652,
+      "file": "at-000044652.bmp"
+    },
+    {
+      "milliseconds": 47652,
+      "file": "at-000047652.bmp"
+    },
+    {
+      "milliseconds": 50833,
+      "file": "at-000050833.bmp"
+    }
+  ],
+  "terminal_state": 6
+}

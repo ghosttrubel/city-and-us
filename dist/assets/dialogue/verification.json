@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-29T16:10:32.095Z",
+  "status": "passed",
+  "clips": 39,
+  "bytes": 6113316,
+  "seconds": 127.325,
+  "checks": [
+    "script coverage",
+    "PCM16 mono 24kHz WAV headers",
+    "SHA-256",
+    "duration",
+    "non-silent waveform",
+    "peak below clipping"
+  ],
+  "limits": "No listening, pronunciation, browser autoplay or real-device audio validation."
+}

@@ -1,0 +1,978 @@
+{
+  "build": "0.8.1-visual.1 (10)",
+  "date": "2026-10-31T12:10:35.053Z",
+  "files": [
+    {
+      "path": "dist/activity-pose.js",
+      "bytes": 1904,
+      "sha256": "9f3e799562e1c72a9feea40f02da71f12748a3b70d0cd6f355c4038b9c554f54"
+    },
+    {
+      "path": "dist/assets/catalogue/accessory-chain.png",
+      "bytes": 21090,
+      "sha256": "0d984314ef8be5dcaf7f0c07677df5f3a7ba4e897e9d6a4b8084953b2857347d"
+    },
+    {
+      "path": "dist/assets/catalogue/accessory-glasses.png",
+      "bytes": 20626,
+      "sha256": "dc201045f7c2e7ad54d40a2548dffa5d83a425631919a1b22b8c080f878d78c0"
+    },
+    {
+      "path": "dist/assets/catalogue/accessory-hoops.png",
+      "bytes": 20549,
+      "sha256": "7cee11e1de32ba052cee18a36cfcad82c7373c4e6354033c0e867e14573922f8"
+    },
+    {
+      "path": "dist/assets/catalogue/bottom-shorts.png",
+      "bytes": 16969,
+      "sha256": "e07e0bf49cdb7c0f87f511afcb1c49e23fd242e38bb3978b856a156c2e22b713"
+    },
+    {
+      "path": "dist/assets/catalogue/bottom-slim.png",
+      "bytes": 17104,
+      "sha256": "2299e7c5787e4f3a139f576f3bd3b8d84e0012e038cea4ac47eaeade2a00f2b9"
+    },
+    {
+      "path": "dist/assets/catalogue/bottom-wide.png",
+      "bytes": 18630,
+      "sha256": "a186d1fb9bd16ddf85c62a7ec05364c68ac8abd559a6f2ce39f9c4047cc20e97"
+    },
+    {
+      "path": "dist/assets/catalogue/cap-fila.png",
+      "bytes": 19883,
+      "sha256": "3f8a4a4aad3839cbfa17ebe9d31d16c281f337cb4e5148063214e465290f66b2"
+    },
+    {
+      "path": "dist/assets/catalogue/dress-day.png",
+      "bytes": 17983,
+      "sha256": "e7768369e0b67647b9f1b54887e95c38a99309395595cf5c5f419002de43bc92"
+    },
+    {
+      "path": "dist/assets/catalogue/dress-evening.png",
+      "bytes": 19393,
+      "sha256": "b8998345de3c8ab2871b87de3627e5443c89f7d045f80adc3e867933104aa603"
+    },
+    {
+      "path": "dist/assets/catalogue/furniture-bookcase.png",
+      "bytes": 3943,
+      "sha256": "6601dda82eef2ea5aa972c7f2ca4fbfad883160e203eab19188998551c5591f1"
+    },
+    {
+      "path": "dist/assets/catalogue/furniture-cabinet.png",
+      "bytes": 4616,
+      "sha256": "37056a2ecdc5a537522f24add90e9f7ad14c0b0de2efbd3f595289d1d6e8e08d"
+    },
+    {
+      "path": "dist/assets/catalogue/furniture-coffee-table.png",
+      "bytes": 2975,
+      "sha256": "dddf89565546b21140086787850511f9c8c345f8f8a27f7ba3e0c3dcec8498f3"
+    },
+    {
+      "path": "dist/assets/catalogue/furniture-floor-lamp.png",
+      "bytes": 3112,
+      "sha256": "4cf30816efdebca572cb5524f64d120db2e5c23277298a730c97237f6eb102f9"
+    },
+    {
+      "path": "dist/assets/catalogue/furniture-plant.png",
+      "bytes": 9227,
+      "sha256": "d6c4ea8f95b1c0bd675e480e10b8902276dfbe70182305d216c08b11eae7b302"
+    },
+    {
+      "path": "dist/assets/catalogue/furniture-round-table.png",
+      "bytes": 4147,
+      "sha256": "45a9adc5fe37b788ad5ce1aa3a3b4024d98976ee558b4eea9b6f9f87269bac47"
+    },
+    {
+      "path": "dist/assets/catalogue/furniture-rug.png",
+      "bytes": 2856,
+      "sha256": "94453da3281295c134437ec2fdaed4847285b0a3ae70d344f14fb6ac7d0988b3"
+    },
+    {
+      "path": "dist/assets/catalogue/furniture-runner.png",
+      "bytes": 2791,
+      "sha256": "c52209efb6ec38bdf1e878a06e905c9132bd40ebab3998b813b685aaad9f0eeb"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-afro.png",
+      "bytes": 21692,
+      "sha256": "5af0201ae3df83d702d4aaabff22b2d45730694aa77beb6de4f617479bd49961"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-bald.png",
+      "bytes": 19110,
+      "sha256": "92439162ab562dba9b8cd1fc679916ba3d3dbcdd28768c269f2b7556293298c3"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-bob.png",
+      "bytes": 19973,
+      "sha256": "18bf4853d76696df8f9a1ab2e87cfb1d2653e1f99fc728333559d0cf0d980e53"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-braids.png",
+      "bytes": 20549,
+      "sha256": "7cee11e1de32ba052cee18a36cfcad82c7373c4e6354033c0e867e14573922f8"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-bun.png",
+      "bytes": 19934,
+      "sha256": "dae561feb7a64bfb198787bdc5f48d01e131de7425f780158ecf197f13702232"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-cornrows.png",
+      "bytes": 20026,
+      "sha256": "2b8a139e7ad0f297e3a7c1e100942c2c47831f57de5c1f74281075d98987bc03"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-crown.png",
+      "bytes": 20982,
+      "sha256": "929d817a60c785d4f712507bcbbb7f137f5afcc7202eb92c4c5135a9e6fa2c21"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-fade.png",
+      "bytes": 19250,
+      "sha256": "9341ab69581c5ff6473b7f2d82b836c3980897e556c015edb30bf0d6ea70d8a7"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-locs.png",
+      "bytes": 20361,
+      "sha256": "8da518ba13108eed867f680418679119f16d25142d4aaa51c6121e6b4f66cdae"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-pixie.png",
+      "bytes": 20150,
+      "sha256": "69feb3c8eddda33600f7890109eabc48b61d0c3298dd59cd160d68d13b7db9d7"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-puff.png",
+      "bytes": 22812,
+      "sha256": "8cf5e20bc6de7bea9f888457b962e6029db54394ec7eaf5b82c176f309c2e9e6"
+    },
+    {
+      "path": "dist/assets/catalogue/hair-wig.png",
+      "bytes": 19886,
+      "sha256": "7f419a25e83d65ba83337b1139bca4d039946cffdb1a43cc754e39b658561c67"
+    },
+    {
+      "path": "dist/assets/catalogue/headwrap-gele.png",
+      "bytes": 25870,
+      "sha256": "35111752f7747e05a1fd0e1200a1a5d3f4d8300a1e16031f656de3b81b5ac928"
+    },
+    {
+      "path": "dist/assets/catalogue/native-agbada.png",
+      "bytes": 15763,
+      "sha256": "69cf2fb2a68a016dec7210c87bb34f47fffdb307026c30dfc19b4a589b32abd7"
+    },
+    {
+      "path": "dist/assets/catalogue/native-ankara.png",
+      "bytes": 17670,
+      "sha256": "f2a04264c1a10629c5f8e68daab38745a7aa4a752114937eeb030a861cf2e3e8"
+    },
+    {
+      "path": "dist/assets/catalogue/native-iro.png",
+      "bytes": 17472,
+      "sha256": "559adffeadb66d38b45e7879f57000ef40832bb577af95a8a19e092f124eed3a"
+    },
+    {
+      "path": "dist/assets/catalogue/native-senator.png",
+      "bytes": 17106,
+      "sha256": "013b5d288b81d3663f602edf4f459dc7d07c7bd8fbc4da1a122e758c287b96d7"
+    },
+    {
+      "path": "dist/assets/catalogue/outfit-casual.png",
+      "bytes": 17104,
+      "sha256": "2299e7c5787e4f3a139f576f3bd3b8d84e0012e038cea4ac47eaeade2a00f2b9"
+    },
+    {
+      "path": "dist/assets/catalogue/outfit-track.png",
+      "bytes": 18960,
+      "sha256": "e639b071e4d932bebbbe5e37a238bfd4807f40c8fe1c69796ae1f4165d9052ee"
+    },
+    {
+      "path": "dist/assets/catalogue/outfit-varsity.png",
+      "bytes": 17453,
+      "sha256": "2117c659fcbf007bffe6387509ef3d023a019385f3480a3ea601ec252bb2d681"
+    },
+    {
+      "path": "dist/assets/catalogue/shoe-boots.png",
+      "bytes": 15054,
+      "sha256": "a4cdbb1d3dce486197b89930e9a92f34773fb6664adb77f9cb46876610c1089b"
+    },
+    {
+      "path": "dist/assets/catalogue/shoe-loafers.png",
+      "bytes": 16583,
+      "sha256": "f1a41155f6b90c719d40eee76c6f26e60d9604c27b5f8112ec7be4fdf07d6646"
+    },
+    {
+      "path": "dist/assets/catalogue/shoe-trainers.png",
+      "bytes": 15489,
+      "sha256": "92b6a15969a8d82fb4d726d1c9e51ddb8dbd5b24315bff7d6fc51608e5bbd105"
+    },
+    {
+      "path": "dist/assets/catalogue/top-blazer.png",
+      "bytes": 17917,
+      "sha256": "5684f7575ab6de8fe881b9bb3f1d252f10c9ea27660feee87395166d34d6caf6"
+    },
+    {
+      "path": "dist/assets/catalogue/top-tee.png",
+      "bytes": 17104,
+      "sha256": "2299e7c5787e4f3a139f576f3bd3b8d84e0012e038cea4ac47eaeade2a00f2b9"
+    },
+    {
+      "path": "dist/assets/catalogue/top-wrap.png",
+      "bytes": 17902,
+      "sha256": "bb17b6ab6f93c03a892c787046f728763f345cdc53a7a17970aa9a85e5c9a167"
+    },
+    {
+      "path": "dist/assets/characters/animation-bind.json",
+      "bytes": 7178,
+      "sha256": "fa348caa6fac01412cfe37d4af58c077b977c41aea460866178dabf64854d71f"
+    },
+    {
+      "path": "dist/assets/characters/female-normal.webp",
+      "bytes": 34954,
+      "sha256": "afe9e5e6c9637de8dd8bd0dc3617405d302f5677b17fb59bfc51490a248053a8"
+    },
+    {
+      "path": "dist/assets/characters/female-skin.webp",
+      "bytes": 18054,
+      "sha256": "e9cf42d240e88031b6ca96cf6da1f10b41504ceb6d5a0d5f477f2e17d34cf1df"
+    },
+    {
+      "path": "dist/assets/characters/Hair_Buns.glb",
+      "bytes": 133356,
+      "sha256": "5a518a777c5922796adcb6df1329b7798821e09da54ff9792068b32a99c87082"
+    },
+    {
+      "path": "dist/assets/characters/Hair_Buzzed.glb",
+      "bytes": 21296,
+      "sha256": "8c1cf129003be6b5885d6256556c0ec146a8970774e23d65badbe967adc2745f"
+    },
+    {
+      "path": "dist/assets/characters/Hair_BuzzedFemale.glb",
+      "bytes": 21428,
+      "sha256": "a9609480b1ecf451401a52a64ea76b815fd7880f35939e228057777f3ac5441e"
+    },
+    {
+      "path": "dist/assets/characters/Hair_Long.glb",
+      "bytes": 117448,
+      "sha256": "60162317f17147ae133ae4f076f280ab31984d28ca2a4f979c898aac654a6990"
+    },
+    {
+      "path": "dist/assets/characters/License_Animations.txt",
+      "bytes": 332,
+      "sha256": "6d01f55c6e4c49a2c9963e147e561945ae2c83958c8ca667d90a6bffdbfac061"
+    },
+    {
+      "path": "dist/assets/characters/License_Standard.txt",
+      "bytes": 806,
+      "sha256": "0f4beaf0fe360a7732e58bbe3dbf60a2422367fbea60cb9ea4add968f383268e"
+    },
+    {
+      "path": "dist/assets/characters/locomotion.glb",
+      "bytes": 165732,
+      "sha256": "d8eb5e3fe0f16ee278febf1389276496b5e0f40a8201a965370eaed4f7d15544"
+    },
+    {
+      "path": "dist/assets/characters/male-normal.webp",
+      "bytes": 44864,
+      "sha256": "46e4b06aaceb832c7dbde85988cc9d098b971395a4d5c2b91a11f98b69881894"
+    },
+    {
+      "path": "dist/assets/characters/male-skin.webp",
+      "bytes": 19978,
+      "sha256": "73c055c1c853f1ecbd04dba294337b35be6c7526de53d5b27b9b2daaf846f8e4"
+    },
+    {
+      "path": "dist/assets/characters/Superhero_Female_FullBody.glb",
+      "bytes": 573936,
+      "sha256": "e72cfbfa65ccfe0cd5cedb51fd42ec5c4526cf49fa6f20cc400113e3930d6ff5"
+    },
+    {
+      "path": "dist/assets/characters/Superhero_Male_FullBody.glb",
+      "bytes": 550820,
+      "sha256": "2bf5ca778aa41ab1890a305a657d4966689df7b90a6e6d500c88586af81ac122"
+    },
+    {
+      "path": "dist/assets/characters/T_Eye_Brown.webp",
+      "bytes": 5334,
+      "sha256": "f8f13cca0f88d8778e0752b3ce8cb089b9763f91e0f56ecb31ccd32fff85ef19"
+    },
+    {
+      "path": "dist/assets/dialogue/askmore-female.wav",
+      "bytes": 91244,
+      "sha256": "b6ffccfea101d9163dd6245470e65b7049a07406c30a5156ae631c0610f919d1"
+    },
+    {
+      "path": "dist/assets/dialogue/askmore-male.wav",
+      "bytes": 105644,
+      "sha256": "19ed5eb6750fd51d3fa2b560f9f7f09fd04281a7073ecc209bd86a519aa3ed05"
+    },
+    {
+      "path": "dist/assets/dialogue/beans.wav",
+      "bytes": 207644,
+      "sha256": "9c9579b284e829a5d3ac9b951b946988eb45e8e49e6550c146fc3cc9fd195e9f"
+    },
+    {
+      "path": "dist/assets/dialogue/busy.wav",
+      "bytes": 229244,
+      "sha256": "2e8a84bb5a381e561d116b1ba4a19e1b42c2c8dc2a5e45a89564eb63032bddf4"
+    },
+    {
+      "path": "dist/assets/dialogue/busyreply.wav",
+      "bytes": 180044,
+      "sha256": "8c2237bd6ea78695f65def20a3bcd186fd00aeadd7ba8631bdc7889f58365295"
+    },
+    {
+      "path": "dist/assets/dialogue/casual-female.wav",
+      "bytes": 102044,
+      "sha256": "ecea2ce672f8f43e51b44ff9065639d29529b530c10476ceb2923978e61c9e2a"
+    },
+    {
+      "path": "dist/assets/dialogue/casual-male.wav",
+      "bytes": 124844,
+      "sha256": "e730d1f8937c094f1ac2dd68ba887eb6fcd8242faea5ef7426dd3d1fb3b10b28"
+    },
+    {
+      "path": "dist/assets/dialogue/deliveryhello.wav",
+      "bytes": 212444,
+      "sha256": "7c62473956d9de1c53e89d7bc2861cfb6806a44f7af58c7a1a4d90a3cd4006ef"
+    },
+    {
+      "path": "dist/assets/dialogue/deliverythanks-female.wav",
+      "bytes": 130844,
+      "sha256": "1f0a5485e32cd0977f4a83f47c6f2ab317182de3ddd0eed1d0ed4519d2071600"
+    },
+    {
+      "path": "dist/assets/dialogue/deliverythanks-male.wav",
+      "bytes": 146444,
+      "sha256": "ae404060fa538a96849453282454d412feb465281fc10ac4abe084889ac83391"
+    },
+    {
+      "path": "dist/assets/dialogue/directions-female.wav",
+      "bytes": 97244,
+      "sha256": "64751ca55b2a69396791a4e1c3721ad17d6a0317000fe536e0eb5bab49a9ee6a"
+    },
+    {
+      "path": "dist/assets/dialogue/directions-male.wav",
+      "bytes": 110444,
+      "sha256": "0fe68686a2217ffd37c99b763460bf335777bef4b21db6237f9f251cb9042f8a"
+    },
+    {
+      "path": "dist/assets/dialogue/dishquestion-female.wav",
+      "bytes": 117644,
+      "sha256": "d2619197676399f466140db1fa13ff9100729de1b85e61deca07169fcdf069d7"
+    },
+    {
+      "path": "dist/assets/dialogue/dishquestion-male.wav",
+      "bytes": 140444,
+      "sha256": "26832ff0022160389105cc9074bd90e5876d3ff81e23a9d9bdb0c53c25e94950"
+    },
+    {
+      "path": "dist/assets/dialogue/extra-female.wav",
+      "bytes": 105644,
+      "sha256": "d14f02a9ba8b35cef217fc0d3ac51a60430f8ad0c395657eb94107013c804729"
+    },
+    {
+      "path": "dist/assets/dialogue/extra-male.wav",
+      "bytes": 123644,
+      "sha256": "265aa0f31c1da03f66ad5a813ab1e84c9f3402e6a32ce3fe11c36c6824f7cc6a"
+    },
+    {
+      "path": "dist/assets/dialogue/garden.wav",
+      "bytes": 243644,
+      "sha256": "0b49bd46239d19632de48dd758b9d05f2283b3a88a46cc8cb21612fd0de8e2b2"
+    },
+    {
+      "path": "dist/assets/dialogue/goodbye.wav",
+      "bytes": 123644,
+      "sha256": "13b8aef1317b287e4421dee7443e68111070853c5d489d3bc43ee8a4543bf9b4"
+    },
+    {
+      "path": "dist/assets/dialogue/greet-female.wav",
+      "bytes": 108044,
+      "sha256": "887c90889a9d696796740f01bb6d0fecdb1df1748bc306f3098c95e4f44ba7e1"
+    },
+    {
+      "path": "dist/assets/dialogue/greet-male.wav",
+      "bytes": 117644,
+      "sha256": "462f9ce76436d3e1c85fb2b1a678b35542f85dc1a740367f004415e5e91bb824"
+    },
+    {
+      "path": "dist/assets/dialogue/handover.wav",
+      "bytes": 230444,
+      "sha256": "bff680334c34a20667aa9e49f4a4d2d3e557cdde4b2322004704d44a734946fd"
+    },
+    {
+      "path": "dist/assets/dialogue/handsfull.wav",
+      "bytes": 226844,
+      "sha256": "83900653ca89adca8f3a0bb50b95c58bc71a7a7db4e35c5c0bfac98ac51bd459"
+    },
+    {
+      "path": "dist/assets/dialogue/hello.wav",
+      "bytes": 132044,
+      "sha256": "2085fa27035a55f0f90cc0a2aebc8c3396716c63fb4cb942551ac16b4155f79d"
+    },
+    {
+      "path": "dist/assets/dialogue/jobs.wav",
+      "bytes": 303644,
+      "sha256": "72ec4b965f8ee93e5c4944b152ba6e80e0abb093453145eaa3434747e49258c6"
+    },
+    {
+      "path": "dist/assets/dialogue/jollof.wav",
+      "bytes": 235244,
+      "sha256": "553a3869257b01f120dbd04135a8798ce3bdbe95c84c2dda7b7061289254990b"
+    },
+    {
+      "path": "dist/assets/dialogue/later-female.wav",
+      "bytes": 141644,
+      "sha256": "4a2a67bbd5ac89c7c0be0bdceecb7e53a820fc5aa704e81661f54ea87af22750"
+    },
+    {
+      "path": "dist/assets/dialogue/later-male.wav",
+      "bytes": 162044,
+      "sha256": "76c5d4a3a2a9ba60cc806002d4ab3ba16ee7ea3f50afd1ca380fff4a7230b55d"
+    },
+    {
+      "path": "dist/assets/dialogue/LICENSE-Kokoro-Apache-2.0.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "dist/assets/dialogue/manifest.json",
+      "bytes": 23043,
+      "sha256": "01bec2bc59c5733bc87565a24bc528ed780fd809f9f406b941ad9c349e8f4a34"
+    },
+    {
+      "path": "dist/assets/dialogue/noextra.wav",
+      "bytes": 244844,
+      "sha256": "ddbc4f82d5fcc1ca6af029c170f86823df21a36fbdc284f24728d9fc0e47e558"
+    },
+    {
+      "path": "dist/assets/dialogue/north.wav",
+      "bytes": 249644,
+      "sha256": "a765b9fe17acabe09ad4b23690c0415b01287e1f4228b9e21708452b2c6a40f6"
+    },
+    {
+      "path": "dist/assets/dialogue/README.md",
+      "bytes": 1724,
+      "sha256": "67a7abd9444e1003c79f9fc95c33674094ae63bcc0a1e00125025513f8ed6ac1"
+    },
+    {
+      "path": "dist/assets/dialogue/receive-female.wav",
+      "bytes": 128444,
+      "sha256": "44cc60a76158df2c87d030baecf77dd846b95998078ff822629b943c20a74d9e"
+    },
+    {
+      "path": "dist/assets/dialogue/receive-male.wav",
+      "bytes": 139244,
+      "sha256": "e3d0068d784f1c984ddeeee4501d03c0e94e6ee4bb0da593e5c15fdd529c4053"
+    },
+    {
+      "path": "dist/assets/dialogue/refuse.wav",
+      "bytes": 201644,
+      "sha256": "3378575d50dd56ecb07fd8fbb57cb834786cdb8ae49a91989c9c57556e17462a"
+    },
+    {
+      "path": "dist/assets/dialogue/review.html",
+      "bytes": 7139,
+      "sha256": "9db91ccbfae5800448a33625d82a446a6251d4bcb447689711c0ef10cb19a58c"
+    },
+    {
+      "path": "dist/assets/dialogue/thanks-female.wav",
+      "bytes": 88844,
+      "sha256": "9fa6499232874d71c81cdd96b811cd19a964b1aa8fca3f4a9be339c91a378477"
+    },
+    {
+      "path": "dist/assets/dialogue/thanks-male.wav",
+      "bytes": 100844,
+      "sha256": "01200f91ea3f1e15a38db67f59031c4add489ca2969ecd7d4bb8af271aadbcba"
+    },
+    {
+      "path": "dist/assets/dialogue/verification.json",
+      "bytes": 376,
+      "sha256": "a23b9cd33049f2d28bfe29acfdef14692be5c96a9d5578c0fc4166c0723c21af"
+    },
+    {
+      "path": "dist/assets/dialogue/wait.wav",
+      "bytes": 210044,
+      "sha256": "514adc938a4f51c83cdda1f30b997c22e025472aab8a26349d3218c8e0379a5f"
+    },
+    {
+      "path": "dist/assets/dialogue/welcome.wav",
+      "bytes": 134444,
+      "sha256": "4b88a0c07f84002977f322ae0b4b4435885187e788c937e87238e322855d49ff"
+    },
+    {
+      "path": "dist/assets/dialogue/well.wav",
+      "bytes": 177644,
+      "sha256": "21e943a1118663e86705e1b264a843e2776db0709ec2e65587954bd70fbf3ba7"
+    },
+    {
+      "path": "dist/assets/dialogue/work-female.wav",
+      "bytes": 85244,
+      "sha256": "c52a486684f6b0e6a3e758395c8f555f9211483027d24757a374c6e70d98e5e4"
+    },
+    {
+      "path": "dist/assets/dialogue/work-male.wav",
+      "bytes": 102044,
+      "sha256": "853cb067c6a74f6996d97c00160e48109f5ab3692f4506068b3bac493b2e8c5f"
+    },
+    {
+      "path": "dist/assets/fashion-review/female-casual.webp",
+      "bytes": 2290,
+      "sha256": "bf05d68d63c49428b15cc8c93a0ab096e900e759c29baedf83e4bbe980d8a991"
+    },
+    {
+      "path": "dist/assets/fashion-review/female-hair-bob.webp",
+      "bytes": 2620,
+      "sha256": "07875c7a1ee088d0d88826f3ba151cb4eb181077b5f2f28743a947d3dde2e0a9"
+    },
+    {
+      "path": "dist/assets/fashion-review/female-hair-braids.webp",
+      "bytes": 2972,
+      "sha256": "d1f7f115097f3f24dac59f24809085e528c3b81cfbe2af311ef2ca380d61f366"
+    },
+    {
+      "path": "dist/assets/fashion-review/female-hair-bun.webp",
+      "bytes": 2736,
+      "sha256": "c2bd160505626eb95cf87886409872bd4e0faf08aa72cba3e163590b4143ee4a"
+    },
+    {
+      "path": "dist/assets/fashion-review/female-native.webp",
+      "bytes": 4412,
+      "sha256": "8bff97ac6f8f03577fefc7e78a909a48aa44854d42e365ef622b23a38efcfa96"
+    },
+    {
+      "path": "dist/assets/fashion-review/male-casual.webp",
+      "bytes": 2306,
+      "sha256": "85e4aa0f9750561fb3442ba3e1542eef56c1acbc9f60f9bcd2c9ac231395183a"
+    },
+    {
+      "path": "dist/assets/fashion-review/male-hair-cornrows.webp",
+      "bytes": 2610,
+      "sha256": "4d04d34ba0d2e23c83f922cf7017d73529c06258bcb1168c6ac8c717767e694d"
+    },
+    {
+      "path": "dist/assets/fashion-review/male-hair-fade.webp",
+      "bytes": 2468,
+      "sha256": "78abf9dc3d943e6bec4eb98a769397b07b6463504219bab5de1f02433b133b16"
+    },
+    {
+      "path": "dist/assets/fashion-review/male-hair-locs.webp",
+      "bytes": 2702,
+      "sha256": "ac5b0e035741e2ef1483d8d65fd84b6b74522e86ec83d89281c2dc0438ec775c"
+    },
+    {
+      "path": "dist/assets/fashion-review/male-native.webp",
+      "bytes": 2348,
+      "sha256": "6b6848d84ecfefb6bbf7951e6f9b854732ea6b1ed487b6d02a6b51915fe89af4"
+    },
+    {
+      "path": "dist/assets/food/beans-meal.svg",
+      "bytes": 5167,
+      "sha256": "6c507401a79b9ebaddc6c89029c99fa21fd6fe952afbc508de1d428e09d0660d"
+    },
+    {
+      "path": "dist/assets/food/beans.svg",
+      "bytes": 4687,
+      "sha256": "ed08451fe5cbdb9e6df3c03362e6d0f60716834b1cfdb6b8fac9540203ddb917"
+    },
+    {
+      "path": "dist/assets/food/home-beans.svg",
+      "bytes": 5167,
+      "sha256": "6c507401a79b9ebaddc6c89029c99fa21fd6fe952afbc508de1d428e09d0660d"
+    },
+    {
+      "path": "dist/assets/food/home-jollof.svg",
+      "bytes": 3852,
+      "sha256": "4a5261ba13a0e08ece9a4c0685f572536c0c971262d1167d1a85555d30b5ec6d"
+    },
+    {
+      "path": "dist/assets/food/jollof.svg",
+      "bytes": 4332,
+      "sha256": "4f2c385236e02dd0680eaf08392b9b537e7b3c42a99847595c9286a29f714f0d"
+    },
+    {
+      "path": "dist/assets/food/pepper-yam.svg",
+      "bytes": 3049,
+      "sha256": "5c88696a01de014f4278613bdf09213b57f60acd276503a01b33397e5c37629c"
+    },
+    {
+      "path": "dist/assets/food/plantain.svg",
+      "bytes": 352,
+      "sha256": "8acd1694a43ad0de9824165e75b8eae23eaec8be42b065f4a2079b2b36d1e4dd"
+    },
+    {
+      "path": "dist/assets/food/practice-rice.svg",
+      "bytes": 3852,
+      "sha256": "7b6c2cd684330b31e3557fa2722b9fe0c2fc343d1fc180fb0392a72dbd18ba2e"
+    },
+    {
+      "path": "dist/assets/food/rice.svg",
+      "bytes": 3852,
+      "sha256": "7b6c2cd684330b31e3557fa2722b9fe0c2fc343d1fc180fb0392a72dbd18ba2e"
+    },
+    {
+      "path": "dist/assets/food/tomato.svg",
+      "bytes": 369,
+      "sha256": "f66fb2fc756fed02298fbc197ac30edbc01453082b1229d8f7ab361cd97d6d9d"
+    },
+    {
+      "path": "dist/camera.js",
+      "bytes": 3075,
+      "sha256": "392f4ccad30ba2effdcc211dfd92e4c8d281b5ef25735c5301ec3f63da659eef"
+    },
+    {
+      "path": "dist/character-behaviour.js",
+      "bytes": 3237,
+      "sha256": "a5b2c5d5a80bcc153815d5fb1869a5bc1fdedd1a6b4c9bc46dfca48cf04ac498"
+    },
+    {
+      "path": "dist/character.js",
+      "bytes": 15227,
+      "sha256": "0aad76fcee4c44e5ee6803f926873a7f5aca062688a4776e42445493eb85021d"
+    },
+    {
+      "path": "dist/compact.css",
+      "bytes": 10328,
+      "sha256": "95ac53f465748e0196ff1bb11f82b6c0af944b85d06a959b432faefb3acf52dc"
+    },
+    {
+      "path": "dist/controls.js",
+      "bytes": 1255,
+      "sha256": "c577ffcdf66c9ffdbbdb7fba7c7383cd80a0ae6a78c0ca1544e164e05f1ef0e2"
+    },
+    {
+      "path": "dist/daily-life.js",
+      "bytes": 15954,
+      "sha256": "bcb7a48553c5682c830eeee9ea3322089cb5be39cdbde57805edf07f43397722"
+    },
+    {
+      "path": "dist/daily-ui.js",
+      "bytes": 14411,
+      "sha256": "7afa053c87cd7d4ec63bfadd1dfad64bb25b4ed5f103b53da966b474c8b86b81"
+    },
+    {
+      "path": "dist/daily-world.js",
+      "bytes": 3445,
+      "sha256": "dafdf66b5f588667666138034d50dfc5d66e9852bf46045401fd0df30325e3d0"
+    },
+    {
+      "path": "dist/decor-state.js",
+      "bytes": 5051,
+      "sha256": "3e6d36c3f609bae5db460f87bac73afb8156d9f5c9c3db780505b679a58e3bc6"
+    },
+    {
+      "path": "dist/decor-ui.js",
+      "bytes": 9407,
+      "sha256": "aad90e60d1b1625bc22ee904344288939ceea6d1e87dfd8a07c78b58f34c89e1"
+    },
+    {
+      "path": "dist/destination-interiors.js",
+      "bytes": 4050,
+      "sha256": "6c25fa3b4be0e6a75a901e90f9e04c2889a2c64c9487898b010c09f7d1cd6d2a"
+    },
+    {
+      "path": "dist/destination-play.js",
+      "bytes": 7680,
+      "sha256": "fc545aa4f135ea469136b665c887ec800c090ceacc51761932c5e9dedaffecd3"
+    },
+    {
+      "path": "dist/destinations-state.js",
+      "bytes": 5788,
+      "sha256": "49935355197e8a52e124de182cec0363a102e6677ad13366e7ac8a747426174e"
+    },
+    {
+      "path": "dist/dialogue-lines.js",
+      "bytes": 4109,
+      "sha256": "44550af09cdb8d5e2ef8f41728b01c7926e95fcfc7f765e539c0f256e2393f01"
+    },
+    {
+      "path": "dist/dialogue.js",
+      "bytes": 6492,
+      "sha256": "e8a74afb53db49ac0601f49bd6bd68356af5340326f0a797f8571e5a815004a6"
+    },
+    {
+      "path": "dist/districts.js",
+      "bytes": 8730,
+      "sha256": "e9164225ae078997385b75cdbdc320f623ed9dda6d421e74bdd3c4602cb74488"
+    },
+    {
+      "path": "dist/doorway.js",
+      "bytes": 1728,
+      "sha256": "57e5afdb216d79638d67d30781b6453afdc888c20d6fc846a1e6b788a3ca3b09"
+    },
+    {
+      "path": "dist/environment-state.js",
+      "bytes": 2499,
+      "sha256": "e4325e387c64e30592628736aca3a33a8c5f1fa41b35badd89359b7538416a04"
+    },
+    {
+      "path": "dist/environment.js",
+      "bytes": 4098,
+      "sha256": "bbd6c201097ac6bbf57e3d77c36af4b9b35e8379d0f1fe0baa9790da370b008b"
+    },
+    {
+      "path": "dist/everyday-clothes.js",
+      "bytes": 3229,
+      "sha256": "2c6e1f7e2f2aacb345d9b098d1d22f8cf2c0d92e64fc8959c4fb03ca0b49c642"
+    },
+    {
+      "path": "dist/fashion-catalogue.js",
+      "bytes": 6417,
+      "sha256": "c1a90be198639143484ab18f10ee31df6f9afd7d894175a5f76e2d3a03220abb"
+    },
+    {
+      "path": "dist/fashion-meshes.js",
+      "bytes": 9644,
+      "sha256": "004f5e39974b77897f021aa21ca40fcabc75225eacdf3c99d1f47b416c7fa92e"
+    },
+    {
+      "path": "dist/fashion-review.css",
+      "bytes": 5681,
+      "sha256": "6748f4036187e3ce8ae3c48cd2b8123ec9b4b595a1e31e4b0593f4d74d145577"
+    },
+    {
+      "path": "dist/fashion-review.html",
+      "bytes": 4303,
+      "sha256": "4a290a2fb2a86a618c63e5a3f8ff87013599916fcb7a2b690a51480e214c4ce6"
+    },
+    {
+      "path": "dist/fashion-review.js",
+      "bytes": 7603,
+      "sha256": "d038279650726696fe5caab4178a50a1aa92d14e687bae9c33838d737cad1acf"
+    },
+    {
+      "path": "dist/food-images.js",
+      "bytes": 402,
+      "sha256": "831d5014409c4fd03ce3fb871a9d986dc7894452c0c84122baeb10241bc59aea"
+    },
+    {
+      "path": "dist/food-service.js",
+      "bytes": 8514,
+      "sha256": "5488ac7a8514d7f7b137306590a6e2bd99658ac37782a34186228812074ec493"
+    },
+    {
+      "path": "dist/furniture-catalogue.js",
+      "bytes": 1452,
+      "sha256": "4a61a059f70b8a9bdb0095e3eafec1b27cd429cb7b9442c0d84ff48721c5e025"
+    },
+    {
+      "path": "dist/furniture-meshes.js",
+      "bytes": 4418,
+      "sha256": "52f46029c4caed6235e0ae892eb7e6aad0b78980559b79199ea2b14cdb91964e"
+    },
+    {
+      "path": "dist/game.js",
+      "bytes": 84231,
+      "sha256": "4bbaab4dde93904351ddd44f75960565aa67b9bc1d756972233af93bcd4b8d1a"
+    },
+    {
+      "path": "dist/garments.js",
+      "bytes": 7028,
+      "sha256": "625948db5d850e89271effaed41bf89e57a8f1de5241a0cc475fbf01035a1aef"
+    },
+    {
+      "path": "dist/home-experience.js",
+      "bytes": 17577,
+      "sha256": "d8d41cc1efd45a20e8b5818fb8b0dffd2193f6f7b64e3a9e033399174073e389"
+    },
+    {
+      "path": "dist/home-interior.js",
+      "bytes": 10572,
+      "sha256": "a989c77aa134235e763d09902d0b920d6cda06a56b0cab196402e71baa5f5321"
+    },
+    {
+      "path": "dist/home-layout.js",
+      "bytes": 1260,
+      "sha256": "a367e6252fe3e0265a50c8b87fd7ad78adb51c7db75a1e236473f1311fb668e8"
+    },
+    {
+      "path": "dist/home-life.js",
+      "bytes": 12038,
+      "sha256": "e4925945b18769f181ed0f1f160ba08d7010fda08b6633fa0b402af56c381b16"
+    },
+    {
+      "path": "dist/home-motion.js",
+      "bytes": 3699,
+      "sha256": "b3dc9ef8b0f84c7295bb7101c01a4bb9d688380835ba921d2ea6927f9875788e"
+    },
+    {
+      "path": "dist/home-props.js",
+      "bytes": 6163,
+      "sha256": "d2942596f35a78fb3ecc9ef000d2e3303d02dbd2100cb5f451ae136194ec22b3"
+    },
+    {
+      "path": "dist/home-style.js",
+      "bytes": 488,
+      "sha256": "c9b01fcc5e237eb6f26c0717204a37fb7ab0172cad8d7bde6c50b1c2de058632"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 6950,
+      "sha256": "3b5a1a22ff440c02f2aabc7730e16028f7229fcc2be79d98d8dd38cf45ae0042"
+    },
+    {
+      "path": "dist/interior-camera.js",
+      "bytes": 1131,
+      "sha256": "265db57cebddf9a0d5bca715f0c848ad86b2d9166d0690dc8af363c70ad43d05"
+    },
+    {
+      "path": "dist/interior.js",
+      "bytes": 5712,
+      "sha256": "60c9c5b08e08a56329bfb881cd20ccf316bf460c421c729b97e41a3cf3042a5b"
+    },
+    {
+      "path": "dist/life.js",
+      "bytes": 10591,
+      "sha256": "bf20489749880d749bdb58aa311eafe842092c6d1c94d67615d22fdd546c7331"
+    },
+    {
+      "path": "dist/makeup-preview.js",
+      "bytes": 2660,
+      "sha256": "08d5b2b14b1afd87eac32204c8e6a97dbdfd59808a3393aff864df3dc14cc5ce"
+    },
+    {
+      "path": "dist/mobile-runtime.js",
+      "bytes": 13191,
+      "sha256": "5ee2b8dbee64077d529b4dbcfcc64e1f4839d10bcd43567a669ebfc4ebb307d0"
+    },
+    {
+      "path": "dist/navigation.js",
+      "bytes": 7259,
+      "sha256": "2c0ebbffa03bdf3cea9ea6470e4cb75e00b2a8093a2c4349e94e3168069ee6f4"
+    },
+    {
+      "path": "dist/neighbourhood.js",
+      "bytes": 11526,
+      "sha256": "5340c230e6d9bc84f6b9d9959be24bc5ef857650729b0b97359b840a07b37f76"
+    },
+    {
+      "path": "dist/phone-wallpaper.js",
+      "bytes": 3188,
+      "sha256": "6c8e58686bc4078ea145096f5e8b671afde6913f72ec4eb7ecce1a9884c951b3"
+    },
+    {
+      "path": "dist/portrait-camera.js",
+      "bytes": 814,
+      "sha256": "ce403aee713e1226b762f514fa24ba6b5f08235eb139a7eea11ab8355bb9b84d"
+    },
+    {
+      "path": "dist/portrait-lighting.js",
+      "bytes": 439,
+      "sha256": "ced3e38529d6620a1ef52c01aed19bd28c258878e8cc805b7555990f8e58509e"
+    },
+    {
+      "path": "dist/portrait.css",
+      "bytes": 11251,
+      "sha256": "603795b0a7491dba50c116724c50cd2a85f3a724c06eb0de31115520fc562094"
+    },
+    {
+      "path": "dist/privacy.html",
+      "bytes": 2162,
+      "sha256": "1323f61a80ab8858d1f7c691c6fc9c0b76ee7b5907e35f41f4249e4081dedffe"
+    },
+    {
+      "path": "dist/public-names.js",
+      "bytes": 1555,
+      "sha256": "5c1457cd67006383cd4520c9c417e2e968064a161ddb2b8e6b1b3b4442550c5d"
+    },
+    {
+      "path": "dist/resolution.js",
+      "bytes": 2841,
+      "sha256": "9d008662e9745e6a10263d436151a634eadd4e0d62bef4a37eec1add5de3613a"
+    },
+    {
+      "path": "dist/service-experience.js",
+      "bytes": 11055,
+      "sha256": "3950109c8c4a83f305e449d4e79b5d1819f93ac4851c3c5b978f3e80367f501f"
+    },
+    {
+      "path": "dist/skin-tones.js",
+      "bytes": 1842,
+      "sha256": "9360fe1c71ccbbaf91b4b773adfd21894323b97c00191f81ddcee9d381746fb6"
+    },
+    {
+      "path": "dist/soft-geometry.js",
+      "bytes": 675,
+      "sha256": "8d15f155a97b24842fdea98657eb65a4bc876e776a6813320252ef564069b4b6"
+    },
+    {
+      "path": "dist/street-life.js",
+      "bytes": 7138,
+      "sha256": "da30a1d5d6d4e7aac04cf248e9d81e077ba16cc5c7d95bef952bb78158fc834f"
+    },
+    {
+      "path": "dist/street.js",
+      "bytes": 22757,
+      "sha256": "942bb8f3c79b4db4c51bb48a336034c448dd6461df38e7f8193d481117319ef6"
+    },
+    {
+      "path": "dist/style.css",
+      "bytes": 40893,
+      "sha256": "b25ab29f8b30a57e34924cd3ebe62667c7204f1cc7e6cb4461fa42c7240c6d93"
+    },
+    {
+      "path": "dist/surface-materials.js",
+      "bytes": 1329,
+      "sha256": "2cac0d5822df02d4f213d2fdb2c7bc039997416f04ddd7c608da2ed3d12deed9"
+    },
+    {
+      "path": "dist/vendor/addons/BufferGeometryUtils.js",
+      "bytes": 31781,
+      "sha256": "51db05616ad0ddf7722e4ae8ad06bacc464985f510db3e65501498c4a816b10c"
+    },
+    {
+      "path": "dist/vendor/addons/GLTFLoader.js",
+      "bytes": 110035,
+      "sha256": "fe2abf726234f3f3aad81b5646ddcc3395088eff4315fb95d58827780c917ce4"
+    },
+    {
+      "path": "dist/vendor/addons/SkeletonUtils.js",
+      "bytes": 8815,
+      "sha256": "2ddb9e16eec56fa3f90cf2b107d16defbd7ae276d2f9ff2b4e281a6a318ee46a"
+    },
+    {
+      "path": "dist/vendor/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    {
+      "path": "dist/vendor/three.module.js",
+      "bytes": 687458,
+      "sha256": "f7cee3c7533449a1505cc12cb5128b89e3d4fd3d7ea62b05f9f5464a217472ee"
+    },
+    {
+      "path": "dist/visual.css",
+      "bytes": 1689,
+      "sha256": "23f8995e126d2611335c0cfde6c3ca370307af80c688b516a28a36f7faa47301"
+    },
+    {
+      "path": "dist/wardrobe-state.js",
+      "bytes": 4277,
+      "sha256": "ec290b2b85d904a2801e38dc09a09dcea2953b0103ffdfbaa3cb0c20fcd6d706"
+    },
+    {
+      "path": "dist/wardrobe-ui.js",
+      "bytes": 10991,
+      "sha256": "68455de1bf27f387f112e1a34e4bb6cda03ef6935b0f5b477ce992ea47a1dea5"
+    },
+    {
+      "path": "dist/zoom-control.js",
+      "bytes": 1598,
+      "sha256": "6e0069dccd02cdfd40123751683987f4be6d3d636d5bcbae0cfce726357715fc"
+    },
+    {
+      "path": "android/app/build.gradle",
+      "sha256": "af8129d2375e78cb4f0a3a6ceb0fda3fc71d28cfa0a91531d981a050d9eea465"
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "sha256": "36eec437b273dc51245df08e341156de692ad31f30d937d36e7a80ba239e4f59"
+    },
+    {
+      "path": "android/app/src/main/java/com/cityandus/lagosstreet/MainActivity.java",
+      "sha256": "5c2c7edef78f5105d740c31876dbcff1258d328908ae9255ffcfa10f5ff952ee"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "triangles": 18839,
+  "materialBatches": 5,
+  "bones": 65,
+  "maxJointPositionError": 0.00000122375535840041,
+  "bytes": 1067644,
+  "sha256": "e53ad23a0dfdbb0a2790bee9b8eb17180519dee9015bbfe0d579c11679a85189",
+  "materials": [
+    "Top_Knit",
+    "Jeans_Denim",
+    "Top_Binding",
+    "Jeans_Stitch",
+    "Hardware"
+  ],
+  "sex": "female",
+  "profile": "square"
+}

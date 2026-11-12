@@ -1,0 +1,7 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
+const cp='checkpoints/2026-11-08-before-places-batch-3/',manifest=JSON.parse(await readFile(cp+'manifest.json','utf8'));let protectedFiles=0;
+const names=['dist/character.js','dist/fashion-catalogue.js','dist/wardrobe-state.js','dist/wardrobe-garments.js','dist/home-life.js','dist/home-interior.js','dist/decor-state.js','dist/decor-ui.js','dist/place-interiors.js','dist/place-facades.js','.openai/hosting.json'];
+for(const e of manifest.files)if(names.includes(e.file)||['reference/','dist/assets/','art/blender/'].some(p=>e.file.startsWith(p))||/license/i.test(e.file)){assert.equal(createHash('sha256').update(await readFile(e.file)).digest('hex'),e.sha256,e.file);protectedFiles++;}
+for(const f of ['README.md','ROADMAP.md','docs/OWNER_REQUIREMENTS.md'])assert((await readFile(f,'utf8')).replace(/\r\n/g,'\n').includes((await readFile(cp+f,'utf8')).replace(/\r\n/g,'\n')),f+' historical content lost');
+const result={status:'passed',protectedFiles,checks:['Approved shop meshes/facades, characters, wardrobe, decor, home systems, all asset/reference bytes, MIT licenses and hosting identity preserved.','Full prior roadmap and owner requirements retained.'],scope:'Source/assets only; browser saves not read by this gate.'};await writeFile('qa/places-vehicles-3/preservation.json',JSON.stringify(result,null,2));console.log(result);

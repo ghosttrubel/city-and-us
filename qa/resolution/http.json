@@ -1,0 +1,32 @@
+[
+  {
+    "path": "/?review=daily",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 5567
+  },
+  {
+    "path": "/resolution.js",
+    "status": 200,
+    "type": "text/javascript; charset=utf-8",
+    "bytes": 2841
+  },
+  {
+    "path": "/mobile-runtime.js",
+    "status": 200,
+    "type": "text/javascript; charset=utf-8",
+    "bytes": 12314
+  },
+  {
+    "path": "/game.js",
+    "status": 200,
+    "type": "text/javascript; charset=utf-8",
+    "bytes": 71839
+  },
+  {
+    "path": "/style.css",
+    "status": 200,
+    "type": "text/css; charset=utf-8",
+    "bytes": 37841
+  }
+]

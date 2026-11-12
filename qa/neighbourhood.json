@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-23",
+  "status": "passed",
+  "checks": [
+    "Joystick dead zone, proportional/clamped magnitude and camera-relative movement; collision sliding and no large-step tunnelling",
+    "Entrances derive from building footprints; room exits and parcel/counter stations have collision-free standing space",
+    "Collection and handover reject wrong space/range; carrying survives serialization; exact-once pay; home return completes round before another pickup",
+    "Invalid spatial/delivery save fields rejected; map includes shared footprints, roads, entrances, waypoint and facing marker"
+  ],
+  "scope": "Pure logic and CPU geometry only. No browser/touch/visual verification or multiplayer claim."
+}

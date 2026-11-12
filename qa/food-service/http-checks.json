@@ -1,0 +1,54 @@
+{
+  "scope": "LAN HTTP response checks only; not browser rendering or device touch.",
+  "url": "http://10.126.70.116:3000/?review=daily",
+  "health": [
+    {
+      "path": "/?review=daily",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 6284
+    },
+    {
+      "path": "/game.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 73158
+    },
+    {
+      "path": "/home-life.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 11808
+    },
+    {
+      "path": "/home-experience.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 14217
+    },
+    {
+      "path": "/food-service.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 8069
+    },
+    {
+      "path": "/service-experience.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 9458
+    },
+    {
+      "path": "/street-life.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 6411
+    },
+    {
+      "path": "/mobile-runtime.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 12294
+    }
+  ]
+}

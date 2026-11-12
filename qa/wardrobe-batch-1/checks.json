@@ -1,0 +1,184 @@
+{
+  "status": "passed",
+  "build": "0.8.2-wardrobe.1 (11)",
+  "results": [
+    {
+      "item": "outfit-f-crop-joggers",
+      "build": "slim",
+      "topTriangles": 832,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-f-crop-joggers",
+      "build": "average",
+      "topTriangles": 832,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-f-crop-joggers",
+      "build": "athletic",
+      "topTriangles": 832,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-f-crop-joggers",
+      "build": "broad",
+      "topTriangles": 832,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-f-square-denim",
+      "build": "slim",
+      "topTriangles": 1072,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-f-square-denim",
+      "build": "average",
+      "topTriangles": 1072,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-f-square-denim",
+      "build": "athletic",
+      "topTriangles": 1072,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-f-square-denim",
+      "build": "broad",
+      "topTriangles": 1072,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-m-relaxed-denim",
+      "build": "slim",
+      "topTriangles": 912,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-m-relaxed-denim",
+      "build": "average",
+      "topTriangles": 912,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-m-relaxed-denim",
+      "build": "athletic",
+      "topTriangles": 912,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-m-relaxed-denim",
+      "build": "broad",
+      "topTriangles": 912,
+      "bottomTriangles": 1280,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-m-camp-cargo",
+      "build": "slim",
+      "topTriangles": 840,
+      "bottomTriangles": 904,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-m-camp-cargo",
+      "build": "average",
+      "topTriangles": 840,
+      "bottomTriangles": 904,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-m-camp-cargo",
+      "build": "athletic",
+      "topTriangles": 840,
+      "bottomTriangles": 904,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    },
+    {
+      "item": "outfit-m-camp-cargo",
+      "build": "broad",
+      "topTriangles": 840,
+      "bottomTriangles": 904,
+      "poses": [
+        "walk",
+        "sit",
+        "eat"
+      ]
+    }
+  ],
+  "saveChecks": "Additive old-save migration, free owned items, colour preservation, named looks, actual UI equip and reload, menu visibility state.",
+  "scope": "CPU skinning and DOM/GPU test doubles. Finite geometry is not proof of zero clipping; inspect the labelled software poses and retest physically."
+}

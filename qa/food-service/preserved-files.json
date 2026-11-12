@@ -1,0 +1,25 @@
+{
+  "files": [
+    "dist/assets/characters/animation-bind.json",
+    "dist/assets/characters/female-normal.webp",
+    "dist/assets/characters/female-skin.webp",
+    "dist/assets/characters/Hair_Buns.glb",
+    "dist/assets/characters/Hair_Buzzed.glb",
+    "dist/assets/characters/Hair_BuzzedFemale.glb",
+    "dist/assets/characters/Hair_Long.glb",
+    "dist/assets/characters/License_Animations.txt",
+    "dist/assets/characters/License_Standard.txt",
+    "dist/assets/characters/locomotion.glb",
+    "dist/assets/characters/male-normal.webp",
+    "dist/assets/characters/male-skin.webp",
+    "dist/assets/characters/Superhero_Female_FullBody.glb",
+    "dist/assets/characters/Superhero_Male_FullBody.glb",
+    "dist/assets/characters/T_Eye_Brown.webp",
+    "dist/controls.js",
+    "dist/mobile-runtime.js",
+    "dist/resolution.js",
+    ".openai/hosting.json"
+  ],
+  "changed": [],
+  "scope": "Current files match the home-before-street checkpoint; gameplay integration changes separately checked."
+}

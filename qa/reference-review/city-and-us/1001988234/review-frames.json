@@ -1,0 +1,115 @@
+{
+  "clip": "1001988234.mp4",
+  "method": "Installed libVLC CPU callbacks; sampled frames only, no audio listening",
+  "duration_ms": 83196,
+  "captures": [
+    {
+      "milliseconds": 0,
+      "file": "at-000000000.bmp"
+    },
+    {
+      "milliseconds": 3172,
+      "file": "at-000003172.bmp"
+    },
+    {
+      "milliseconds": 6408,
+      "file": "at-000006408.bmp"
+    },
+    {
+      "milliseconds": 9900,
+      "file": "at-000009900.bmp"
+    },
+    {
+      "milliseconds": 12908,
+      "file": "at-000012908.bmp"
+    },
+    {
+      "milliseconds": 16404,
+      "file": "at-000016404.bmp"
+    },
+    {
+      "milliseconds": 19664,
+      "file": "at-000019664.bmp"
+    },
+    {
+      "milliseconds": 22912,
+      "file": "at-000022912.bmp"
+    },
+    {
+      "milliseconds": 26404,
+      "file": "at-000026404.bmp"
+    },
+    {
+      "milliseconds": 29416,
+      "file": "at-000029416.bmp"
+    },
+    {
+      "milliseconds": 32664,
+      "file": "at-000032664.bmp"
+    },
+    {
+      "milliseconds": 36184,
+      "file": "at-000036184.bmp"
+    },
+    {
+      "milliseconds": 39656,
+      "file": "at-000039656.bmp"
+    },
+    {
+      "milliseconds": 42912,
+      "file": "at-000042912.bmp"
+    },
+    {
+      "milliseconds": 46404,
+      "file": "at-000046404.bmp"
+    },
+    {
+      "milliseconds": 49900,
+      "file": "at-000049900.bmp"
+    },
+    {
+      "milliseconds": 53172,
+      "file": "at-000053172.bmp"
+    },
+    {
+      "milliseconds": 56412,
+      "file": "at-000056412.bmp"
+    },
+    {
+      "milliseconds": 59900,
+      "file": "at-000059900.bmp"
+    },
+    {
+      "milliseconds": 63160,
+      "file": "at-000063160.bmp"
+    },
+    {
+      "milliseconds": 66416,
+      "file": "at-000066416.bmp"
+    },
+    {
+      "milliseconds": 69920,
+      "file": "at-000069920.bmp"
+    },
+    {
+      "milliseconds": 73404,
+      "file": "at-000073404.bmp"
+    },
+    {
+      "milliseconds": 76452,
+      "file": "at-000076452.bmp"
+    },
+    {
+      "milliseconds": 79904,
+      "file": "at-000079904.bmp"
+    },
+    {
+      "milliseconds": 82960,
+      "file": "at-000082960.bmp"
+    },
+    {
+      "milliseconds": 83250,
+      "file": "at-000083250.bmp"
+    }
+  ]
+}

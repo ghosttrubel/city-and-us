@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-29T15:56:04.629Z",
+  "results": [
+    {
+      "name": "check",
+      "exit": 0
+    },
+    {
+      "name": "check:mobile",
+      "exit": 0
+    },
+    {
+      "name": "check:physical-home",
+      "exit": 0
+    },
+    {
+      "name": "check:street-service",
+      "exit": 0
+    },
+    {
+      "name": "check:living-streets",
+      "exit": 1
+    },
+    {
+      "name": "check:daily-life",
+      "exit": 0
+    },
+    {
+      "name": "check:destinations",
+      "exit": 0
+    }
+  ]
+}

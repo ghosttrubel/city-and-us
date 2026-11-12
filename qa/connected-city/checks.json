@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-27T09:52:40.188Z",
+  "results": {
+    "npm run check": 0,
+    "destination state/routes": 0,
+    "destination handler journey": 0,
+    "portrait UI handlers": 0,
+    "beachwear audit": 0,
+    "npm run check:mobile": 0,
+    "npm run check:physical-home": 0,
+    "npm run check:street-service": 0,
+    "npm run check:daily-life": 0,
+    "npm run check:resolution": 0,
+    "software previews": 0
+  },
+  "browserSessions": [],
+  "deviceVerification": "Pending for this milestone. Earlier iPhone startup confirmation preserved.",
+  "url": "http://10.126.70.116:3000/?review=daily",
+  "checkpoint": "checkpoints/2026-10-26-before-connected-city",
+  "noPurchases": true
+}

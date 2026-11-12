@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "protectedFiles": 449,
+  "checks": [
+    "Approved shop meshes/facades, characters, wardrobe, decor, home systems, all asset/reference bytes, MIT licenses and hosting identity preserved.",
+    "Full prior roadmap and owner requirements retained."
+  ],
+  "scope": "Source/assets only; browser saves not read by this gate."
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-08T20:34:26.013Z",
+  "status": "focused checks passed; legacy voice expectation fails",
+  "checks": [
+    {
+      "command": "npm run check",
+      "exitCode": 0,
+      "result": "passed",
+      "log": "final-syntax.log"
+    },
+    {
+      "command": "npm run check:places-vehicles",
+      "exitCode": 0,
+      "result": "passed",
+      "log": "vehicles.log"
+    },
+    {
+      "command": "npm run check:mobile",
+      "exitCode": 0,
+      "result": "passed",
+      "log": "mobile.log"
+    },
+    {
+      "command": "node tools/verify-places-3-game.mjs",
+      "exitCode": 0,
+      "result": "passed",
+      "log": "final-controls-dialogue.log"
+    },
+    {
+      "command": "npm run check:phone-review",
+      "exitCode": 1,
+      "result": "legacy audio assertion failed: expects intentionally disabled generic clips",
+      "log": "dialogue.log"
+    }
+  ],
+  "sourceHashes": {
+    "dist/vehicle-controls.js": "a5220fab09885eaef9a08d610d7b8fac8c9eea1cad1cd8a285eb641dda280053",
+    "dist/road-ui.css": "901f1bd527ab46726a0f52d9ac2103491859b3a82831fefeab8b5ed6699595b7",
+    "dist/game.js": "b8cec352ee0fb5b2ca7d8c597bd7108e2be5e0a18a67436a9a8b293f7a00dad3",
+    "dist/place-voice.js": "79627c0c78c1b50bb4bd477e05d3d727406be894a1343c495a1f622994c8c274",
+    "dist/dialogue.js": "8cc81b863d407331962b2315f7d960a695a1770b2ad831b3c7c904521e749ab5",
+    "tools/verify-places-3-game.mjs": "73135ff7238215d761c4f329be07d9eea1cb6fad15fbfb4a0df8b7f0330dff83"
+  },
+  "limits": "No browser session available. No live CSS/WebGL, native touch or physical Android performance acceptance. Existing regression harness uses isolated saves and DOM/renderer doubles."
+}

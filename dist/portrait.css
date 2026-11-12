@@ -1,0 +1,71 @@
+/* Portrait phones have their own control zones and vertically scrolling menus.
+   The world viewport follows visualViewport; tablet/desktop layouts stay wide. */
+@media (max-width:600px){
+ body.portrait-layout{--touch-bottom:calc(14px + env(safe-area-inset-bottom));--above-touch:calc(142px + env(safe-area-inset-bottom))}
+ .portrait-layout .game-header{top:calc(6px + env(safe-area-inset-top));right:calc(10px + env(safe-area-inset-right));left:auto;width:calc(100% - 104px - env(safe-area-inset-left) - env(safe-area-inset-right));max-width:300px;padding:3px 5px;border-radius:11px}
+ .portrait-layout .status-line{grid-template-columns:minmax(0,1fr) auto 44px 44px;gap:0 2px}
+ .portrait-layout #cash{font-size:10px}.portrait-layout .brand span{font-size:10px}.portrait-layout #clock{font-size:9px!important}
+ .portrait-layout #minimap{top:calc(6px + env(safe-area-inset-top));left:calc(10px + env(safe-area-inset-left));right:auto;bottom:auto;width:76px;height:76px;border-radius:50%}
+ .portrait-layout #route-distance{font-size:8px}.portrait-layout #quick-menu{width:214px;max-width:calc(var(--app-width,100vw) - 24px);top:52px}
+ .portrait-layout .objective-panel{top:calc(88px + env(safe-area-inset-top));left:calc(10px + env(safe-area-inset-left));right:auto;width:calc(100% - 116px - env(safe-area-inset-left) - env(safe-area-inset-right));max-width:240px;font-size:10px}
+ .portrait-layout .objective-panel summary{padding:3px 6px;min-height:36px}.portrait-layout .objective-panel button{font-size:11px}
+ .portrait-layout #hud{top:calc(62px + env(safe-area-inset-top));left:auto;right:calc(10px + env(safe-area-inset-right));width:min(300px,calc(100% - 20px));max-height:calc(100% - 80px - env(safe-area-inset-top) - env(safe-area-inset-bottom));padding:12px}
+ .portrait-layout .joystick{left:calc(16px + env(safe-area-inset-left));bottom:var(--touch-bottom);width:108px;height:108px}
+ .portrait-layout .joystick-thumb{width:44px;height:44px}.portrait-layout .joystick-label{bottom:5px;color:#fff5dd;font-size:8px;letter-spacing:1px}
+ .portrait-layout .context-action{right:calc(16px + env(safe-area-inset-right));bottom:calc(22px + env(safe-area-inset-bottom));width:90px;height:90px;font-size:12px;padding:10px;line-height:1.25}
+ .portrait-layout .zoom{top:calc(64px + env(safe-area-inset-top));bottom:auto;right:calc(10px + env(safe-area-inset-right));gap:4px}
+ .portrait-layout .zoom button{width:40px;min-height:44px;border-radius:9px}
+ .portrait-layout #meal-actions,.portrait-layout #home-strip,.portrait-layout #service-strip,.portrait-layout #destination-ui,.portrait-layout .activity{left:50%;right:auto;transform:translateX(-50%);bottom:var(--above-touch);width:min(360px,calc(100% - 24px - env(safe-area-inset-left) - env(safe-area-inset-right)));max-width:none;max-height:min(220px,35%);overflow-y:auto;overscroll-behavior:contain}
+ .portrait-layout #meal-actions{width:min(320px,calc(100% - 24px));padding:5px 7px}
+ .portrait-layout .home-strip-line{gap:3px}.portrait-layout .home-strip-line strong{min-width:100px}.portrait-layout #home-remaining{font-size:10px}
+ .portrait-layout #home-strip #home-action-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .portrait-layout #home-drawer,.portrait-layout #street-card{left:50%;right:auto;top:auto;transform:translateX(-50%);bottom:var(--above-touch);width:min(320px,calc(100% - 24px));max-height:min(360px,45%);padding:8px;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ .portrait-layout #home-panel-close,.portrait-layout #street-close{position:sticky;top:0;float:right;z-index:2}
+ .portrait-layout #dialogue-panel{left:50%;transform:translateX(-50%);bottom:var(--touch-bottom);width:min(320px,calc(100% - 24px));max-height:min(270px,38%);padding:5px 9px}
+ .portrait-layout #dialogue-panel p{font-size:12px;line-height:1.4}.portrait-layout #dialogue-choices button{font-size:12px}
+ .portrait-layout.activity-open #home-strip,.portrait-layout.activity-open #service-strip,.portrait-layout.activity-open #destination-ui,.portrait-layout.activity-open .activity{bottom:var(--touch-bottom)}
+ .portrait-layout.activity-open #home-drawer{bottom:calc(170px + env(safe-area-inset-bottom));max-height:calc(100% - 190px - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
+ .portrait-layout.conversation-open #joystick,.portrait-layout.conversation-open #action,.portrait-layout.conversation-open #meal-actions,.portrait-layout.activity-open #joystick,.portrait-layout.activity-open #action{visibility:hidden;pointer-events:none}
+ .portrait-layout #toast{bottom:calc(126px + env(safe-area-inset-bottom));max-width:calc(100% - 40px);font-size:11px;padding:7px 10px}
+ .portrait-layout.conversation-open #toast,.portrait-layout.activity-open #toast{bottom:calc(285px + env(safe-area-inset-bottom))}
+ .portrait-layout .overlay{padding:calc(8px + env(safe-area-inset-top)) calc(10px + env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) calc(10px + env(safe-area-inset-left));align-items:center}
+ .portrait-layout .sheet{width:100%;max-width:420px;max-height:100%;padding:14px;border-radius:18px;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+ .portrait-layout .sheet h2{font-size:25px}.portrait-layout .sheet .close{position:sticky;top:0;z-index:5;float:right;min-width:44px;min-height:44px}
+ .portrait-layout .phone-sheet{width:100%;height:100%;max-height:100%;min-height:0;padding:24px 12px 0;border-width:4px;border-radius:24px;overflow:hidden}
+ .portrait-layout .phone-sheet .close{position:absolute;top:40px;right:8px}
+ .portrait-layout .phone-heading{min-height:44px;margin-right:44px}.portrait-layout .phone-heading h2{font-size:18px}
+ .portrait-layout #phonebody{min-height:0;flex:1;overflow-y:auto;overflow-x:hidden;touch-action:pan-y;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ .portrait-layout .app-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 7px}.portrait-layout .app-icon{width:48px;height:48px}
+ .portrait-layout .phone-welcome{margin:14px 0 18px}.portrait-layout .phone-objective{margin:18px 0 4px}.portrait-layout .phone-home-indicator{height:44px;min-height:44px}
+ .portrait-layout .catalogue-sheet{display:flex;flex-direction:column;height:min(900px,100%);overflow:hidden;padding:10px}
+ .portrait-layout .catalogue-sheet>.close{position:absolute;top:7px;right:7px}
+ .portrait-layout .catalogue-heading{flex:none;min-height:54px;padding-right:45px;gap:4px 10px;flex-wrap:wrap}.portrait-layout .catalogue-heading h2{font-size:21px;margin:2px 0 5px}.portrait-layout .catalogue-heading>strong{font-size:12px;margin:0 0 5px}
+ .portrait-layout .wardrobe-layout{display:block;min-height:0;flex:1;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ .portrait-layout .wardrobe-preview{position:static;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:5px;padding:8px;border-radius:12px}
+ .portrait-layout .wardrobe-stage{grid-column:1;grid-row:1/4;height:210px;min-height:160px;width:100%;border-radius:9px}
+ .portrait-layout .preview-toolbar{grid-column:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;margin:0}
+ .portrait-layout .preview-toolbar button{min-width:0;padding:4px;font-size:10px;min-height:44px}
+ .portrait-layout .catalogue-slider,.portrait-layout .catalogue-pose{grid-column:2;min-width:0;font-size:11px;margin:0}
+ .portrait-layout .catalogue-slider input,.portrait-layout .catalogue-pose select{width:100%;min-width:0;min-height:36px}
+ .portrait-layout #wardrobe-selection,.portrait-layout #wardrobe-feedback{grid-column:1/-1;min-width:0}
+ .portrait-layout #wardrobe-selection h3{font-size:15px;margin:5px 0}.portrait-layout #wardrobe-selection .primary,.portrait-layout #wardrobe-selection .secondary{margin-top:6px;padding:8px}
+ .portrait-layout .wardrobe-browser{min-width:0}.portrait-layout .catalogue-tabs{position:sticky;top:0;z-index:3;margin-top:8px}
+ .portrait-layout .catalogue-categories{flex-wrap:nowrap;overflow-x:auto;touch-action:pan-x;padding:8px 0;gap:5px}.portrait-layout .catalogue-categories button{flex:none;min-height:44px;padding:6px 10px}
+ .portrait-layout .catalogue-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.portrait-layout .catalogue-card .item-detail{font-size:11px;line-height:1.35}
+ .portrait-layout .creator{display:flex;flex-direction:column;gap:12px}.portrait-layout .character-stage{height:260px;min-height:200px;flex:none}.portrait-layout .creator-controls{min-width:0}.portrait-layout .creator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .portrait-layout input,.portrait-layout textarea,.portrait-layout select{font-size:16px!important;scroll-margin-block:16px}
+ .portrait-layout .field input,.portrait-layout .field select{min-width:0;max-width:100%}
+ .portrait-layout.keyboard-open{--touch-bottom:8px;--above-touch:8px}
+ .portrait-layout.keyboard-open #joystick,.portrait-layout.keyboard-open #action,.portrait-layout.keyboard-open .zoom{visibility:hidden;pointer-events:none}
+ .portrait-layout.keyboard-open .overlay{padding-bottom:8px}.portrait-layout.keyboard-open .phone-sheet{padding-top:18px}.portrait-layout.keyboard-open .phone-speaker{display:none}
+ .portrait-layout.keyboard-open .character-stage{height:100px;min-height:100px}.portrait-layout.keyboard-open .wardrobe-stage{height:100px;min-height:100px}.portrait-layout.keyboard-open .catalogue-slider,.portrait-layout.keyboard-open .catalogue-pose{display:none}
+}
+
+/* Zoom owns a clear touch layer above passive world labels. Menus cancel it. */
+.zoom{z-index:9;pointer-events:none}.zoom button{pointer-events:auto;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;min-width:44px;min-height:44px}
+.menu-open .zoom,.conversation-open .zoom{visibility:hidden;pointer-events:none}
+
+.wallpaper-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.wallpaper-tile{display:flex;flex-direction:column;gap:6px;align-items:stretch;background:#fff;border:1px solid #bdccd1;border-radius:13px;padding:8px;text-align:left;font-size:12px}.wallpaper-thumb{display:block;height:110px;border-radius:9px}.wallpaper-tile small{font-size:11px;color:#31594c}.wallpaper-preview{display:flex;flex-direction:column;justify-content:space-between;min-height:245px;border-radius:18px;padding:16px;color:white}.wallpaper-title{margin:15px 0!important}.wallpaper-label,.wallpaper-sample-icons span{background:#10252cf2;color:#fff;border-radius:9px;padding:9px;font-size:12px}.wallpaper-sample-icons{display:flex;flex-wrap:wrap;gap:8px}.app-wallpaper{background:linear-gradient(135deg,#257884,#785694)}.phone-home-screen .app>span:last-of-type{padding:3px 5px;background:#10252cf2;color:white;border-radius:5px}.phone-home-screen .phone-welcome,.phone-home-screen .phone-status,.phone-home-screen .phone-heading{background:#10252cf2;color:white;border-radius:10px;padding:6px}.phone-home-screen .phone-welcome p{color:white}.phone-home-screen .phone-welcome .eyebrow,.phone-home-screen .phone-date{color:#e1eceb}.phone-home-screen .phone-objective{background:#10252cf2}.phone-home-screen .phone-home-indicator{color:white}.phone-home-screen .close{background:#10252cf2;color:white}
+
+/* Quick navigation occupies the same corner as zoom on phones. */
+.quick-menu-open .zoom{display:none!important}

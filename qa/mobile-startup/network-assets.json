@@ -1,0 +1,341 @@
+{
+  "date": "2026-10-26T13:03:15.985Z",
+  "origin": "http://10.126.70.116:3000",
+  "modules": [
+    {
+      "path": "/mobile-runtime.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 9827
+    },
+    {
+      "path": "/game.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 69635
+    },
+    {
+      "path": "/daily-life.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 15796
+    },
+    {
+      "path": "/daily-world.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 3012
+    },
+    {
+      "path": "/daily-ui.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 13838
+    },
+    {
+      "path": "/skin-tones.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 1842
+    },
+    {
+      "path": "/portrait-lighting.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 439
+    },
+    {
+      "path": "/decor-ui.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 9407
+    },
+    {
+      "path": "/furniture-meshes.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 4418
+    },
+    {
+      "path": "/decor-state.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 4823
+    },
+    {
+      "path": "/wardrobe-ui.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 10861
+    },
+    {
+      "path": "/navigation.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 7096
+    },
+    {
+      "path": "/interior-camera.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 1143
+    },
+    {
+      "path": "/doorway.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 1728
+    },
+    {
+      "path": "/vendor/three.module.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 687458
+    },
+    {
+      "path": "/character.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 15197
+    },
+    {
+      "path": "/street.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 21083
+    },
+    {
+      "path": "/life.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 9594
+    },
+    {
+      "path": "/interior.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 16450
+    },
+    {
+      "path": "/home-style.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 492
+    },
+    {
+      "path": "/activity-pose.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 1904
+    },
+    {
+      "path": "/neighbourhood.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 9646
+    },
+    {
+      "path": "/districts.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 8083
+    },
+    {
+      "path": "/camera.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 3031
+    },
+    {
+      "path": "/controls.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 1255
+    },
+    {
+      "path": "/furniture-catalogue.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 1452
+    },
+    {
+      "path": "/home-layout.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 905
+    },
+    {
+      "path": "/fashion-catalogue.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 6417
+    },
+    {
+      "path": "/wardrobe-state.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 4277
+    },
+    {
+      "path": "/makeup-preview.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 2660
+    },
+    {
+      "path": "/fashion-meshes.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 9356
+    },
+    {
+      "path": "/vendor/addons/BufferGeometryUtils.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 31781
+    },
+    {
+      "path": "/garments.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 6130
+    },
+    {
+      "path": "/vendor/addons/GLTFLoader.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 110035
+    },
+    {
+      "path": "/vendor/addons/SkeletonUtils.js",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "bytes": 8815
+    }
+  ],
+  "assets": [
+    {
+      "path": "/assets/characters/animation-bind.json",
+      "status": 200,
+      "type": "application/json",
+      "bytes": 7178
+    },
+    {
+      "path": "/assets/characters/female-normal.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 34954
+    },
+    {
+      "path": "/assets/characters/female-skin.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 18054
+    },
+    {
+      "path": "/assets/characters/Hair_Buns.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 133356
+    },
+    {
+      "path": "/assets/characters/Hair_Buzzed.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 21296
+    },
+    {
+      "path": "/assets/characters/Hair_BuzzedFemale.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 21428
+    },
+    {
+      "path": "/assets/characters/Hair_Long.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 117448
+    },
+    {
+      "path": "/assets/characters/License_Animations.txt",
+      "status": 200,
+      "type": "text/plain; charset=utf-8",
+      "bytes": 332
+    },
+    {
+      "path": "/assets/characters/License_Standard.txt",
+      "status": 200,
+      "type": "text/plain; charset=utf-8",
+      "bytes": 806
+    },
+    {
+      "path": "/assets/characters/locomotion.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 165732
+    },
+    {
+      "path": "/assets/characters/male-normal.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 44864
+    },
+    {
+      "path": "/assets/characters/male-skin.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 19978
+    },
+    {
+      "path": "/assets/characters/Superhero_Female_FullBody.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 573936
+    },
+    {
+      "path": "/assets/characters/Superhero_Male_FullBody.glb",
+      "status": 200,
+      "type": "model/gltf-binary",
+      "bytes": 550820
+    },
+    {
+      "path": "/assets/characters/T_Eye_Brown.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 5334
+    }
+  ],
+  "textureEstimate": [
+    {
+      "path": "/assets/characters/female-normal.webp",
+      "width": 512,
+      "height": 512,
+      "rgbaMipMiB": 1.33
+    },
+    {
+      "path": "/assets/characters/female-skin.webp",
+      "width": 512,
+      "height": 512,
+      "rgbaMipMiB": 1.33
+    },
+    {
+      "path": "/assets/characters/male-normal.webp",
+      "width": 512,
+      "height": 512,
+      "rgbaMipMiB": 1.33
+    },
+    {
+      "path": "/assets/characters/male-skin.webp",
+      "width": 512,
+      "height": 512,
+      "rgbaMipMiB": 1.33
+    },
+    {
+      "path": "/assets/characters/T_Eye_Brown.webp",
+      "width": 512,
+      "height": 512,
+      "rgbaMipMiB": 1.33
+    }
+  ],
+  "scope": "HTTP responses and file metadata only; no iPhone/GPU memory measurement."
+}

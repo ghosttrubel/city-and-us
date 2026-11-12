@@ -1,0 +1,43 @@
+{
+  "combinations": 32,
+  "character": {
+    "maximumDraws": 22,
+    "maximumTriangles": 27014
+  },
+  "street": {
+    "draws": 124,
+    "triangles": 69207,
+    "obstacles": 25
+  },
+  "sampleBounds": [
+    {
+      "sex": "female",
+      "build": "slim",
+      "outfit": "streetwear",
+      "minY": -0.003681910555749346,
+      "maxY": 2.3504635947122985
+    },
+    {
+      "sex": "female",
+      "build": "slim",
+      "outfit": "jacket",
+      "minY": -0.003681910555749346,
+      "maxY": 2.3504635947122985
+    },
+    {
+      "sex": "female",
+      "build": "slim",
+      "outfit": "native",
+      "minY": -0.003681910555749346,
+      "maxY": 2.3344700642294844
+    },
+    {
+      "sex": "female",
+      "build": "slim",
+      "outfit": "dress",
+      "minY": -0.003681910555749346,
+      "maxY": 2.4382009791709525
+    }
+  ],
+  "limitation": "CPU rig/geometry checks only; browser rendering and real Android performance still require testing."
+}

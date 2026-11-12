@@ -1,0 +1,33 @@
+{
+  "note": "Post-work retention record. These files were not edited in this pass; not a pre/post hash comparison.",
+  "files": [
+    {
+      "file": "dist/street.js",
+      "sha256": "942bb8f3c79b4db4c51bb48a336034c448dd6461df38e7f8193d481117319ef6"
+    },
+    {
+      "file": "dist/camera.js",
+      "sha256": "392f4ccad30ba2effdcc211dfd92e4c8d281b5ef25735c5301ec3f63da659eef"
+    },
+    {
+      "file": "dist/zoom-control.js",
+      "sha256": "6e0069dccd02cdfd40123751683987f4be6d3d636d5bcbae0cfce726357715fc"
+    },
+    {
+      "file": "dist/controls.js",
+      "sha256": "c577ffcdf66c9ffdbbdb7fba7c7383cd80a0ae6a78c0ca1544e164e05f1ef0e2"
+    },
+    {
+      "file": "dist/reference-outfits.js",
+      "sha256": "406a29b81125c9df626ceda560ed4711c56073fd4739d1714bba65b9c59cbc70"
+    },
+    {
+      "file": "dist/fashion-catalogue.js",
+      "sha256": "c8080183c8bc957106032685e3cf6225d3e81b977f780197547f1e1332e85aea"
+    },
+    {
+      "file": "dist/wardrobe-state.js",
+      "sha256": "8ccc31b7fdbc5f34df619e181f0073ced164201dedd2f2d450949d4b3e51dfd5"
+    }
+  ]
+}

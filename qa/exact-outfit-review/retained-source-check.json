@@ -1,0 +1,29 @@
+{
+  "comparison": "Against the previous interior-pass retention record",
+  "files": [
+    {
+      "file": "dist/street.js",
+      "unchanged": true
+    },
+    {
+      "file": "dist/camera.js",
+      "unchanged": true
+    },
+    {
+      "file": "dist/zoom-control.js",
+      "unchanged": true
+    },
+    {
+      "file": "dist/controls.js",
+      "unchanged": true
+    },
+    {
+      "file": "dist/reference-outfits.js",
+      "unchanged": true
+    },
+    {
+      "file": "dist/wardrobe-state.js",
+      "unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "build": "0.8.2-wardrobe.1 (11)",
+  "scope": "Software render of runtime geometry/poses. Simplified lighting; not live WebGL or physical-device acceptance.",
+  "records": [
+    {
+      "item": "outfit-f-crop-joggers",
+      "pose": "idle",
+      "file": "outfit-f-crop-joggers-idle.png"
+    },
+    {
+      "item": "outfit-f-crop-joggers",
+      "pose": "walk",
+      "file": "outfit-f-crop-joggers-walk.png"
+    },
+    {
+      "item": "outfit-f-crop-joggers",
+      "pose": "sit",
+      "file": "outfit-f-crop-joggers-sit.png"
+    },
+    {
+      "item": "outfit-f-crop-joggers",
+      "pose": "eat",
+      "file": "outfit-f-crop-joggers-eat.png"
+    },
+    {
+      "item": "outfit-f-square-denim",
+      "pose": "idle",
+      "file": "outfit-f-square-denim-idle.png"
+    },
+    {
+      "item": "outfit-f-square-denim",
+      "pose": "walk",
+      "file": "outfit-f-square-denim-walk.png"
+    },
+    {
+      "item": "outfit-f-square-denim",
+      "pose": "sit",
+      "file": "outfit-f-square-denim-sit.png"
+    },
+    {
+      "item": "outfit-f-square-denim",
+      "pose": "eat",
+      "file": "outfit-f-square-denim-eat.png"
+    },
+    {
+      "item": "outfit-m-relaxed-denim",
+      "pose": "idle",
+      "file": "outfit-m-relaxed-denim-idle.png"
+    },
+    {
+      "item": "outfit-m-relaxed-denim",
+      "pose": "walk",
+      "file": "outfit-m-relaxed-denim-walk.png"
+    },
+    {
+      "item": "outfit-m-relaxed-denim",
+      "pose": "sit",
+      "file": "outfit-m-relaxed-denim-sit.png"
+    },
+    {
+      "item": "outfit-m-relaxed-denim",
+      "pose": "eat",
+      "file": "outfit-m-relaxed-denim-eat.png"
+    },
+    {
+      "item": "outfit-m-camp-cargo",
+      "pose": "idle",
+      "file": "outfit-m-camp-cargo-idle.png"
+    },
+    {
+      "item": "outfit-m-camp-cargo",
+      "pose": "walk",
+      "file": "outfit-m-camp-cargo-walk.png"
+    },
+    {
+      "item": "outfit-m-camp-cargo",
+      "pose": "sit",
+      "file": "outfit-m-camp-cargo-sit.png"
+    },
+    {
+      "item": "outfit-m-camp-cargo",
+      "pose": "eat",
+      "file": "outfit-m-camp-cargo-eat.png"
+    }
+  ]
+}

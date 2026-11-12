@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-26T13:17:02.442Z",
+  "checkpoint": "checkpoints/2026-10-26-before-mobile-startup",
+  "files": 188,
+  "checkpointHashFailures": [],
+  "changed": [
+    "dist/game.js",
+    "dist/index.html",
+    "dist/life.js",
+    "dist/style.css",
+    "tools/game-test-harness.mjs",
+    "tools/qa-progress.txt",
+    "tools/verify-gameplay.mjs",
+    "tools/verify-wardrobe-home.mjs",
+    "README.md",
+    "ROADMAP.md",
+    "CHANGELOG.md",
+    "package.json"
+  ],
+  "protectedAssetChanges": [],
+  "browserStorageAccessed": false
+}

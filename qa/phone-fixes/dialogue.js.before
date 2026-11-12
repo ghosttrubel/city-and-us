@@ -1,0 +1,36 @@
+import {LINES} from './dialogue-lines.js';
+// One sequencer for NPC -> voiced player choice -> NPC reply. No microphone,
+// browser speech service or network synthesis. A failed clip becomes text.
+export function createDialogue({state,player,panel,stopInput,gesture=()=>{},commit=()=>{},valid=()=>true}){
+ let session=null,line=null,queue=[],choices=[],audio=null,remaining=0,after=null,fallback=false,token=0;
+ const find=id=>panel.querySelector('#'+id);
+ function stopAudio(){if(audio){audio.pause();audio.onended=null;audio.onerror=null;audio=null;}if(line)actor(line.speaker)?.userData.behaviour?.speak(false);}
+ function actor(role){return role==='player'?player():session?.actor?.();}
+ function close(){const onClose=session?.onClose;stopAudio();for(const m of [player(),session?.actor?.()]){m?.userData.behaviour?.lookAt(null);m?.userData.behaviour?.speak(false);}session=null;line=null;queue=[];after=null;token++;panel.classList.add('hidden');panel.innerHTML='';onClose?.();}
+ function render(){if(!session)return;const showText=state.dialogue.subtitles||state.dialogue.textOnly||state.dialogue.muted||state.dialogue.volume===0||fallback;panel.innerHTML='<button id="dialogue-close" aria-label="Close conversation">×</button><strong>'+ (line?.speaker==='player'?'You':session.name+' · NPC')+'</strong><p id="dialogue-subtitle" role="status"></p><div id="dialogue-choices"></div><button id="dialogue-text" class="dialogue-text">'+(line?'Continue in text':'Replay line')+'</button>';
+ find('dialogue-subtitle').textContent=showText?(line||session.last)?.text||'Choose a reply.':line?'Speaking…':'Choose a reply.';find('dialogue-close').onclick=close;
+ find('dialogue-text').onclick=()=>{if(line){fallback=true;stopAudio();remaining=0;finishLine();}else if(session.lastId)say([session.lastId],choices);};
+ if(!line)for(const choice of choices){const b=document.createElement('button');b.id='dialogue-'+choice.id;b.textContent=LINES[choice.line].text;b.onclick=()=>choose(choice.id);find('dialogue-choices').appendChild(b);}
+ }
+ function next(){stopAudio();if(!session)return;if(!queue.length){line=null;const fn=after;after=null;if(fn)fn();if(session)render();return;}const id=queue.shift();line={...LINES[id],id};session.last=line;session.lastId=id;fallback=false;remaining=Math.max(1.4,line.text.length/19);const m=actor(line.speaker);m?.userData.behaviour?.greet();if(!state.dialogue.textOnly&&!state.dialogue.muted&&state.dialogue.volume>0&&typeof Audio!=='undefined'){
+  const suffix=line.speaker==='player'?'-'+(state.sex==='male'?'male':'female'):'';audio=new Audio(new URL('./assets/dialogue/'+id+suffix+'.wav',import.meta.url).href);audio.volume=state.dialogue.volume;const stamp=token,current=audio;current.onended=()=>{if(stamp===token&&current===audio)remaining=0;};current.onerror=()=>{if(stamp===token&&current===audio){fallback=true;remaining=Math.max(1.4,line.text.length/19);m?.userData.behaviour?.speak(false);render();}};remaining=30;current.play().then(()=>{if(stamp===token&&current===audio)m?.userData.behaviour?.speak(true);}).catch(()=>{if(stamp===token&&current===audio){fallback=true;remaining=Math.max(1.4,line.text.length/19);render();}});
+ }else fallback=true;render();}
+ function finishLine(){if(!line)return;stopAudio();next();}
+ function say(ids,nextChoices=choices,done=null){queue=[...ids];choices=nextChoices;after=done;next();}
+ function choose(id){if(line||!session||!valid(session))return;const choice=choices.find(c=>c.id===id);if(!choice)return;gesture(choice.id,session);say([choice.line,...(typeof choice.reply==='function'?choice.reply():choice.reply||[])],choice.next||choices,()=>{if(!session||!valid(session))return close();if(choice.effect)commit(choice.effect,session);if(choice.end)close();});}
+ function start(config){close();session=config;stopInput();panel.classList.remove('hidden');player().userData.behaviour?.lookAt(()=>session?.actor?.()?.getWorldPosition(player().position.clone())||player().position);config.actor?.()?.userData.behaviour?.lookAt(()=>player().getWorldPosition(player().position.clone()));say([config.open],config.choices);}
+ return {start,close,choose,get active(){return !!session;},get session(){return session;},get line(){return line;},tick(dt){if(!session)return;if(!valid(session)){close();return;}if(line){remaining-=dt;if(remaining<=0)finishLine();}},settingsChanged(){if(line){stopAudio();fallback=true;remaining=Math.max(1.4,line.text.length/19);render();}},pause(){close();}};
+}
+export function streetChoices(busy=false){if(busy)return [{id:'work',line:'work',reply:['busyreply'],end:false},{id:'directions',line:'directions',reply:['busyreply'],end:false},{id:'thanks',line:'thanks',reply:['busyreply'],end:true}];return [
+ {id:'greet',line:'greet',reply:[busy?'busyreply':'well']},
+ {id:'directions',line:'directions',reply:['north'],effect:'dispatch'},
+ {id:'work',line:'work',reply:[busy?'busyreply':'jobs']},
+ {id:'casual',line:'casual',reply:[busy?'busyreply':'garden'],next:[{id:'more',line:'askmore',reply:['refuse']},{id:'thanks',line:'thanks',reply:['welcome'],end:true}]},
+ {id:'thanks',line:'thanks',reply:['welcome'],end:true}
+];}
+export function deliveryChoices(state,received=false){return received?[{id:'thanks',line:'deliverythanks',reply:['goodbye'],end:true}]:[
+ {id:'receive',line:'receive',reply:['handover'],effect:'receive',next:deliveryChoices(state,true)},
+ {id:'dish',line:'dishquestion',reply:()=>[state.daily.order.menu]},
+ {id:'extra',line:'extra',reply:['noextra']},
+ {id:'later',line:'later',reply:['wait'],end:true}
+];}

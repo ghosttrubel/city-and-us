@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": [
+    "No free access; earned progression and confirmed single rental charge; mounted passenger booking blocked; drive, stopped exit and rental reload.",
+    "Both profiles collide without tunnelling, reverse, stop and exit; ownership, rental and explicit permission reject other players.",
+    "Exact old buka trap recovered for free with parcel/cash/inventory retained; terrace excluded and reverse escapes approach.",
+    "Individual stock/quantities/total, atomic checkout, duplicate/stale/funds/location guards, usable ingredients/consumables and reload."
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "scope": "Actual meshes, collision navigation and save/state functions. Not browser pixels or measured device performance.",
+  "rooms": {
+    "shop": {
+      "meshes": 55,
+      "triangles": 25422,
+      "routes": {
+        "counter": [
+          {
+            "x": 2.5,
+            "z": -1.55
+          },
+          {
+            "x": 0,
+            "z": 3.55
+          }
+        ],
+        "produce": [
+          {
+            "x": -2.7,
+            "z": 1.25
+          },
+          {
+            "x": 0,
+            "z": 3.55
+          }
+        ],
+        "shelves": [
+          {
+            "x": 0.7,
+            "z": 0.5
+          },
+          {
+            "x": 0,
+            "z": 3.55
+          }
+        ]
+      }
+    },
+    "dispatch": {
+      "meshes": 41,
+      "triangles": 4812,
+      "routes": {
+        "parcel": [
+          {
+            "x": 2.5,
+            "z": -1.55
+          },
+          {
+            "x": 0,
+            "z": 2
+          },
+          {
+            "x": 0,
+            "z": 3.55
+          }
+        ],
+        "tickets": [
+          {
+            "x": -2.5,
+            "z": -1.55
+          },
+          {
+            "x": 0,
+            "z": 0
+          },
+          {
+            "x": 0,
+            "z": 3.55
+          }
+        ]
+      }
+    }
+  },
+  "rides": [
+    {
+      "service": "neighbourhood",
+      "from": "home",
+      "to": "dispatch",
+      "fare": 450
+    },
+    {
+      "service": "neighbourhood",
+      "from": "home",
+      "to": "shop",
+      "fare": 300
+    },
+    {
+      "service": "neighbourhood",
+      "from": "dispatch",
+      "to": "home",
+      "fare": 450
+    },
+    {
+      "service": "neighbourhood",
+      "from": "dispatch",
+      "to": "shop",
+      "fare": 500
+    },
+    {
+      "service": "neighbourhood",
+      "from": "shop",
+      "to": "home",
+      "fare": 300
+    },
+    {
+      "service": "neighbourhood",
+      "from": "shop",
+      "to": "dispatch",
+      "fare": 500
+    },
+    {
+      "service": "danfo",
+      "from": "home",
+      "to": "dispatch",
+      "fare": 200
+    },
+    {
+      "service": "danfo",
+      "from": "home",
+      "to": "shop",
+      "fare": 125
+    },
+    {
+      "service": "danfo",
+      "from": "dispatch",
+      "to": "home",
+      "fare": 200
+    },
+    {
+      "service": "danfo",
+      "from": "dispatch",
+      "to": "shop",
+      "fare": 225
+    },
+    {
+      "service": "danfo",
+      "from": "shop",
+      "to": "home",
+      "fare": 125
+    },
+    {
+      "service": "danfo",
+      "from": "shop",
+      "to": "dispatch",
+      "fare": 225
+    }
+  ],
+  "status": "passed",
+  "vehicle": {
+    "meshes": 19,
+    "triangles": 7336
+  },
+  "references": [
+    {
+      "file": "City_And_Us_Buildings_And_Places/Shops/Neighbourhood_Shops_Exteriors.png",
+      "sha256": "c2b74cbc761ff4eb0c96458a02549682f3b76b191be827ffb1df593ed0769df9"
+    },
+    {
+      "file": "City_And_Us_Buildings_And_Places/Shops/Neighbourhood_Shops_Interiors.png",
+      "sha256": "332408e1e2b5a773e66cefb79632eee2c2ba37cb7cf8084adfe796f4b26721e6"
+    },
+    {
+      "file": "City_And_Us_Buildings_And_Places/Transport_Hubs/Transport_Hubs_Exteriors.png",
+      "sha256": "bd0b2824dbbe4f37458bb80ee4c20f3feef2f51de3aba91dcd75681cb65505e8"
+    },
+    {
+      "file": "City_And_Us_Buildings_And_Places/Transport_Hubs/Transport_Hubs_Interiors.png",
+      "sha256": "cf0662e1792978f21bd160b0c087592f279725f7f04a45ca2403119cfcebd393"
+    },
+    {
+      "file": "City_And_Us_Transport/Lagos_Street_Transport/Lagos_Street_Transport.png",
+      "sha256": "c0b0d43b63af58fb399b3040e0f9f112bbe4c207e024e2371eedbc6d324a40e5"
+    }
+  ]
+}

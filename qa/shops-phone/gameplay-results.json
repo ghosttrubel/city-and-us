@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "results": [
+    "Provisions greeting, appropriate products, explicit confirmation, cancellation and stale-confirmation protection.",
+    "Phone grocery checkout, font preview/apply, image wallpaper and theme survive reload.",
+    "Stylist greeting, discussion, exact price, cancellation during work, performed service, once-only charge, completion and save.",
+    "Showroom individual furniture, price confirmation, once-only charge, home-storage delivery, owned placement and doorway guards.",
+    "Both new street entrances have continuous collision-clear routes from home.",
+    "Actual entrance/exit controls load both new rooms and preserve safe saves during doorway transitions.",
+    "Bisi reaches home and the real Provisions entrance without obstacle penetration or offscreen freezing.",
+    "Extended save validation and migration preserve balances, wardrobe and vehicle permissions."
+  ],
+  "limits": "Actual shipped handlers with DOM/renderer doubles. Not browser or physical-device acceptance."
+}

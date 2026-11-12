@@ -1,0 +1,74 @@
+[
+  {
+    "path": "/",
+    "status": 200
+  },
+  {
+    "path": "/?review=apartment",
+    "status": 200
+  },
+  {
+    "path": "/fashion-review.html",
+    "status": 200
+  },
+  {
+    "path": "/fashion-review.js",
+    "status": 200
+  },
+  {
+    "path": "/fashion-review.css",
+    "status": 200
+  },
+  {
+    "path": "/skin-tones.js",
+    "status": 200
+  },
+  {
+    "path": "/makeup-preview.js",
+    "status": 200
+  },
+  {
+    "path": "/portrait-lighting.js",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/female-casual.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/female-hair-bob.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/female-hair-braids.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/female-hair-bun.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/female-native.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/male-casual.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/male-hair-cornrows.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/male-hair-fade.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/male-hair-locs.webp",
+    "status": 200
+  },
+  {
+    "path": "/assets/fashion-review/male-native.webp",
+    "status": 200
+  }
+]

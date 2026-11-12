@@ -1,0 +1,39 @@
+# Reference index
+
+| Included file | Original upload |
+| --- | --- |
+| 01-earlier-gameplay/city-venue-actions.jpg | 02-1001953219.jpg |
+| 01-earlier-gameplay/home-and-needs.jpg | 03-1001953220.jpg |
+| 01-earlier-gameplay/street-map.jpg | 04-1001953221.jpg |
+| 01-earlier-gameplay/market-and-city.jpg | 05-1001953222.jpg |
+| 01-earlier-gameplay/stadium-and-city.jpg | 06-1001953223.jpg |
+| 01-earlier-gameplay/market-overview.jpg | 07-1001953224.jpg |
+| 01-earlier-gameplay/home-furnishing.jpg | 08-1001953225.jpg |
+| 01-earlier-gameplay/nightlife-interior.jpg | 09-1001953226.jpg |
+| 01-earlier-gameplay/decoration-shop.jpg | 10-1001953227.jpg |
+| 01-earlier-gameplay/bargaining-activity.jpg | 02-1001953229.jpg |
+| 01-earlier-gameplay/daily-rewards.jpg | 03-1001953230.jpg |
+| 02-onboarding-and-home/city-entry-map.png | image(20261020-122119).png |
+| 02-onboarding-and-home/appearance-flow-reference-only.png | image(20261020-122617).png |
+| 02-onboarding-and-home/personality-traits-1.png | image(20261020-122802).png |
+| 02-onboarding-and-home/personality-traits-2.png | image(20261020-122844).png |
+| 02-onboarding-and-home/life-goals.png | image(20261020-123010).png |
+| 02-onboarding-and-home/starting-background.png | image(20261020-123027).png |
+| 02-onboarding-and-home/starting-homes-1.png | image(20261020-123122).png |
+| 02-onboarding-and-home/starting-homes-2.png | image(20261020-123202).png |
+| 02-onboarding-and-home/matriculation-event.png | image(20261020-123444).png |
+| 02-onboarding-and-home/daily-streak.png | image(20261020-123447).png |
+| 02-onboarding-and-home/home-and-guided-tour.png | image(20261020-123533).png |
+| 03-city-phone-and-activities/home-hud-and-event-banner.png | image(20261022-082544).png |
+| 03-city-phone-and-activities/streak-reward.png | image(20261022-082629).png |
+| 03-city-phone-and-activities/needs-tutorial.png | image(20261022-082729).png |
+| 03-city-phone-and-activities/phone-tutorial.png | image(20261022-082803).png |
+| 03-city-phone-and-activities/sponsored-event-panel.png | image(20261022-082806).png |
+| 03-city-phone-and-activities/city-map-and-billboards.png | image(20261022-084248).png |
+| 03-city-phone-and-activities/phone-home-screen.png | image(20261022-084348).png |
+| 03-city-phone-and-activities/phone-services.png | image(20261022-084422).png |
+| 03-city-phone-and-activities/phone-government-and-business.png | image(20261022-084537).png |
+| 03-city-phone-and-activities/keyboard-shortcuts.png | image(20261022-084543).png |
+| 03-city-phone-and-activities/venue-activities.png | image(20261022-085802).png |
+| 03-city-phone-and-activities/transport-and-fares.png | image(20261022-085808).png |
+| 04-recording/home-gameplay.mp4 | 20261022-0837-10.0398500.mp4 |

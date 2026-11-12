@@ -1,0 +1,19 @@
+﻿{
+    "shippedGameJourney":  "passed",
+    "liveVisualAcceptance":  "pending",
+    "physicalDevicePerformance":  "pending",
+    "syntax":  "npm run check",
+    "localReview":  "http://localhost:3000/?review=places",
+    "publication":  "not performed",
+    "date":  "2026-11-08",
+    "apk":  "not rebuilt",
+    "stateGeometry":  "passed - 12 service/route combinations",
+    "status":  "passed",
+    "retained":  [
+                     "daily-life",
+                     "ride journey",
+                     "mobile startup and lifecycle",
+                     "boutique geometry and journey"
+                 ],
+    "preservation":  "passed - 258 protected files and full roadmap"
+}

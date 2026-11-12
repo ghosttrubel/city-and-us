@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-12T14:08:08.793Z",
+  "status": "passed",
+  "checks": [
+    "Courier routes and all six stop pairs use existing clear streets; vehicle footprint and alighting points checked against static colliders.",
+    "Food: insufficient funds/no route, duplicate confirmations, cancellation/refund in every pre-handover stage, physical receipt, stored consumption and reload without duplicate money or meals.",
+    "Rides: all stop pairs, no boarding from a distance/interior, continuous travel, reload during dispatch/wait/travel/arrival, once-only fare, pre-boarding refunds and physical early drop-off without refund.",
+    "Legacy simmer migrates to the physical kitchen without double ingredient deduction; new recipe actions covered by check:physical-home.",
+    "Legacy saves migrate without resets; invalid service state and full meal storage are rejected."
+  ],
+  "scope": "Automated domain/state and static-route checks, not browser/device verification"
+}

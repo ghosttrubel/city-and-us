@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-25",
+  "kind": "Software mesh renders; not browser screenshots",
+  "catalogueThumbnails": 43,
+  "standingWalkingSittingFrames": 72,
+  "otherActivityFrames": 40,
+  "apartmentViews": 2,
+  "reviewedSheets": [
+    "catalogue-sheet.png",
+    "hair-female.png",
+    "hair-male.png",
+    "garments-female.png",
+    "garments-male.png",
+    "activities-female.png",
+    "activities-male.png"
+  ],
+  "liveBrowserSessions": 0,
+  "physicalDeviceTests": 0,
+  "limitations": [
+    "Simplified CPU shading; no WebGL shadows",
+    "No live catalogue CSS or native-input verification",
+    "No Android performance measurement"
+  ]
+}

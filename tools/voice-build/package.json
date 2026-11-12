@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "kokoro-js": "1.2.1"
+  },
+  "scripts": {
+    "generate": "node generate.mjs"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-31T12:15:30.159Z",
+  "status": "passed",
+  "scope": "Artifact signatures, package structure/assets, target SDK and permission inspection. No emulator/physical-device or Play validation.",
+  "results": [
+    {
+      "file": "city-and-us-device-test.apk",
+      "bytes": 8356281,
+      "sha256": "32a9d7cc9dfa8556f2df3c4e8b18f77d99994b05645923ac9ca9a0252590ee07",
+      "bundledFiles": 192,
+      "voiceClips": 39
+    }
+  ],
+  "permissions": "package: com.cityandus.lagosstreet.debug\r\n",
+  "retainedSigner": null,
+  "releaseCertificate": null,
+  "debugSignature": "Signer #1 certificate DN: C=US, O=Android, CN=Android Debug\r\nSigner #1 certificate SHA-256 digest: e6a11185886b96784cbec3a32417aefb8e45f2d31d10fc4a338d73c8111168ee\r\nSigner #1 certificate SHA-1 digest: 1a55a2b356224497a1127aac144d6353c5743f37\r\nSigner #1 certificate MD5 digest: 4a104c246ca02ddeff635fe75b4068e5\r\n",
+  "aabVerification": null
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "bytes": 3509
+  },
+  {
+    "path": "/?review=daily",
+    "status": 200,
+    "bytes": 3509
+  },
+  {
+    "path": "/daily-life.js",
+    "status": 200,
+    "bytes": 15796
+  },
+  {
+    "path": "/daily-world.js",
+    "status": 200,
+    "bytes": 3012
+  },
+  {
+    "path": "/daily-ui.js",
+    "status": 200,
+    "bytes": 13838
+  }
+]

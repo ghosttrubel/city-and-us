@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-01T10:20:02.942Z",
+  "results": [
+    {
+      "step": "debug-build",
+      "exit": 1,
+      "signingUnchanged": true
+    }
+  ],
+  "deviceVerified": false
+}

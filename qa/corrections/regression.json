@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-24",
+  "characters": 112,
+  "poses": 2688,
+  "hairMeshes": 96,
+  "doorSequences": 16,
+  "status": "passed",
+  "scope": "CPU skeleton, materials, frustum, cutaway exclusion and threshold motion. Does not establish live WebGL appearance."
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "scope": "Shipped game, synthetic joystick/UI and rendering doubles; not device/browser visual verification.",
+  "steps": [
+    "Collected once at the separate parcel desk, read bike instructions, mounted the red cargo bike and blocked a simultaneous passenger booking.",
+    "Rode with real joystick handlers, braked, reloaded while mounted with parcel intact, and parked beside Provisions.",
+    "Dismounted before entering, delivered exactly once, returned the same bike to Dispatch and finished the round at home."
+  ]
+}

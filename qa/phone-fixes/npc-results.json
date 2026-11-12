@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "scope": "Real NPC controller and rig with isolated observer on shipped street navigation; not phone rendering or touch.",
+  "checks": [
+    "Both Bisi stops reachable, full out-and-back routine",
+    "Every step collision-clear and speed-bounded",
+    "Idle gestures at routine stops",
+    "Yield before entering another person, resume when clear"
+  ]
+}
