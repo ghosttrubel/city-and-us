@@ -1,0 +1,14 @@
+{
+  "testedAt": "2026-11-12T16:35:50.835Z",
+  "passed": true,
+  "liveAuth": false,
+  "groups": [
+    "Sign-up awaiting email confirmation, sign-in errors, sign-in, reset request, password update and explicit profile update use the real REST client against a controlled Auth/Data API double; sign-in never copies or uploads progress.",
+    "Guest import requires a valid confirmation, keeps the guest save, opens an account slot and does not upload automatically. Upload is separately confirmed and uses returned server timestamps.",
+    "Concurrent cloud updates, changed local snapshots and lost success responses cannot be retried blindly. Network failures preserve local progress; Check cloud reconciles an ambiguous upload.",
+    "Restore confirms the source and destination, rechecks cloud and local revisions, preserves the prior device story for export, retains story identity and aborts safely on storage quota failure.",
+    "Sign-out invalidates pending confirmations, account B cannot upload account A’s local story, per-account local/cloud rows remain separate, first-insert races conflict, and offline sign-out clears local credentials with a revocation retry.",
+    "Session resume, expiry refresh, recovery callbacks with immediate URL credential removal, password update and a delayed sign-in arriving after sign-out are covered.",
+    "Review mode makes zero Auth/Data API calls, review provenance survives file imports, credentials/gallery/media/oversized/invalid snapshots are rejected, and the game guards against stale-tab local overwrites."
+  ]
+}

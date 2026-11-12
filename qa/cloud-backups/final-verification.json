@@ -1,0 +1,98 @@
+{
+  "completedAt": "2026-11-12T16:38:49.905Z",
+  "baselineCommit": "2ff86f4",
+  "checks": [
+    {
+      "command": "npm.cmd run check",
+      "exitCode": 0
+    },
+    {
+      "command": "npm.cmd run check:cloud",
+      "exitCode": 0
+    },
+    {
+      "command": "node tools/check-retail-regressions.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "node tools/verify-retail-preservation.mjs",
+      "exitCode": 0
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "gameplay": [
+    {
+      "suite": "verify-life",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-shops-phone",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-phone-media",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-road-vehicles",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-decor",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-physical-home-state",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-physical-home",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-daily-life",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-street-service",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-mobile-lifecycle",
+      "exitCode": 0
+    },
+    {
+      "suite": "verify-wardrobe-replacement",
+      "exitCode": 0
+    }
+  ],
+  "liveVerified": [
+    "Auth settings/public project key",
+    "Anonymous table access denied",
+    "Local-origin CORS including PATCH preflight"
+  ],
+  "unverified": [
+    "Live signup and email confirmation",
+    "Live sign-in and account switching",
+    "Live password reset email and update",
+    "Authenticated backup/restore and cross-user RLS",
+    "Execution/adoption of SQL migration",
+    "Browser visual/touch behavior",
+    "Native Android auth, internet permission and deep links"
+  ],
+  "published": false,
+  "apkRebuilt": false,
+  "sourceSha256": {
+    "dist/game.js": "8e4f91844f6158a788ee8afeb35e0b80e9283231768c6bea141d9eabb516f830",
+    "dist/cloud-auth.js": "b7feaa00c0942e096849672268bd4801eedc1ecbdf6655622fd0fb39175f9458",
+    "dist/cloud-saves.js": "08e6bb9eb253b5d197c2b9fd4cbf0512190217bb188f6a990ed915e658cad6cf",
+    "dist/cloud-ui.js": "81602c5368045085c76c3e11223291ce243086713163d115a5def0b1f316f2a9",
+    "dist/privacy.html": "6110b167257d36e2ff624333e56d62b17f52fa72620cca0dab651d463d35973f",
+    "dist/retail-phone.css": "20b191a90b11c794e1851f409298baed9e2b7ddafd4d3bbf6eb6e91627f01ac3",
+    "package.json": "09a859830994506eb19909209d6283a13d31506c3b1dc4259c3402eab1e6ef92",
+    "supabase/migrations/202611120001_auth_and_save_backups.sql": "cf1ac80091d7cb05beb91bd57cb6af6b603af74fb762774b9782ee5d9c4b15c7"
+  }
+}

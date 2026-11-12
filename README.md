@@ -1,3 +1,11 @@
+# Supabase Auth and cloud backups — 12 November 2026
+
+Optional email/password accounts and explicitly confirmed manual cloud backups are implemented in the local web source. Guest saves, per-account device stories, review isolation and local gallery media are preserved. No gameplay, character, outfit, rental or progression rules changed; no chat, publication or APK rebuild. Live checks reached Auth settings and confirmed anonymous table access is denied. Authenticated account/email/backup round trips still require real-account verification.
+
+[Exact review steps and test evidence](qa/cloud-backups/STATUS.md) · [Supabase dashboard and migration setup](docs/SUPABASE_SETUP.md). Existing source history follows unchanged.
+
+---
+
 # Shops, services and phone checkpoint — 12 November 2026
 
 Local implementation now includes separate enterable Hair Salon and Furniture Showroom, corrected Provisions shopping, confirmed stylist service, connected phone Shopping, image wallpapers/themes/fonts, gameplay capture/gallery and original bundled music. Bisi uses the real home/Provisions route; Ayo reads delivery and needs state. Character/outfit redesign remains paused.

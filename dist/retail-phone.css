@@ -30,3 +30,5 @@
 #sheet .catalogue-card .item-name,#sheet .catalogue-card .item-detail,#sheet .catalogue-card .item-price,#sheet .catalogue-notice a{color:inherit}
 #sheet.catalogue-sheet button,#sheet.decorator-sheet button{min-height:44px}
 #sheet .catalogue-heading{padding-bottom:8px}#sheet .catalogue-heading h2{font-size:1.3rem}
+
+.cloud-account{font-size:.9rem;line-height:1.4;overflow-wrap:anywhere}.cloud-account .field{margin:8px 0}.cloud-account input{min-height:42px;width:100%;box-sizing:border-box}.cloud-account button{min-height:42px;margin:5px 0}.cloud-account small{font-size:.72rem;opacity:.8}.cloud-account details{margin:12px 0}.cloud-account summary{cursor:pointer;padding:8px 0}

@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-11-12T16:25:05.486Z",
+  "checks": [
+    {
+      "path": "/auth/v1/settings",
+      "error": "fetch failed"
+    },
+    {
+      "path": "/rest/v1/player_profiles?select=user_id&limit=1",
+      "error": "fetch failed"
+    },
+    {
+      "path": "/rest/v1/player_save_backups?select=user_id,save_format,updated_at&limit=1",
+      "error": "fetch failed"
+    }
+  ],
+  "authenticatedFlowsVerified": false
+}

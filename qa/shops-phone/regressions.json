@@ -9,10 +9,7 @@
   },
   {
     "suite": "verify-phone-media",
-    "exitCode": 0,
-    "initialExitCode": 1,
-    "finalLog": "media-final.log",
-    "retestNote": "Corrected test-harness timers for HTTP and allowed Windows native resources to close naturally. Final standalone process exited 0."
+    "exitCode": 0
   },
   {
     "suite": "verify-road-vehicles",

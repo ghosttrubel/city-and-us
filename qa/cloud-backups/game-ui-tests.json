@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "browserVisuals": false,
+  "results": [
+    "Invalid existing saves are retained instead of overwritten by startup or page-hide.",
+    "Real game Settings opens account controls; review UI makes no network requests.",
+    "Real sign-in handler leaves guest progress untouched. Import cancellation does nothing; explicit confirmation opens a separate account slot without uploading.",
+    "Reload boots the selected account story; confirmed upload reaches the mock API and reports success.",
+    "Sign-out removes tab credentials; signing in as B hides upload for A’s device story; Guest returns to the original preserved save.",
+    "A stale running game cannot overwrite a local story changed by another tab."
+  ]
+}
