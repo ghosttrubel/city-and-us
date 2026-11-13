@@ -45,3 +45,7 @@ checkpoints/
 
 # Temporary editor recovery files
 *.bak
+
+# Local dependency test cache
+.npm-test-cache/
+.qa-db/

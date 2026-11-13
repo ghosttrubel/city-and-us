@@ -1,3 +1,9 @@
+# Superseded setup reference
+
+The 13 November automatic saving, Google/native auth, deletion and private-chat setup is in [ONLINE_SETUP.md](ONLINE_SETUP.md). The manual-only notes below are retained as historical evidence and are not the current behavior or deployment instructions.
+
+---
+
 # Supabase Auth and manual cloud snapshots
 
 Project: `https://yhervptejlpgallfinro.supabase.co`. The supplied publishable key is intentionally public in `dist/cloud-auth.js`. No service-role key, secret key or database password is required by the client.

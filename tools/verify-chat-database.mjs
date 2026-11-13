@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {createRequire} from 'node:module';
+const require=createRequire(new URL('../.qa-db/package.json',import.meta.url));
+let PGlite;try{({PGlite}=require('@electric-sql/pglite'))}catch{throw Error('Install isolated test engine: npm install --prefix .qa-db --save-exact @electric-sql/pglite@0.5.16 --ignore-scripts');}
+const db=new PGlite();
+await db.exec("create role anon;create role authenticated;create role service_role bypassrls;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to authenticated,anon;grant execute on function auth.uid() to authenticated,anon;create publication supabase_realtime;");
+for(const file of ['202611120001_auth_and_save_backups.sql','202611130001_online_account_foundation.sql','202611130002_private_chat.sql'])await db.exec(await readFile(new URL('../supabase/migrations/'+file,import.meta.url),'utf8'));
+const A='11111111-1111-4111-8111-111111111111',B='22222222-2222-4222-8222-222222222222',C='33333333-3333-4333-8333-333333333333';
+await db.query('insert into auth.users values ($1),($2),($3)',[A,B,C]);
+async function as(id,sql,params=[]){await db.exec('set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[id]);try{return await db.query(sql,params)}finally{await db.exec('reset role')}}
+const identity=async(id,name)=>(await as(id,'select public.chat_identity($1) as p',[name])).rows[0].p;
+const a=await identity(A,'Alpha'),b=await identity(B,'Bravo');await identity(C,'Charlie');assert.notEqual(a.player_id,A);
+const look=(await as(A,'select * from public.chat_lookup($1)',['Bra'])).rows;assert.deepEqual(Object.keys(look[0]).sort(),['display_name','player_id']);assert.equal(look[0].player_id,b.player_id);
+const cid=(await as(A,'select public.chat_open($1) as id',[b.player_id])).rows[0].id;assert.equal((await as(B,'select public.chat_open($1) as id',[a.player_id])).rows[0].id,cid);
+const nonce='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
+const send=(id,client,body)=>as(id,'select (public.chat_send($1,$2,$3)).*',[cid,client,body]);
+const first=(await send(A,nonce,'Hello Bravo')).rows[0];assert.equal(first.sender_id,A);assert.equal(first.delivered_at,null);assert.equal(first.read_at,null);assert.equal((await send(A,nonce,'Hello Bravo')).rows[0].id,first.id);
+await assert.rejects(send(A,nonce,'Different content'),/different message/);
+assert.equal((await as(C,'select * from public.chat_messages where conversation_id=$1',[cid])).rows.length,0);
+await assert.rejects(send(C,'cccccccc-cccc-4ccc-8ccc-cccccccccccc','Intruder'),/access denied/);
+await assert.rejects(as(C,'select public.chat_ack($1,$2,true)',[cid,[first.id]]),/access denied/);
+await assert.rejects(as(C,'insert into public.chat_messages(conversation_id,sender_id,client_id,body) values($1,$2,$3,$4)',[cid,A,nonce,'forged']),/permission denied/);
+await as(A,'select public.chat_ack($1,$2,true)',[cid,[first.id]]);assert.equal((await as(A,'select * from public.chat_messages')).rows[0].read_at,null);
+await as(B,'select public.chat_ack($1,$2,false)',[cid,[first.id]]);let row=(await as(A,'select * from public.chat_messages')).rows[0];assert(row.delivered_at);assert.equal(row.read_at,null);await as(B,'select public.chat_ack($1,$2,true)',[cid,[first.id]]);assert((await as(A,'select * from public.chat_messages')).rows[0].read_at);
+await as(B,'select public.chat_block($1,true)',[a.player_id]);await assert.rejects(send(A,'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb','blocked'),/unavailable/);await as(B,'select public.chat_block($1,false)',[a.player_id]);
+await as(B,'select public.chat_mute($1,true)',[cid]);assert.equal((await as(B,'select * from public.chat_list()')).rows[0].muted,true);assert.equal((await as(A,'select * from public.chat_list()')).rows[0].muted,false);
+const report=(await as(B,'select public.chat_report($1,$2) as id',[first.id,'A test moderation report'])).rows[0].id;assert(report);await assert.rejects(as(A,'select * from public.chat_reports'),/permission denied/);assert.equal((await db.query('select * from public.chat_reports')).rows.length,1);
+for(let i=0;i<19;i++)await send(A,'00000000-0000-4000-8000-'+String(i).padStart(12,'0'),'limit '+i);
+await assert.rejects(send(A,'ffffffff-ffff-4fff-8fff-ffffffffffff','over limit'),/limit reached/);
+assert.equal((await send(A,nonce,'Hello Bravo')).rows[0].id,first.id);
+const page=(await as(B,'select id from public.chat_messages where conversation_id=$1 and id<$2 order by id desc limit 5',[cid,Number(first.id)+20])).rows;assert.equal(page.length,5);assert(page[0].id>page[1].id);
+const reply=(await send(B,'dddddddd-dddd-4ddd-8ddd-dddddddddddd','Reply stays')).rows[0];
+await db.query('delete from auth.users where id=$1',[A]);assert.equal((await db.query('select * from auth.users')).rows.length,2);assert.equal((await as(B,'select * from public.chat_messages')).rows.length,1);assert.equal((await as(B,'select * from public.chat_messages')).rows[0].id,reply.id);assert.equal((await db.query('select * from public.chat_reports')).rows.length,0);
+await db.close();console.log('PASS: actual migrations in isolated PGlite PostgreSQL: A/B conversation; C denied reads/sends/receipts; spoofing denied; idempotency; delivery/read; block/mute/report privacy; send limits; pagination; deletion isolation. Live Supabase Auth/Realtime pending.');

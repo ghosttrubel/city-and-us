@@ -33,13 +33,16 @@ export function createCloudAuth({storage,fetcher=globalThis.fetch,disabled=false
  }
  async function ensure(){
   assert(epoch);if(!session)throw Error('Sign in first.');
+  // Read the shared credential before refresh so a resumed tab never reuses an old refresh token.
+  if(storage){let shared=null;try{shared=JSON.parse(storage.getItem(AUTH_KEY)||'null')}catch{}if(shared?.user?.id!==session.user.id){++epoch;session=shared&&isUserId(shared.user?.id)?shared:null;notify();throw Error('Account changed. Sign in again.');}if(shared.access_token!==session.access_token)session=shared;}
   if(session.expires_at*1000>now()+60000)return session;
-  if(!refreshing){const e=epoch,old=session;refreshing=(async()=>{
+  if(!refreshing){const e=epoch;const refresh=async()=>{
+   assert(e);if(storage){const shared=JSON.parse(storage.getItem(AUTH_KEY)||'null');if(shared?.user?.id!==session?.user?.id)throw Error('Account changed.');if(shared?.expires_at*1000>now()+60000){session=shared;return session;}if(shared)session=shared;}const old=session;
    const result=await request('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:old.refresh_token}});
    const value=await accept(result,e,old.user.id);
    if(value.user.id!==old.user.id){persist(null);throw Error('Account identity changed. Sign in again.');}
    return value;
-  })().catch(error=>{if(e===epoch&&[400,401,403].includes(error.status)){++epoch;recovery=false;persist(null);}throw error}).finally(()=>{refreshing=null});}
+  };refreshing=(globalThis.navigator?.locks?globalThis.navigator.locks.request('city-and-us-auth-refresh',refresh):refresh()).catch(error=>{if(e===epoch&&[400,401,403].includes(error.status)){++epoch;recovery=false;persist(null);}throw error}).finally(()=>{refreshing=null});}
   return refreshing;
  }
  return {
@@ -92,11 +95,11 @@ export function createCloudAuth({storage,fetcher=globalThis.fetch,disabled=false
   async probe(){const result=await request('/rest/v1/rpc/game_connection',{method:'POST',body:{}});if(result?.version!==1)throw Error('Game service setup is incomplete. Progress remains on this device.');return result;},
   async validateSession(){const e=epoch,s=await ensure();try{const user=await request('/auth/v1/user',{token:s.access_token});assert(e);if(user.id!==s.user.id)throw Error('Session identity mismatch.');return user;}catch(error){if(e===epoch&&[401,403].includes(error.status)){++epoch;persist(null);}throw error;}},
   async google(redirect){
-   assert(epoch);if(session)throw Error('Sign out before switching accounts.');
+   const e=epoch;assert(e);if(session)throw Error('Sign out before switching accounts.');
    const bytes=cryptoApi.getRandomValues(new Uint8Array(32));
    const b64=b=>btoa(String.fromCharCode(...b)).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'');
    const verifier=b64(bytes),challenge=b64(new Uint8Array(await cryptoApi.subtle.digest('SHA-256',new TextEncoder().encode(verifier))));
-   storage.setItem('city-and-us-pkce',JSON.stringify({verifier,created:now(),redirect}));
+   assert(e);storage.setItem('city-and-us-pkce',JSON.stringify({verifier,created:now(),redirect}));
    const url=new URL(SUPABASE_URL+'/auth/v1/authorize');url.search=new URLSearchParams({provider:'google',redirect_to:redirect,code_challenge:challenge,code_challenge_method:'s256'});return url.href;
   },
   async completeOAuth(code){
@@ -106,8 +109,8 @@ export function createCloudAuth({storage,fetcher=globalThis.fetch,disabled=false
    const e=++epoch;const result=await request('/auth/v1/token?grant_type=pkce',{method:'POST',body:{auth_code:code,code_verifier:pending.verifier}});
    storage.removeItem('city-and-us-pkce');return accept(result,e);
   },
-  cancelOAuth(){storage.removeItem('city-and-us-pkce')},
-  syncSession(){const raw=storage.getItem(AUTH_KEY);const next=raw?JSON.parse(raw):null;if(next?.access_token===session?.access_token)return;++epoch;session=next&&isUserId(next.user?.id)?next:null;recovery=!!session?.recovery;notify();},
+  cancelOAuth(){++epoch;storage.removeItem('city-and-us-pkce')},
+  syncSession(){const raw=storage.getItem(AUTH_KEY);let next=null;try{next=raw?JSON.parse(raw):null}catch{}if(next?.access_token===session?.access_token)return;++epoch;session=next&&isUserId(next.user?.id)?next:null;recovery=!!session?.recovery;notify();},
   async accessToken(){return (await ensure()).access_token},
   async deleteAccount(){await this.authorized('/functions/v1/delete-account',{method:'POST',body:{confirm:'DELETE'}});++epoch;recovery=false;persist(null);},
   async authorized(path,options={}){
