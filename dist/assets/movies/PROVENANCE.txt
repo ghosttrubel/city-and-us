@@ -1,0 +1,11 @@
+Lagoon Light — original City & Us sample short
+
+All geometric artwork, animation and synthesized music were authored for this project. No third-party film clips, streams, brands, artwork or recorded music were used. The included generation source is tools/create-lagoon-film.mjs and tools/create-lagoon-film.py. The project owner retains control over use, modification and distribution of these original project assets. No additional watermark or external branding is included.
+
+This 16-second sample is not a commercial catalogue title. Commercial film availability requires separately supplied licensed content and rights.
+
+Video generation uses the existing sharp package and an external local encoder (ffmpeg, or installed VLC plus Python); those third-party tools are not bundled with this asset.
+
+Regeneration: node tools/create-lagoon-film.mjs. Set FFMPEG to an installed ffmpeg executable, or set PYTHON and VLC_HOME to existing installations. No runtime encoding dependency ships in the game. Actual decode check: python tools/create-lagoon-film.py verify dist/assets/movies/lagoon-light.mp4 <output-directory>.
+
+Verified locally: MP4 container has fast-start metadata, 640x360 H.264 baseline video and AAC audio. VLC software decoded 379 frames over 16.023 seconds and completed normally. Four decoded captures have distinct pixel hashes, confirming animation rather than a still frame. Browser and Android playback remain separate acceptance checks.

@@ -1,3 +1,4 @@
+import {cashChange} from './bank.js';
 import {driving} from './road-vehicles.js';
 import {PICKUP_STOPS,RIDE_START,FARE_DISTANCE,localRoadPath} from './ride-roads.js';
 // Device-local daily life. State transitions and currency settle in one save snapshot.
@@ -44,19 +45,19 @@ export function orderFood(s,menu,address,expectedSerial,routes){
  const d=s.daily;if(expectedSerial!==d.foodSerial||activeFood(s))return failure('This order was already handled.');if(!Object.hasOwn(FOOD_MENU,menu)||!FOOD_ADDRESSES.includes(address))return failure('Choose an available meal and address.');
  if(!routes?.collect?.length||!routes.deliver[address]?.length)return failure('No delivery route is available. Nothing was charged.');if(!mealSpace(s))return failure('Your meal storage is full. Eat a meal first.');
  const total=FOOD_MENU[menu].price+DELIVERY_FEE;if(s.money<total)return failure('Not enough game currency. Nothing was charged.');if(d.foodSerial>=1e9)return failure('Order limit reached.');
- s.money-=total;d.order={id:++d.foodSerial,menu,address,total,status:'preparing',progress:0};s.stats.purchases++;return success('Order confirmed. Meet the courier outside '+ENTRANCES[address].name+'.');
+ cashChange(s,-total,'purchase',{sku:'food-'+menu,ref:'food-'+(d.foodSerial+1)});d.order={id:++d.foodSerial,menu,address,total,status:'preparing',progress:0};s.stats.purchases++;return success('Order confirmed. Meet the courier outside '+ENTRANCES[address].name+'.');
 }
-export function cancelFood(s,id){const o=s.daily.order;if(!o||o.id!==id||!activeFood(s))return failure('This order can no longer be cancelled.');o.status='cancelled';s.money+=o.total;if(s.daily.guide==='food')s.daily.guide=null;return success('Order cancelled. '+o.total+' game currency refunded.');}
+export function cancelFood(s,id){const o=s.daily.order;if(!o||o.id!==id||!activeFood(s))return failure('This order can no longer be cancelled.');o.status='cancelled';cashChange(s,o.total,'refund',{ref:'food-'+o.id});if(s.daily.guide==='food')s.daily.guide=null;return success('Order cancelled. '+o.total+' game currency refunded.');}
 export function receiveFood(s,id,location,position){const o=s.daily.order;if(!o||o.id!==id||o.status!=='arrived'||location!=='city'||!near(position,ENTRANCES[o.address].outside,1.7))return failure('Meet the courier at the delivery entrance first.');if(activeMeals(s).length>=20||heldMeal(s))return failure('Place or store the meal in your hand first.');if(s.daily.meals.some(m=>m.id==='food-'+o.id))return failure('That meal was already received.');o.status='received';newMeal(s,'food-'+o.id,o.menu,{carry:true});s.daily.stats.received++;if(s.daily.guide==='food')s.daily.guide=null;return success('Meal received in your hand. Carry it home to the dining table.');}
 export function mealInfo(recipe){return NUTRITION[recipe];}
 export function eatMeal(){return failure('Carry the meal to your table, open it, and sit to eat.');}
 export function bookRide(s,pickup,destination,expectedSerial,service='neighbourhood'){
  if(driving(s))return failure('Park and exit your vehicle before booking a passenger ride.');
  const d=s.daily,quote=rideQuote(pickup,destination,service);if(expectedSerial!==d.rideSerial||activeRide(s))return failure('This booking was already handled.');if(!quote)return failure('Choose two different stops.');if(s.money<quote.fare)return failure('Not enough game currency. Nothing was charged.');if(d.rideSerial>=1e9)return failure('Trip limit reached.');
- s.money-=quote.fare;d.ride={id:++d.rideSerial,service,pickup,destination,dropoff:destination,fare:quote.fare,status:'dispatching',progress:0,path:roadPath(RIDE_DEPOT,RIDE_STOPS[pickup].point),distance:0,early:false};d.guide='ride';return success(RIDE_SERVICES[service].name+' booked. Walk to '+RIDE_STOPS[pickup].name+'.');
+ cashChange(s,-quote.fare,'ride',{service,pickup,destination,ref:'ride-'+(d.rideSerial+1)});d.ride={id:++d.rideSerial,service,pickup,destination,dropoff:destination,fare:quote.fare,status:'dispatching',progress:0,path:roadPath(RIDE_DEPOT,RIDE_STOPS[pickup].point),distance:0,early:false};d.guide='ride';return success(RIDE_SERVICES[service].name+' booked. Walk to '+RIDE_STOPS[pickup].name+'.');
 }
 export function cancelRide(s,id){
- const r=s.daily.ride;if(!r||r.id!==id||!['dispatching','waiting'].includes(r.status))return failure('This ride cannot be refunded after boarding.');r.status='cancelled';s.money+=r.fare;if(s.daily.guide==='ride')s.daily.guide=null;return success('Ride cancelled. Full fare refunded.');
+ const r=s.daily.ride;if(!r||r.id!==id||!['dispatching','waiting'].includes(r.status))return failure('This ride cannot be refunded after boarding.');r.status='cancelled';cashChange(s,r.fare,'refund',{ref:'ride-'+r.id});if(s.daily.guide==='ride')s.daily.guide=null;return success('Ride cancelled. Full fare refunded.');
 }
 export function boardRide(s,id,location,position){
  const r=s.daily.ride;if(driving(s)||!r||r.id!==id||r.status!=='waiting'||location!=='city'||!near(position,RIDE_STOPS[r.pickup].curb,1.6))return failure('Meet your vehicle at the pickup marker first.');

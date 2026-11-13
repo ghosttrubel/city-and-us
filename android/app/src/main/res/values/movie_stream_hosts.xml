@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <!-- Add only contracted HTTPS media/CDN hosts, including redirect hosts. -->
+ <string-array name="movie_stream_hosts"></string-array>
+</resources>

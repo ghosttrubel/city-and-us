@@ -1,0 +1,123 @@
+{
+  "verifiedAt": "2026-11-13T13:06:45.956Z",
+  "repository": "ghosttrubel/city-and-us (root)",
+  "checks": {
+    "bank": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: actual bank SQL in isolated PostgreSQL: migration, atomic transfers, replay/CAS, forged balances, insufficient funds, owner isolation, fixed parcel quotes, charge-backed refunds, guest import guard, cash-only robbery/cooldown/retry, reset and deletion. Live pending.",
+      "notes": ""
+    },
+    "cloud-game": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: shipped game review isolation, auto account load, durable pending reload, offline pause/reconnect, bank confirmation/cancel/lost-response reload, preserved guest, reset/account identity, switching and corrupt-save preservation. API/DOM doubles only.",
+      "notes": ""
+    },
+    "shops": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "[\n  \"Provisions greeting, appropriate products, explicit confirmation, cancellation and stale-confirmation protection.\",\n  \"Phone grocery checkout, font preview/apply, image wallpaper and theme survive reload.\",\n  \"Stylist greeting, discussion, exact price, cancellation during work, performed service, once-only charge, completion and save.\",\n  \"Showroom individual furniture, price confirmation, once-only charge, home-storage delivery, owned placement and doorway guards.\",\n  \"Both new street entrances have continuous collision-clear routes from home.\",\n  \"Actual entrance/exit controls load both new rooms and preserve safe saves during doorway transitions.\",\n  \"Bisi reaches home and the real Provisions entrance without obstacle penetration or offscreen freezing.\",\n  \"Extended save validation and migration preserve balances, wardrobe and vehicle permissions.\"\n]",
+      "notes": ""
+    },
+    "life": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "{\n  \"date\": \"2026-10-23\",\n  \"status\": \"passed\",\n  \"checks\": [\n    \"Trait choices affect successful pay and needs drain; a completed introduction cannot overwrite choices\",\n    \"Home/Curious study bonuses, cooking skill/grocery use, low-resource rejection, sleep/wash restoration and midnight rollover\",\n    \"Version-1 migration retains progress/appearance and rejects malformed imported simulation fields\",\n    \"All three original interiors have finite geometry, a bounded triangle count and ray-pickable activity objects (CPU only)\"\n  ],\n  \"scope\": \"Pure simulation and CPU scene checks. No rendered browser or device-performance claim.\"\n}",
+      "notes": ""
+    },
+    "apps": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: Movies catalogue/details/controls/fullscreen/error/retry/resume/throttle/expiry; actual fast-start MP4 container; phone pages/categories/search; bank conservation/confirmation helper/reload-safe robbery/ack pruning. DOM/media API doubles: browser playback/layout pending.",
+      "notes": ""
+    },
+    "account": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: migration, debounce, durable reload, offline/reconnect, lost response, CAS conflict, account isolation, new-story transition, review exclusion (API doubles; not live).",
+      "notes": ""
+    },
+    "mobile": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "{\n  date: '2026-11-13T12:36:40.835Z',\n  status: 'passed',\n  scope: 'Actual game module with DOM, GPU and storage doubles; not Safari, rendered pixels or device touch verification.',\n  checks: [\n    'LAN-like crypto API: fresh identity and successful game initialisation without randomUUID',\n    'Conservative mobile graphics and visual-viewport canvas/aspect sizing',\n    'A held joystick resets during rotation and does not continue moving after resume',\n    'Background/native pause preserves cooking, food delivery, money and frame count; resume uses current timestep without catch-up',\n    'Resize while paused, landscape resume after Safari-bar-sized viewport change',\n    'Reload preserves identity, food order, money, wardrobe and furniture'\n  ]\n}",
+      "notes": ""
+    },
+    "startup": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "{\n  date: '2026-11-13T12:35:48.025Z',\n  scope: 'Isolated bootstrap/event/failure tests and actual identity function. No browser, GPU pixels or physical-device verification.',\n  checks: [\n    'Reproduced old startup identity failure with randomUUID unavailable; replacement generates compatible IDs using getRandomValues.',\n    'Portrait starts unpaused and accepts movement/menu input; keyboard preserves physical orientation, follows visual viewport and clears held input; background/native pause still works.',\n    'Rejected game import displays readable failure, opens diagnostics and pauses instead of leaving a blank world.',\n    'Failed HTTP requests retain status/path; failed required assets expose retry error.',\n    'First submitted frame dismisses loading; mobile DPR capped; context loss stops with Retry, while intentional preview disposal does not falsely fail.',\n    'Shader/link errors surface in diagnostics, not merely in a developer console.'\n  ],\n  status: 'passed'\n}",
+      "notes": ""
+    },
+    "road": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "{\n  \"status\": \"passed\",\n  \"checks\": [\n    \"No free access; earned progression and confirmed single rental charge; mounted passenger booking blocked; drive, stopped exit and rental reload.\",\n    \"Both profiles collide without tunnelling, reverse, stop and exit; ownership, rental and explicit permission reject other players.\",\n    \"Exact old buka trap recovered for free with parcel/cash/inventory retained; terrace excluded and reverse escapes approach.\",\n    \"Individual stock/quantities/total, atomic checkout, duplicate/stale/funds/location guards, usable ingredients/consumables and reload.\"\n  ]\n}",
+      "notes": ""
+    },
+    "preservation": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "{\n  status: 'passed',\n  checks: [\n    'Character/outfit assets and sources are retained. State/permission sources match their baseline except the explicitly audited cash-journal calls.',\n    'Supplied reference collections, MIT licenses and existing hosting identity match the earlier manifest.',\n    'Full previous README and ROADMAP retained.'\n  ],\n  limits: 'No user browser saves were accessed. Save behavior is covered separately with isolated fixtures.'\n}",
+      "notes": ""
+    },
+    "nativeauth": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: OAuth PKCE/cancellation, persistent session refresh/expiry, and actual deletion handler caller binding (Auth/network doubles; live Google, email and deletion pending).",
+      "notes": "(node:18064) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)"
+    },
+    "chat": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: chat client durable retry after lost reply, no duplicate insertion, explicit delivered/read receipts, pagination, authenticated realtime subscription, mute and account-scoped pending outbox (network doubles; live pending).",
+      "notes": ""
+    },
+    "http": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: actual HTTP sample video MIME, length, seek range, suffix range and invalid range. Player/device playback remains separate.",
+      "notes": ""
+    },
+    "cloud-backups": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "Sign-up awaiting email confirmation, sign-in errors, sign-in, reset request, password update and explicit profile update use the real REST client against a controlled Auth/Data API double; sign-in never copies or uploads progress.\nGuest import requires a valid confirmation, keeps the guest save, opens an account slot and does not upload automatically. Upload is separately confirmed and uses returned server timestamps.\nConcurrent cloud updates, changed local snapshots and lost success responses cannot be retried blindly. Network failures preserve local progress; Check cloud reconciles an ambiguous upload.\nRestore confirms the source and destination, rechecks cloud and local revisions, preserves the prior device story for export, retains story identity and aborts safely on storage quota failure.\nSign-out invalidates pending confirmations, account B cannot upload account A’s local story, per-account local/cloud rows remain separate, first-insert races conflict, and offline sign-out clears local credentials with a revocation retry.\nSession resume, expiry refresh, recovery callbacks with immediate URL credential removal, password update and a delayed sign-in arriving after sign-out are covered.\nReview mode makes zero Auth/Data API calls, review provenance survives file imports, credentials/gallery/media/oversized/invalid snapshots are rejected, and the game guards against stale-tab local overwrites.",
+      "notes": ""
+    },
+    "chat-db": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: actual migrations in isolated PGlite PostgreSQL: A/B conversation; C denied reads/sends/receipts; spoofing denied; idempotency; delivery/read; block/mute/report privacy; send limits; pagination; deletion isolation. Live Supabase Auth/Realtime pending.",
+      "notes": ""
+    },
+    "phone-media": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "[\n  'Camera renders the gameplay canvas before photo; supported recorder exposes status, stops tracks and saves once.',\n  'Storage failure retains capture, blocks replacement and supports export / retry.',\n  'Gallery shows stored media, exports, requires delete confirmation and refreshes after deletion.',\n  'Unsupported recording and unavailable persistent storage are explicitly reported.',\n  'Music play/pause, track and volume controls call playback and persist preferences (audio API double).',\n  'Bundled tracks contain 24 seconds of non-silent PCM; server supplies audio/image MIME types and range playback.'\n]",
+      "notes": ""
+    },
+    "geometry": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "PASS: street geometry, ground heights, routes and door definitions match the pre-presentation root commit; shared texture size/anisotropy/batching retained. Rendered finish/device performance pending.",
+      "notes": ""
+    },
+    "syntaxFinal": {
+      "passed": true,
+      "exitCode": 0,
+      "output": "npm run check passed",
+      "notes": ""
+    }
+  },
+  "native": {
+    "passed": true,
+    "method": "javac against Android 36 android.jar; generated R and BuildConfig stubs; classes only",
+    "apkBuilt": false
+  },
+  "liveSupabaseVerified": false,
+  "personalAccountAccessed": false,
+  "browserAvailable": false,
+  "inGameScreenshots": false
+}

@@ -49,3 +49,5 @@ checkpoints/
 # Local dependency test cache
 .npm-test-cache/
 .qa-db/
+
+.qa-native/

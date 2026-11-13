@@ -1,3 +1,4 @@
+import {cashChange} from './bank.js';
 import {HOME_BOUNDS} from './home-layout.js';
 // Shared spatial data for the scene, collision, map, doors and delivery rules.
 export const BUILDINGS=[
@@ -93,12 +94,12 @@ export function collectDelivery(s,location,position){
  if(s.dispatchBike?.mode==='mounted'||Object.values(s.roadVehicles?.vehicles||{}).some(v=>v.mode==='mounted')||location!=='dispatch'||!near(position,PICKUP)||s.delivery&&s.delivery.status!=='complete')return false;
  const base=1200+s.skills.rider*100;
  s.delivery={id:++s.deliverySerial,status:'carrying',destination:'shop',pay:Math.min(1000000,Math.round(base*(s.traits.includes('industrious')?1.1:1)))};
- s.waypoint='shop';return true;
+ cashChange(s,0,'courier-quote',{ref:'parcel-'+s.delivery.id});s.waypoint='shop';return true;
 }
 export function handOverDelivery(s,location,position){
  if(s.dispatchBike?.mode==='mounted'||Object.values(s.roadVehicles?.vehicles||{}).some(v=>v.mode==='mounted')||location!=='shop'||!near(position,SHOP_COUNTER)||s.delivery?.status!=='carrying')return false;
  // Status and payment are committed to the same local save, preventing repeat UI awards.
- s.delivery.status='return';s.money+=s.delivery.pay;s.skills.rider++;s.stats.shifts++;s.job='Neighbourhood courier';s.waypoint='home';return true;
+ s.delivery.status='return';cashChange(s,s.delivery.pay,'courier',{ref:'parcel-'+s.delivery.id});s.skills.rider++;s.stats.shifts++;s.job='Neighbourhood courier';s.waypoint='home';return true;
 }
 export function arriveHome(s){if(s.delivery?.status==='return'){s.delivery.status='complete';s.completedDeliveries++;s.waypoint=null;return true}return false}
 export function deliveryObjective(s){

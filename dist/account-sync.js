@@ -5,7 +5,7 @@ const equal=(a,b)=>canonical(a)===canonical(b);
 const copy=v=>JSON.parse(JSON.stringify(v));
 // One durable journal per Auth UUID. base is the last acknowledged server version;
 // sent survives an ambiguous response, pending always holds the newest local snapshot.
-export function createAccountSync({auth,slots,storage,validate,disabled=false,reload=()=>{},freshStory,changed=()=>{},now=Date.now,schedule=setTimeout,cancel=clearTimeout}){
+export function createAccountSync({auth,slots,storage,validate,disabled=false,reload=()=>{},freshStory,changed=()=>{},writeRemote=null,now=Date.now,schedule=setTimeout,cancel=clearTimeout}){
  let ready=disabled,connected=disabled,issue='',choice=null,busy=null,timer=null,heartbeat=null,retries=0,dirtySince=null,disposed=false,activeId=auth.user?.id||null;
  const listeners=new Set(),emit=()=>{changed();listeners.forEach(fn=>fn())};
  const read=id=>JSON.parse(storage.getItem(syncKey(id))||'null');
@@ -50,13 +50,15 @@ export function createAccountSync({auth,slots,storage,validate,disabled=false,re
  async function flush(id){
   let j=read(id);if(!j?.pending)return;
   const payload=validateBackup(j.pending,validate);j.sent=payload;put(id,j);emit();
-  const rows=await auth.authorized(j.base?path(id)+'&updated_at=eq.'+encodeURIComponent(j.base.updated_at):'/rest/v1/player_save_backups',{method:j.base?'PATCH':'POST',body:{user_id:id,save_format:1,payload},headers:{Prefer:'return=representation'}});
+  const rows=writeRemote?await writeRemote(payload,j.base?.updated_at||null):await auth.authorized(j.base?path(id)+'&updated_at=eq.'+encodeURIComponent(j.base.updated_at):'/rest/v1/player_save_backups',{method:j.base?'PATCH':'POST',body:{user_id:id,save_format:1,payload},headers:{Prefer:'return=representation'}});
   guard(id);
   if(!Array.isArray(rows)||rows.length!==1){await reconcile(id);return;}
   const remote=row(rows[0]);j=read(id);acknowledge(id,j,remote);
   if(j.pending)later();else dirtySince=null;
  }
  const api={
+  get acknowledgedCashOps(){const id=auth.user?.id;return id?read(id)?.base?.payload?.data?.bank?.ops||[]:[]},
+  acceptRemote(remote){const id=auth.user?.id;guard(id);row(remote);if(read(id)?.pending)throw Error('Pending progress must sync first.');const local=slots.read(id);slots.replace(id,remote.payload,local);put(id,{user_id:id,base:remote,pending:null,sent:null});emit();},
   get status(){const id=auth.user?.id;let pending=false;try{pending=!!(id&&read(id)?.pending)}catch{}return {ready,connected,choice,issue,label:!connected?'Reconnecting':choice?'Choose progress':pending?'Saving':id?'Saved':'Connected',pending}},
   subscribe(fn){listeners.add(fn);return()=>listeners.delete(fn)},
   capture(payload){

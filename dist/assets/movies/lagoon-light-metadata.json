@@ -1,0 +1,23 @@
+{
+  "title": "Lagoon Light",
+  "kind": "Original animated sample, not a commercial catalogue film",
+  "width": 640,
+  "height": 360,
+  "durationSeconds": 16.023,
+  "videoCodec": "H.264",
+  "audio": "Original synthesized score",
+  "bytes": 1596746,
+  "createdBy": "tools/create-lagoon-film.mjs",
+  "rights": "Original project asset; no borrowed footage, artwork, brands or music.",
+  "sourceDurationSeconds": 16,
+  "sourceFrames": 384,
+  "videoDurationSeconds": 15.75,
+  "encodedVideoFrames": 379,
+  "audioDurationSeconds": 16.022630385487528,
+  "audioCodec": "AAC",
+  "profile": "H.264 Constrained Baseline (66)",
+  "fastStart": true,
+  "localDecodeVerified": true,
+  "browserPlaybackVerified": false,
+  "sourceFps": 24
+}

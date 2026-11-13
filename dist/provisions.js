@@ -1,3 +1,4 @@
+import {cashChange} from './bank.js';
 import {HOME_STATIONS} from './home-layout.js';
 import {near,SHOP_COUNTER} from './neighbourhood.js';
 export const PRODUCTS={
@@ -17,6 +18,6 @@ else if((p.basket.bundle||0)*3+s.pantry+(s.daily.cook?.status==='prep'?1:0)>99)r
 else if(['water','biscuits','soap'].some(k=>(p.items[k]||0)+(p.basket[k]||0)>40))reason='Maximum 40 of each consumable.';
 return {serial:p.serial,basket:JSON.stringify(p.basket),entries,total,summary,reason,ok:!reason};}
 export function checkout(s,quote,location,position,channel='counter'){if(channel!=='phone'&&(location!=='shop'||!near(position,SHOP_COUNTER)))return no('Return to the checkout before paying.');const current=quoteBasket(s);if(quote.serial!==current.serial||quote.basket!==current.basket||quote.total!==current.total)return no('Basket changed. Review the new total.');if(!current.ok)return no(current.reason);
-s.money-=current.total;for(const [k,n]of current.entries){s.provisions.stock[k]-=n;if(PRODUCTS[k].ingredient){s.homeLife.ingredients.bag[k]+=n;s.homeLife.stockSerial++;}else if(k==='bundle')s.pantry+=n*3;else s.provisions.items[k]+=n;}
+cashChange(s,-current.total,'basket',{entries:current.entries,ref:'basket-'+(s.provisions.serial+1)});for(const [k,n]of current.entries){s.provisions.stock[k]-=n;if(PRODUCTS[k].ingredient){s.homeLife.ingredients.bag[k]+=n;s.homeLife.stockSerial++;}else if(k==='bundle')s.pantry+=n*3;else s.provisions.items[k]+=n;}
 s.provisions.serial++;s.provisions.lastReceipt={serial:s.provisions.serial,total:current.total,summary:current.summary};s.provisions.basket={};s.stats.purchases++;return ok('Paid ₦'+current.total+' for '+current.summary+'. Goods added to your inventory.');}
 export function useProvision(s,id,location,position){if(!['water','biscuits','soap'].includes(id)||s.provisions.items[id]<1)return no('You do not have this item.');if(id==='soap'&&(location!=='home'||!near(position,HOME_STATIONS.wash.stand,1.1)))return no('Take the soap to your home bathroom to use it.');s.provisions.items[id]--;if(id==='water')s.energy=Math.min(100,s.energy+8);if(id==='biscuits')s.food=Math.min(100,s.food+20);if(id==='soap'){s.hygiene=Math.min(100,s.hygiene+30);s.stats.washed++;}s.provisions.serial++;return ok('Used one '+PRODUCTS[id].name+'.');}

@@ -1,0 +1,28 @@
+{
+  "durationMs": 16023,
+  "decodedFrames": 379,
+  "terminalState": 6,
+  "samples": [
+    {
+      "timeMs": 78,
+      "file": "decoded-0.webp",
+      "sha256": "43e7d62dbca94acdf608d46fb9c09e9550b51913b8f82564a527d34d18128dc6"
+    },
+    {
+      "timeMs": 5153,
+      "file": "decoded-1.webp",
+      "sha256": "432fc8979ae07dc7fe11d1bfc40fa5b9c44c148487489c91e719f9b9a9cee4a7"
+    },
+    {
+      "timeMs": 10400,
+      "file": "decoded-2.webp",
+      "sha256": "e5a3cffc1735694cf8f2fda2d12635ce0a1195e76207917082583961e43ee77c"
+    },
+    {
+      "timeMs": 15613,
+      "file": "decoded-3.webp",
+      "sha256": "954b799d9b000e777179df82a89c478f9d7d4ad2e1f7233199413cc744bd3732"
+    }
+  ],
+  "method": "Actual local VLC software decoding into video memory; not browser/device acceptance"
+}

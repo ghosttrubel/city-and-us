@@ -1,0 +1,39 @@
+{
+  "topLevel": [
+    {
+      "type": "ftyp",
+      "bytes": 24
+    },
+    {
+      "type": "moov",
+      "bytes": 7884
+    },
+    {
+      "type": "wide",
+      "bytes": 8
+    },
+    {
+      "type": "mdat",
+      "bytes": 1588830
+    }
+  ],
+  "tracks": [
+    {
+      "handler": "vide",
+      "timescale": 90000,
+      "duration": 1417500,
+      "sampleEntry": "avc1",
+      "samples": 379,
+      "width": 640,
+      "height": 360
+    },
+    {
+      "handler": "soun",
+      "timescale": 22050,
+      "duration": 353299,
+      "sampleEntry": "mp4a",
+      "samples": 345
+    }
+  ],
+  "avcProfile": 66
+}

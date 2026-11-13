@@ -27,9 +27,9 @@ export function buildStreet(){
  function texture(type){
   if(textures.has(type))return textures.get(type);
   const canvas=document.createElement('canvas');canvas.width=canvas.height=512;const c=canvas.getContext('2d');
-  c.fillStyle=type==='asphalt'?'#aaa9a5':type==='paving'?'#e5e1d7':'#e9e6de';c.fillRect(0,0,512,512);
-  for(let i=0;i<16000;i++){const n=Math.floor(100+rand()*145);c.fillStyle='rgba('+n+','+n+','+n+','+(type==='asphalt'?.25:.12)+')';c.fillRect(rand()*512,rand()*512,rand()*2+1,rand()*2+1)}
-  if(type==='paving'){c.strokeStyle='#a39f9466';c.lineWidth=2;for(let y=0;y<=512;y+=64){c.beginPath();c.moveTo(0,y);c.lineTo(512,y);c.stroke();for(let x=(y%128?0:32);x<512;x+=128)c.strokeRect(x,y,128,64)}}
+  c.fillStyle=type==='asphalt'?'#878d91':type==='paving'?'#eee9db':'#e9e6de';c.fillRect(0,0,512,512);
+  for(let i=0;i<16000;i++){const n=Math.floor(100+rand()*145);c.fillStyle='rgba('+n+','+n+','+n+','+(type==='asphalt'?.38:.18)+')';c.fillRect(rand()*512,rand()*512,rand()*2+1,rand()*2+1)}
+  if(type==='paving'){c.strokeStyle='#777e82aa';c.lineWidth=3;for(let y=0;y<=512;y+=64){c.beginPath();c.moveTo(0,y);c.lineTo(512,y);c.stroke();for(let x=(y%128?0:32);x<512;x+=128)c.strokeRect(x,y,128,64)}}
   if(type==='plaster'){for(let i=0;i<70;i++){c.fillStyle='#82796e0b';c.beginPath();c.ellipse(rand()*512,rand()*512,8+rand()*30,4+rand()*80,0,0,Math.PI*2);c.fill()}}
   if(type==='wood'){for(let x=0;x<512;x+=12){c.strokeStyle='#8c807535';c.beginPath();c.moveTo(x,0);c.bezierCurveTo(x+12,130,x-8,350,x+3,512);c.stroke()}}
   const t=new T.CanvasTexture(canvas);t.wrapS=t.wrapT=T.RepeatWrapping;t.colorSpace=T.SRGBColorSpace;
@@ -38,8 +38,8 @@ export function buildStreet(){
  const palettes={
   plaster:['#e5ebed','#d0dde3','#9bb4be','#adbcc8','#71929e'],
   wood:['#a2b3bd','#536a79'],
-  paving:['#c5cfd5'],
-  asphalt:['#454f58'],
+  paving:['#d4d8d3'],
+  asphalt:['#35434b'],
   plain:['#e9eff1','#c2cdd4','#92a5b0','#607984','#354e5c','#253640','#7f9eaa','#a9b8c0','#5c7480','#acc2c9','#c5b581','#9d7371','#b1a79a','#6d9388','#56838b','#f2f5f5','#a9c5c8']
  };
  const paletteColors=new Map(Object.entries(palettes).map(([key,values])=>[key,values.map(hex=>({hex,color:new T.Color(hex)}))]));
@@ -47,7 +47,7 @@ export function buildStreet(){
  function mat(color,type='',metal=0){
   color=paletteColor(color,type);
   const key=[color,type,metal].join('|');
-  if(!materials.has(key))materials.set(key,new T.MeshStandardMaterial({color,map:type?texture(type):null,roughness:metal?.48:.91,metalness:metal}));
+  if(!materials.has(key))materials.set(key,new T.MeshStandardMaterial({color,map:type?texture(type):null,roughness:metal?.48:type==='asphalt'?.97:type==='paving'?.87:.91,metalness:metal}));
   return materials.get(key);
  }
  function mesh(geo,color,x=0,y=0,z=0,parent=city,type='',cast=true){

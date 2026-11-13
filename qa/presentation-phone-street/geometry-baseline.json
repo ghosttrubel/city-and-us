@@ -1,0 +1,8 @@
+{
+  "sourceCommit": "ce6e9312d1141b1a48b927b966b6fdaa6b0a99e0",
+  "scope": "Street excludes only texture/material factory; neighbourhood includes static geometry/route/entrance definitions.",
+  "hashes": {
+    "street.js": "80e1bb3a9b3a2c4b72194fda2c5c63e8ffffbf02a70a1490612e0897f8e0e4e4",
+    "neighbourhood.js": "8820c3417cdad3d3b244498db4381851fc3c365fd27c0e10a229b19c4fac2a09"
+  }
+}

@@ -1,3 +1,5 @@
+import {validMovieWatch} from './movie-catalogue.js';
+import {migrateBank,validBank} from './bank.js';
 import {migrateRoadVehicles,validRoadVehicles} from './road-vehicles.js';
 import {migrateProvisions,validProvisions} from './provisions.js';
 import {migrateStreetLayout} from './street-layout-state.js';
@@ -46,7 +48,7 @@ export function migrate(data,initial,playerId){
   s.stats={cooked:0,washed:0,studied:0,slept:0,shifts:0,purchases:0,...s.stats};
   s.claimedTasks=Array.isArray(s.claimedTasks)?s.claimedTasks:[];
   s.studyFocus=['trader','rider','chef'].includes(s.studyFocus)?s.studyFocus:'trader';s.goalClaimed=!!s.goalClaimed;s.graphics=['phone','balanced','battery'].includes(s.graphics)?s.graphics:'phone';s.resolution=validResolution(s.resolution)?s.resolution:validResolution(initial.resolution)?initial.resolution:'low';
-  migrateEnvironment(s,data);migrateWardrobe(s,data);migrateDecor(s,data);migrateDaily(s,data);migrateHomeLife(s,data);migrateFoodService(s,data);migrateDestinations(s,data);migrateNeighbourhood(s,data);migrateStreetLayout(s,data);migrateBike(s,data);migrateRoadVehicles(s,data);return migrateProvisions(s,data);
+  migrateBank(s);migrateEnvironment(s,data);migrateWardrobe(s,data);migrateDecor(s,data);migrateDaily(s,data);migrateHomeLife(s,data);migrateFoodService(s,data);migrateDestinations(s,data);migrateNeighbourhood(s,data);migrateStreetLayout(s,data);migrateBike(s,data);migrateRoadVehicles(s,data);return migrateProvisions(s,data);
 }
 export function applyStory(s,choices=DEFAULT_STORY){
   if(s.onboarded)return;
@@ -88,7 +90,7 @@ export function completeActivity(s,id){
   return true;
 }
 export function shiftPay(s,pay,success){return Math.round(pay*(success&&s.traits.includes('industrious')?1.1:1))}
-export function goalProgress(s){return s.goal==='saver'?s.money:s.goal==='scholar'?s.study:Math.max(s.skills.trader,s.skills.rider,s.skills.chef)}
+export function goalProgress(s){return s.goal==='saver'?s.money+(s.bank?.balance||0):s.goal==='scholar'?s.study:Math.max(s.skills.trader,s.skills.rider,s.skills.chef)}
 export function goalReward(s){return s.goal==='professional'?1500:s.goal==='scholar'?1200:1000}
 export const TASKS=[
   {id:'food-delivery',name:'Dinner at your door',text:'Receive a phone food delivery and eat a stored meal.',reward:150,done:s=>s.daily?.stats.received>0&&s.daily?.stats.eaten>0},
@@ -101,6 +103,7 @@ export const TASKS=[
 ];
 export function validSave(v){
   const d=v?.data;if(v?.version!==1||!d||typeof d.name!=='string'||d.name.length>24)return false;
+  if(!validBank(d.bank)||!validMovieWatch(d.movieWatch))return false;
   if(!validEnvironment(d)||!validDaily(d)||!validHomeLife(d.homeLife)||!validFoodService(d.foodService)||!validDestinations(d.cityVisits))return false;
   if(d.wardrobe!==undefined&&!validWardrobe(d.wardrobe))return false;
   if(d.decor!==undefined&&!validDecor(d.decor))return false;

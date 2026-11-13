@@ -1,3 +1,4 @@
+import {cashChange} from './bank.js';
 import {BUILDINGS,ENTRANCES,blocked,walkableStreet,STREET_BOUNDS,near} from './neighbourhood.js';
 export const ROAD_PROFILES=Object.freeze({
  bike:Object.freeze({kind:'bike',name:'Dispatch bike',maxSpeed:7.2,reverseSpeed:2,acceleration:4,braking:10,coast:2.5,steering:2.1,width:1.05,length:2.5,wheelbase:1.7,handbrake:false}),
@@ -108,7 +109,7 @@ export function rentRoadCar(s,v,serial,location,position){
  if(location!=='city'||!near(position,v,3)||activeDriver(s)||rideActive(s))return no('Approach this car on foot after finishing other journeys.');
  if(!(s.completedDeliveries>=1||s.stats?.shifts>=1))return no('Complete one parcel round or paid work shift to unlock self-drive rental.');
  if(s.money<RENTAL_PRICE)return no('Rental costs ₦'+RENTAL_PRICE+'. Your balance is ₦'+s.money+'. Nothing was charged.');
- s.money-=RENTAL_PRICE;s.roadVehicles.serial++;v.access={type:'rental',active:true,renterId:s.localPlayerId};
+ cashChange(s,-RENTAL_PRICE,'purchase',{sku:'rental',ref:'rental-'+(s.roadVehicles.serial+1)});s.roadVehicles.serial++;v.access={type:'rental',active:true,renterId:s.localPlayerId};
  return ok('Rental paid: ₦'+RENTAL_PRICE+'. You may drive this car until you return it to the Dispatch rental bay. No ownership granted.');
 }
 export function returnRoadCar(s,v,location,position){

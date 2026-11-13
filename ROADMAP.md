@@ -1,3 +1,11 @@
+# Phone presentation, City Bank and Movies — 13 November 2026
+
+Local source now includes original startup artwork, organised portrait phone apps, an original playable Movies sample, separate cash/deposits with a server transaction ledger, and a material-only street finish. Saves, account sync, permissions, progression and paused character/outfit work are retained.
+
+[Implementation, verification limits and Android review](docs/PRESENTATION_BANK_MOVIES.md) · [Checkpoint evidence](qa/presentation-phone-street/STATUS.md). Live Supabase deployment/three-account testing and actual browser/native screenshots remain pending. Commercial films require supplied rights and content. No publication or APK rebuild. Historical roadmap follows unchanged.
+
+---
+
 # Online account foundation — 13 November 2026
 
 Automatic account saving and service-gated play are implemented in local source. Existing snapshots, guest stories, account identity and keyboard guards are retained. Google/native return, deletion and authenticated chat work are tracked with live verification limits in [the checkpoint status](qa/online-account/STATUS.md) and [setup/review instructions](docs/ONLINE_SETUP.md). No publication or APK rebuild. Historical roadmap follows unchanged.
