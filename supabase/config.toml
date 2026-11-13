@@ -1,0 +1,3 @@
+[functions.delete-account]
+# Function verifies the bearer against Auth /user itself (supports publishable-key clients).
+verify_jwt = false

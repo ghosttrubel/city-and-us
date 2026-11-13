@@ -1,3 +1,9 @@
+# Online account foundation — 13 November 2026
+
+Automatic account saving and service-gated play are implemented in local source. Existing snapshots, guest stories, account identity and keyboard guards are retained. Google/native return, deletion and authenticated chat work are tracked with live verification limits in [the checkpoint status](qa/online-account/STATUS.md) and [setup/review instructions](docs/ONLINE_SETUP.md). No publication or APK rebuild. Historical roadmap follows unchanged.
+
+---
+
 # Supabase Auth and cloud backups — 12 November 2026
 
 Optional email/password accounts and explicitly confirmed manual cloud backups are implemented in the local web source. Guest saves, per-account device stories, review isolation and local gallery media are preserved. No gameplay, character, outfit, rental or progression rules changed; no chat, publication or APK rebuild. Live checks reached Auth settings and confirmed anonymous table access is denied. Authenticated account/email/backup round trips still require real-account verification.

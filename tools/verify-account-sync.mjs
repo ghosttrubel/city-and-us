@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {createAccountSync,syncKey} from '../dist/account-sync.js';
+import {createSaveSlots,GUEST_KEY,SLOT_KEY} from '../dist/cloud-saves.js';
+const A='11111111-1111-4111-8111-111111111111',B='22222222-2222-4222-8222-222222222222';
+const store=()=>{const m=new Map();return {getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,String(v)),removeItem:k=>m.delete(k)}};
+const storage=store(),tab=store(),validate=p=>p?.version===1&&typeof p.data.money==='number',fixture=n=>({version:1,data:{name:'Test',money:n,localPlayerId:'LS-1234567890ABCDEF'}});
+let uid=A,offline=false,lost=false,serial=0,writes=0,reloads=0,callbacks=[],db=new Map();
+const auth={get user(){return uid?{id:uid}:null},recovery:false,subscribe:f=>(callbacks.push(f),()=>{}),probe:async()=>{if(offline)throw Error('Offline');return {version:1}},validateSession:async()=>{},authorized:async(path,opts={})=>{if(offline)throw Error('Offline');const id=uid,r=db.get(id);if(!opts.method)return r?[structuredClone(r)]:[];writes++;if(opts.method==='POST'&&r){const e=Error('conflict');e.status=409;throw e}if(opts.method==='PATCH'&&!path.includes(encodeURIComponent(r.updated_at)))return [];const row={...opts.body,updated_at:new Date(++serial*1000).toISOString()};db.set(id,row);if(lost){lost=false;throw Error('lost reply')}return [structuredClone(row)]}};
+const timers=new Map();let timer=0;
+const make=()=>{const slots=createSaveSlots({storage,tab,validate});return {slots,s:createAccountSync({auth,slots,storage,validate,reload:()=>reloads++,freshStory:()=>fixture(0),schedule:(f,ms)=>(timers.set(++timer,{f,ms}),timer),cancel:id=>timers.delete(id)})}};
+storage.setItem(GUEST_KEY,JSON.stringify(fixture(10)));let {s,slots}=make();await s.connect();assert.equal(s.status.choice.kind,'migration');assert.equal(writes,0);await s.resolve('local');assert.equal(JSON.parse(storage.getItem(GUEST_KEY)).data.money,10);s.dispose();({s,slots}=make());await s.connect();assert.equal(db.get(A).payload.data.money,10);assert(s.status.ready);
+const capture=n=>{const p=fixture(n);storage.setItem(slots.key,JSON.stringify(p));s.capture(p)};
+capture(11);capture(12);capture(13);assert.equal(writes,1);assert.equal(JSON.parse(storage.getItem(syncKey(A))).pending.data.money,13);offline=true;await s.connect();assert(!s.status.ready);s.dispose();({s,slots}=make());await s.connect();assert.equal(JSON.parse(storage.getItem(syncKey(A))).pending.data.money,13);offline=false;await s.connect();assert.equal(db.get(A).payload.data.money,13);assert(s.status.ready);
+capture(14);lost=true;await s.connect();assert.equal(db.get(A).payload.data.money,14);const afterLost=writes;s.dispose();({s,slots}=make());await s.connect();assert.equal(writes,afterLost);assert.equal(s.status.label,'Saved');
+capture(15);db.set(A,{...db.get(A),payload:fixture(99),updated_at:new Date(++serial*1000).toISOString()});await s.connect();assert.equal(s.status.choice.kind,'conflict');assert.equal(db.get(A).payload.data.money,99);await s.resolve('local');assert(storage.getItem(syncKey(A)+':conflict'));s.dispose();({s,slots}=make());await s.connect();assert.equal(db.get(A).payload.data.money,15);
+capture(16);uid=B;callbacks.forEach(f=>f());await s.connect();assert.equal(db.has(B),false);assert.throws(()=>s.capture(fixture(100)),/Account changed/);assert.equal(JSON.parse(storage.getItem(syncKey(A))).pending.data.money,16);s.dispose();uid=A;({s,slots}=make());await s.connect();assert.equal(db.get(A).payload.data.money,16);
+// Existing new-story transition replaces the whole state while keeping the slot and identity.
+const reset=fixture(0);storage.setItem(slots.key,JSON.stringify(reset));s.capture(reset);s.dispose();({s,slots}=make());await s.connect();assert.equal(db.get(A).payload.data.money,0);assert.equal(tab.getItem(SLOT_KEY),A);assert.equal(db.get(A).payload.data.localPlayerId,'LS-1234567890ABCDEF');
+assert.throws(()=>s.capture({...fixture(5),cloudSource:'review'}),/Review/);s.dispose();
+const blocked=createAccountSync({auth,slots,storage,validate,disabled:true});const before=writes;blocked.capture(fixture(55));await blocked.connect();assert.equal(writes,before);blocked.dispose();
+console.log('PASS: migration, debounce, durable reload, offline/reconnect, lost response, CAS conflict, account isolation, new-story transition, review exclusion (API doubles; not live).');

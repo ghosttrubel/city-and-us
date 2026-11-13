@@ -79,6 +79,7 @@ globalThis.createImageBitmap=async()=>({width:512,height:512,close(){}});
 const nativeFetch=globalThis.fetch;
 globalThis.fetch=async(input,init)=>{
  const url=typeof input==='string'?input:input.url||String(input);
+ if(url==='https://yhervptejlpgallfinro.supabase.co/rest/v1/rpc/game_connection')return new Response(JSON.stringify({version:1,server_time:'2026-11-13T00:00:00Z'}));
  if(url.startsWith('file:')){const bytes=await readFile(fileURLToPath(url));return new Response(bytes,{headers:{'Content-Length':String(bytes.length)}})}
  return nativeFetch(input,init);
 };
@@ -110,11 +111,12 @@ const shim='data:text/javascript,'+encodeURIComponent('export * from '+JSON.stri
 let reviewSearch='';
 let source=await readFile(new URL('../dist/game.js',import.meta.url),'utf8');
 source=source.replace(/from '(\.\/[^']+)'/g,(_,path)=>'from '+JSON.stringify(path==='./vendor/three.module.js'?shim:new URL(path,new URL('../dist/game.js',import.meta.url)).href));
-source+='\nglobalThis.__decorQa=()=>cameraRig.entries.filter(e=>e.root===homeDecor.layer);globalThis.__roomQa=()=>({obstacles:interior.getColliders(),bounds:interior.bounds});globalThis.__navigationQa={navigator,route:()=>activeRoute.map(p=>({x:p.x,z:p.z})),navigate:p=>walkingNavigator.route(player.position,p),districts:()=>[...loadedDistricts.keys()],cameraEntries:()=>cameraRig.entries,routeDots:()=>routeDots.count};';
+source+='\nglobalThis.__onlineQa=()=>({auth:cloudAuth,sync:accountSync,state,save});globalThis.__decorQa=()=>cameraRig.entries.filter(e=>e.root===homeDecor.layer);globalThis.__roomQa=()=>({obstacles:interior.getColliders(),bounds:interior.bounds});globalThis.__navigationQa={navigator,route:()=>activeRoute.map(p=>({x:p.x,z:p.z})),navigate:p=>walkingNavigator.route(player.position,p),districts:()=>[...loadedDistricts.keys()],cameraEntries:()=>cameraRig.entries,routeDots:()=>routeDots.count};';
 async function boot({search=reviewSearch}={}){
  reviewSearch=search;
  raf=[];timers.clear();events={};renderers=[];resetDom(html);globalThis.location.search=reviewSearch;
  await import('data:text/javascript,'+encodeURIComponent(source+'\n//# sourceURL=game-logic-qa-'+(++bootNumber)+'.js'));
+ for(let i=0;i<50;i++)await Promise.resolve();
  tick();
 }
 function tick(ms=50){

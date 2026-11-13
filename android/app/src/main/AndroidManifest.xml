@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <uses-permission android:name="android.permission.INTERNET"/>
  <uses-feature android:glEsVersion="0x00030000" android:required="true"/>
  <application android:label="City &amp; Us" android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme" android:hardwareAccelerated="true" android:allowBackup="false" android:fullBackupContent="false" android:usesCleartextTraffic="false" android:supportsRtl="true">
-  <activity android:name=".MainActivity" android:exported="true" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" android:configChanges="orientation|screenSize|keyboardHidden" android:resizeableActivity="true">
+  <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" android:configChanges="orientation|screenSize|keyboardHidden" android:resizeableActivity="true">
    <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+   <intent-filter><action android:name="android.intent.action.VIEW"/><category android:name="android.intent.category.DEFAULT"/><category android:name="android.intent.category.BROWSABLE"/><data android:scheme="com.cityandus.lagosstreet" android:host="auth" android:path="/callback"/></intent-filter>
   </activity>
  </application>
 </manifest>

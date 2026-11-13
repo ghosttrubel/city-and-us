@@ -42,3 +42,6 @@ checkpoints/
 # Blender backup copies
 *.blend1
 *.blend2
+
+# Temporary editor recovery files
+*.bak
